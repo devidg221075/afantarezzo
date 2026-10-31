@@ -14,8 +14,28 @@ L’Associazione aderisce inoltre a CONASFA (Associazione nazionale professional
 
 Inoltre nell’ Ottobre 2013 è nato ufficialmente SINASFA , il primo sindacato di categoria per i farmacisti dipendenti (costituito esso stesso da farmacisti non titolari) [www.sinasfa.it](https://www.sinasfa.it)
 
-Se sei interessato ad iscriverti o avere ulteriori informazioni puoi contattarci alla nostra casella di posta elettronica: [info@afantarezzo.it](mailto:info@afantarezzo.it).
+Dopo l’ultima assemblea elettiva (Maggio 2023), attualmente il Consiglio Direttivo è così composto:
+
+## Consiglio direttivo
+
+- Dr.ssa Francesca Granelli presidenza
+- Dr.ssa Silvia Rossi vice presidenza
+- Dr.ssa Stefania Tanania segreteria
+- Dr.ssa Simona Mengozzi tesoreria
+- Dr.ssa Gloria Caterini consiglio
+- Dr.ssa Jessika Lodovichi consiglio
+- Dr.ssa Flavia Sorbi consiglio
+
+## Revisori dei conti
+
+- Dr.ssa Corti Alessandra
+- Dr. Tavanti Matteo
+- Dr.ssa Valdambrini Chiara
+
+Se sei interessato ad iscriverti o avere ulteriori informazioni puoi contattarci alla nostra casella di posta elettronica: [info@afantarezzo.it](mailto:info@afantarezzo.it)
 
 Secondo noi è un opportunità importante da non perdere , anche perché in questo momento così delicato per la nostra professione, presentarsi dai vari interlocutori, con un numero nutrito di iscritti fa davvero la differenza.
 
 Grazie per l’attenzione.
+
+Per A.FA.N.T. Arezzo – Il presidente Dr.ssa Francesca Granelli
