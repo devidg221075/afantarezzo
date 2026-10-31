@@ -70,6 +70,11 @@ VARIANTI = [
     ('d', 'd-notte.html', 'D · Notte', 'Scuro ad alto contrasto, con giallo'),
 ]
 
+RITOCCHI = [
+    ('c1', 'c1-luce.html', 'C1 · Luce', 'Più chiara e calma: bianco, blu come accento'),
+    ('c2', 'c2-intensa.html', 'C2 · Intensa', 'Più grande e decisa: riquadro della notizia sovrapposto'),
+]
+
 
 def e(s):
     return html.escape(s, quote=True)
@@ -79,7 +84,10 @@ def barra(sigla):
     voci = ''.join(
         f'<a href="{f}"{" aria-current=page" if s == sigla else ""}>{e(n)}</a>' for s, f, n, _ in VARIANTI
     )
-    return f'<nav class="pbar" aria-label="Prototipi"><span>Prototipo — scegli la proposta:</span>{voci}<a href="index.html">Indice</a></nav>'
+    rit = ''.join(
+        f'<a href="{f}"{" aria-current=page" if s == sigla else ""}>{e(n)}</a>' for s, f, n, _ in RITOCCHI
+    )
+    return f'<nav class="pbar" aria-label="Prototipi"><span>Proposte:</span>{voci}<span>Ritocchi sulla C:</span>{rit}<a href="index.html">Indice</a></nav>'
 
 
 BASE_CSS = """
@@ -253,9 +261,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--acc)}
 
 
 # ------------------------------------------------------------- C · Blu del logo
-def var_c():
-    fonts = font('Outfit', 'outfit-latin-wght-normal.woff2') + font('Inter', 'inter-latin-wght-normal.woff2')
-    css = """
+CSS_C = """
 :root{--blue:#0739c2;--navy:#02088f;--violet:#a257dc;--cyan:#70d0f7;--sky:#aee1f8;--bg:#f2f6ff;--ink:#0b1440;--mut:#4a5588}
 body{font:400 17px/1.65 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -297,6 +303,11 @@ h1 span{background:linear-gradient(90deg,#aee1f8,#dc74fd);-webkit-background-cli
 @media (max-width:900px){.hg{grid-template-columns:1fr;padding:30px 0 56px}.grid,.quick{grid-template-columns:1fr 1fr}.foot .wrap{grid-template-columns:1fr}.rib{display:none}}
 @media (max-width:620px){.grid,.quick{grid-template-columns:1fr}.btn.g{margin:10px 0 0}.nav a{padding:7px 11px;font-size:14px}.nav ul{border-radius:22px}}
 """
+
+
+def var_c():
+    fonts = font('Outfit', 'outfit-latin-wght-normal.woff2') + font('Inter', 'inter-latin-wght-normal.woff2')
+    css = CSS_C
     carte = ''.join(
         f'<article class="card"><div class="bar"></div><div class="in"><span class="tags">{e(n["categoria"])}</span><h3>{e(n["title"])}</h3><p class="date">{data_it(n["date"])}</p><p>{e(n["estratto"])}</p></div></article>'
         for n in ALTRE)
@@ -314,6 +325,74 @@ h1 span{background:linear-gradient(90deg,#aee1f8,#dc74fd);-webkit-background-cli
 </main>
 {footer_html()}"""
     return pagina('c', 'C · Blu del logo', fonts, css, corpo)
+
+
+# ------------------------------------------------------------------ C1 · Luce
+def var_c1():
+    fonts = font('Outfit', 'outfit-latin-wght-normal.woff2') + font('Inter', 'inter-latin-wght-normal.woff2')
+    css = CSS_C + """
+.hero{background:linear-gradient(135deg,#eaf0ff 0%,#f4efff 58%,#ffffff 100%);color:var(--ink)}
+.hero:before{background:radial-gradient(circle,rgba(112,208,247,.5),rgba(112,208,247,0) 68%)}
+.hero:after{background:radial-gradient(circle,rgba(220,116,253,.28),rgba(220,116,253,0) 66%)}
+.rib{background:linear-gradient(180deg,rgba(7,57,194,.09),rgba(7,57,194,0))}
+.brand{color:var(--ink)}.mono{background:var(--blue);color:#fff}.brand small{opacity:1;color:var(--mut)}
+.nav ul{background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px -18px rgba(7,57,194,.5);backdrop-filter:none}
+.nav a{color:var(--ink)}.nav a:hover{background:var(--tint)}.nav a[aria-current=page]{background:var(--blue);color:#fff}
+h1{color:var(--navy)}h1 span{background:linear-gradient(90deg,#0739c2,#a257dc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut)}
+.btn{background:var(--blue);color:#fff}.btn:hover{background:var(--navy)}.btn.g{background:#fff;color:var(--blue);border:2px solid var(--blue)}.btn.g:hover{background:var(--tint)}
+.chips span{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.glass{background:#fff;border:1px solid var(--line);box-shadow:0 34px 60px -34px rgba(7,57,194,.4)}
+.hg{padding:40px 0 92px}
+.sec{padding-top:72px}
+"""
+    base = var_c()
+    # riusa il corpo di C: stessa struttura, stile diverso
+    corpo = re.search(r'<main id="main">.*?</footer>', base, re.S).group(0)
+    return pagina('c1', 'C1 · Luce', fonts, css, corpo)
+
+
+# ---------------------------------------------------------------- C2 · Intensa
+def var_c2():
+    fonts = font('Outfit', 'outfit-latin-wght-normal.woff2') + font('Inter', 'inter-latin-wght-normal.woff2')
+    css = CSS_C + """
+.hero:before{width:640px;height:640px;right:-160px;top:-200px}
+.hero:after{width:560px;height:560px}
+.hc{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:46px 0 170px}
+.eyebrow{display:inline-block;font:600 13px 'Outfit',sans-serif;letter-spacing:.2em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:7px 16px;border-radius:999px;margin-bottom:24px}
+.hc h1{font-size:clamp(46px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;margin:0 0 24px;text-wrap:balance}
+.hc .lead{margin:0 auto 32px;font-size:20px}
+.hc .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hc .btn.g{margin-left:0}
+.float{position:relative;z-index:3;margin-top:-104px}
+.fnews{display:grid;grid-template-columns:190px 1fr auto;gap:30px;align-items:center;background:#fff;border-radius:30px;padding:30px 38px;box-shadow:0 44px 80px -34px rgba(2,8,143,.6)}
+.fnews .dn{font:700 78px/.95 'Outfit',sans-serif;color:var(--blue);letter-spacing:-.04em}.fnews .dm{font:500 17px 'Outfit',sans-serif;color:var(--mut)}
+.fnews h2{font:600 27px/1.2 'Outfit',sans-serif;margin:8px 0 6px;letter-spacing:-.015em}.fnews p{margin:0;color:var(--mut)}
+.fnews .go{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;font:600 16px 'Outfit',sans-serif;white-space:nowrap}.fnews .go:hover{background:var(--navy)}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.stats3 div{background:#fff;border-radius:22px;padding:22px 26px;box-shadow:0 10px 30px -18px rgba(7,57,194,.45)}
+.stats3 b{display:block;font:700 44px/1 'Outfit',sans-serif;letter-spacing:-.03em;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.stats3 span{color:var(--mut);font-size:15.5px}
+.sec{padding-top:70px}
+@media (max-width:900px){.hc{padding:26px 0 130px}.fnews{grid-template-columns:1fr;gap:12px;padding:26px 24px}.stats3{grid-template-columns:1fr}.float{margin-top:-84px}}
+"""
+    g = HERO['date'].split('-')
+    carte = ''.join(
+        f'<article class="card"><div class="bar"></div><div class="in"><span class="tags">{e(n["categoria"])}</span><h3>{e(n["title"])}</h3><p class="date">{data_it(n["date"])}</p><p>{e(n["estratto"])}</p></div></article>'
+        for n in ALTRE)
+    rapidi = ''.join(f'<div class="q"><i></i><b>{e(t)}</b><span>{e(d)}</span></div>' for t, d in RAPIDI)
+    corpo = f"""
+<main id="main">
+<section class="hero"><div class="rib" aria-hidden="true"></div><div class="wrap">
+<div class="head"><a class="brand" href="#"><span class="mono" aria-hidden="true">A</span><span><b>A.FA.N.T. Arezzo</b><small>Associazione Farmacisti Non Titolari</small></span></a><nav class="nav" aria-label="Principale"><ul>{menu_html()}</ul></nav></div>
+<div class="hc"><span class="eyebrow">Arezzo · dal 2008</span><h1>A.FA.N.T. Arezzo<br><span>Farmacisti Non Titolari</span></h1><p class="lead">{e(INTRO)}</p><div class="btns"><a class="btn" href="#">Iscriviti</a><a class="btn g" href="#">Chi siamo</a></div></div>
+</div></section>
+<div class="wrap float"><aside class="fnews" aria-label="Ultima comunicazione"><div><div class="dn">{int(g[2])}</div><div class="dm">{MESI[int(g[1]) - 1]} {g[0]}</div></div><div><span class="tag">Ultima comunicazione</span><h2>{e(HERO["title"])}</h2><p>{e(HERO["estratto"])}</p></div><a class="go" href="#">Leggi tutto →</a></aside>
+<div class="stats3"><div><b>2008</b><span>anno di fondazione</span></div><div><b>15 €</b><span>quota annuale di iscrizione</span></div><div><b>{N_TOT}</b><span>comunicazioni dal {ANNO0}</span></div></div></div>
+<section class="sec"><div class="wrap"><h2 class="t">Ultime comunicazioni</h2><div class="grid">{carte}</div></div></section>
+<section class="sec"><div class="wrap"><h2 class="t">Per gli iscritti</h2><div class="quick">{rapidi}</div></div></section>
+</main>
+{footer_html()}"""
+    return pagina('c2', 'C2 · Intensa', fonts, css, corpo)
 
 
 # ------------------------------------------------------------------ D · Notte
@@ -382,7 +461,7 @@ h1 span{color:var(--acc)}
 
 def indice():
     schede = ''
-    for s, f, n, d in VARIANTI:
+    for s, f, n, d in VARIANTI + RITOCCHI:
         img = f'img/{s}-desktop.png'
         schede += (f'<a class="c" href="{f}"><span class="im">'
                    + (f'<img src="{img}" alt="Anteprima del prototipo {e(n)}" loading="lazy">' if os.path.exists(os.path.join(OUT, img)) else '')
@@ -392,16 +471,16 @@ def indice():
 .g{{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}}.c{{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:14px 14px 18px;text-decoration:none;color:inherit;display:block}}.c:hover{{border-color:#1c1917}}
 .im{{display:block;aspect-ratio:16/10;background:#e7e5e4;border-radius:10px;overflow:hidden;margin-bottom:12px}}.im img{{width:100%;height:100%;object-fit:cover;object-position:top;display:block}}.c b{{display:block;font-size:19px}}.c span+span,.c b+span{{color:#57534e;font-size:15px}}
 @media (max-width:700px){{.g{{grid-template-columns:1fr}}}}</style></head><body><div class="w"><h1>Prototipi grafici della home</h1>
-<p>Quattro proposte con gli stessi testi reali del sito. Il logo è provvisorio (monogramma): va sostituito con quello dell'associazione. Clicca per aprire a tutta pagina.</p>
+<p>Quattro proposte (A-D) e due ritocchi sulla C scelta (C1, C2), con gli stessi testi reali del sito. Il logo è provvisorio (monogramma): va sostituito con quello dell'associazione. Clicca per aprire a tutta pagina.</p>
 <div class="g">{schede}</div></div></body></html>"""
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for (s, f, n, d), fn in zip(VARIANTI, (var_a, var_b, var_c, var_d)):
+    for (s, f, n, d), fn in zip(VARIANTI + RITOCCHI, (var_a, var_b, var_c, var_d, var_c1, var_c2)):
         open(os.path.join(OUT, f), 'w', encoding='utf-8').write(fn())
     open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(indice())
-    print('generati:', ', '.join(f for _, f, _, _ in VARIANTI), '+ index.html')
+    print('generati:', ', '.join(f for _, f, _, _ in VARIANTI + RITOCCHI), '+ index.html')
 
 
 if __name__ == '__main__':
