@@ -5,28 +5,34 @@ import eventi from '../data/eventi.json';
 const oggi = new Date().toISOString().slice(0, 10);
 const prossimo = eventi.filter((e) => e.data >= oggi).sort((a, b) => a.data.localeCompare(b.data))[0];
 const ultima = news[0];
+const primoAnno = news.reduce((m, n) => (n.date < m ? n.date : m), news[0].date).slice(0, 4);
 // Se l'HERO mostra l'ultima comunicazione, la griglia parte dalla successiva per non ripeterla.
 const ultime = prossimo ? news.slice(0, 3) : news.slice(1, 4);
 ---
 <Base current="/">
-  <section class="hero" aria-labelledby="titolo-hero">
+  <section class="hero" slot="hero" aria-labelledby="titolo-hero">
     <div class="wrap">
       <div>
-        <h1 id="titolo-hero">A.FA.N.T. Arezzo<br />Associazione Farmacisti Non Titolari</h1>
-        <p>Dal maggio 2008 Afant-Arezzo raggruppa i farmacisti non titolari della provincia di Arezzo, con un proprio statuto e un Consiglio Direttivo.</p>
+        <h1 id="titolo-hero">A.FA.N.T. Arezzo<br /><span>Farmacisti Non Titolari</span></h1>
+        <p class="lead">Dal maggio 2008 Afant-Arezzo raggruppa i farmacisti non titolari della provincia di Arezzo, con un proprio statuto e un Consiglio Direttivo.</p>
         <div class="actions">
           <a class="btn" href="/iscrizione/">Iscriviti</a>
           <a class="btn sec" href="/chi-siamo/">Chi siamo</a>
         </div>
+        <div class="chips">
+          <span>Dal 2008</span>
+          <span>Quota 15 € l'anno</span>
+          <span>{news.length} comunicazioni dal {primoAnno}</span>
+        </div>
       </div>
-      <aside class="card" aria-label={prossimo ? 'Prossimo evento' : 'Ultima comunicazione'}>
+      <aside class="glass" aria-label={prossimo ? 'Prossimo evento' : 'Ultima comunicazione'}>
         {prossimo ? (
           <>
             <span class="tag">Prossimo evento</span>
             <h2>{prossimo.titolo}</h2>
             <p class="date">{formatDate(prossimo.data)}{prossimo.ora ? `, ore ${prossimo.ora}` : ''}{prossimo.luogo ? ` · ${prossimo.luogo}` : ''}</p>
             {prossimo.descrizione && <p>{prossimo.descrizione}</p>}
-            {prossimo.link && <p><a href={prossimo.link}>Dettagli</a></p>}
+            {prossimo.link && <p><a href={prossimo.link}>Dettagli →</a></p>}
           </>
         ) : (
           <>
@@ -34,6 +40,7 @@ const ultime = prossimo ? news.slice(0, 3) : news.slice(1, 4);
             <h2><a href={`/notizie/${ultima.slug}/`}>{ultima.title}</a></h2>
             <p class="date">{formatDate(ultima.date)}</p>
             <p>{excerpt(ultima.raw, 32)}</p>
+            <p><a href={`/notizie/${ultima.slug}/`}>Leggi tutto →</a></p>
           </>
         )}
       </aside>
@@ -52,7 +59,7 @@ const ultime = prossimo ? news.slice(0, 3) : news.slice(1, 4);
         </article>
       ))}
     </div>
-    <p class="more"><a class="btn sec" href="/notizie/">Tutte le notizie</a></p>
+    <p class="more"><a class="btn" href="/notizie/">Tutte le notizie</a></p>
   </section>
 
   <section class="section wrap" aria-labelledby="accessi">

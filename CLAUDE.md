@@ -17,9 +17,11 @@ Le regole del cliente valgono per questo sito e per qualsiasi altro sito svilupp
 - Non inventare testi, numeri o certificazioni. Testi legali (privacy, cookie): collegare i documenti ufficiali del cliente, non scriverli.
 - Foto: solo quelle del cliente.
 - I dati personali (per esempio i curricula) non vanno copiati in questo repository pubblico.
-- Velocità e accessibilità: `main.css` sotto i 30 KB, CLS 0, nessuna richiesta esterna, nessun font web, `prefers-reduced-motion` rispettato.
+- Velocità e accessibilità: `main.css` sotto i 30 KB, CLS 0, nessuna richiesta esterna, `prefers-reduced-motion` rispettato.
+- Font web ammessi per scelta del cliente (direzione grafica C), ma **incorporati nel sito** (nessuna richiesta a Google o ad altri), solo sottoinsieme latino, massimo 2 famiglie e 150 KB in tutto.
 
 ## Scelte tecniche concordate
+- Direzione grafica scelta: **C "Blu del logo"** (palette della locandina: blu, ciano, viola; titoli Outfit, testi Inter). Prototipi in `prototipi/`.
 - Astro statico con contenuti in Markdown, aggiornati dal cliente chiedendo a Claude.
 - Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro: tenuta, curricula compresi, ma solo con consenso scritto non scaduto e file fuori dal repository pubblico (vedi `src/data/README.md`).
 - HERO della home: prossimo evento o assemblea, pulsante Iscriviti, ultime comunicazioni, logo e presentazione.

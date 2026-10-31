@@ -1,4 +1,4 @@
-// Verifica i vincoli del cliente sulla build: main.css sotto 30 KB, nessun font web, nessuna richiesta esterna.
+// Verifica i vincoli del cliente sulla build: CSS sotto 30 KB, font solo incorporati (max 2 famiglie, 150 KB), nessuna richiesta esterna.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 const dist = 'dist';
@@ -8,7 +8,9 @@ let ko = 0;
 const css = files.filter((f) => f.endsWith('.css'));
 const kb = css.reduce((s, f) => s + statSync(f).size, 0) / 1024;
 console.log(`CSS: ${css.length} file, ${kb.toFixed(1)} KB (limite 30 KB)`); if (kb >= 30) ko++;
-const fonts = files.filter((f) => /\.(woff2?|ttf|otf|eot)$/i.test(f)); console.log(`Font web: ${fonts.length}`); if (fonts.length) ko++;
+const fonts = files.filter((f) => /\.(woff2?|ttf|otf|eot)$/i.test(f));
+const fkb = fonts.reduce((s, f) => s + statSync(f).size, 0) / 1024;
+console.log(`Font incorporati: ${fonts.length} file, ${fkb.toFixed(0)} KB (limite 150 KB)`); if (fonts.length > 2 || fkb > 150) ko++;
 const ext = new Set();
 for (const f of files.filter((f) => /\.(html|css|js)$/.test(f))) {
   const t = readFileSync(f, 'utf8');
