@@ -21,7 +21,7 @@ Le regole del cliente valgono per questo sito e per qualsiasi altro sito svilupp
 - Font web ammessi per scelta del cliente (direzione grafica C), ma **incorporati nel sito** (nessuna richiesta a Google o ad altri), solo sottoinsieme latino, massimo 2 famiglie e 150 KB in tutto.
 
 ## Scelte tecniche concordate
-- Direzione grafica scelta: **C "Blu del logo"** (palette della locandina: blu, ciano, viola; titoli Outfit, testi Inter). Prototipi in `prototipi/`.
+- Direzione grafica scelta: **C "Blu del logo"**, variante **C2 "Intensa"** (palette della locandina: blu, ciano, viola; titoli Outfit, testi Inter; HERO centrato con riquadro della notizia sovrapposto e tre cifre chiave). Prototipi in `prototipi/`.
 - Astro statico con contenuti in Markdown, aggiornati dal cliente chiedendo a Claude.
 - Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro: tenuta, curricula compresi, ma solo con consenso scritto non scaduto e file fuori dal repository pubblico (vedi `src/data/README.md`).
-- HERO della home: prossimo evento o assemblea, pulsante Iscriviti, ultime comunicazioni, logo e presentazione.
+- HERO della home: pulsante Iscriviti, presentazione, e in evidenza il prossimo evento (da `src/data/eventi.json`) oppure l'ultima comunicazione; logo da inserire (ora monogramma provvisorio).

@@ -21,6 +21,7 @@ const menu = [
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
+  {PREVIEW && <div class="pnote"><strong>Anteprima per il cliente.</strong> Le note arancioni indicano cosa è ancora da decidere o da recuperare e non compariranno nel sito finale. Il logo è provvisorio (monogramma): va sostituito con quello dell'associazione.</div>}
   <div class="band">
     <div class="rib" aria-hidden="true"></div>
     <header class="site-header wrap">
@@ -37,7 +38,6 @@ const menu = [
     <slot name="hero" />
   </div>
   <main id="contenuto">
-    {PREVIEW && <div class="wrap" style="padding-top:1rem"><p class="preview-note"><strong>Anteprima per il cliente.</strong> Le note arancioni indicano cosa è ancora da decidere o da recuperare. Non compariranno nel sito finale. Il logo è provvisorio (monogramma): va sostituito con quello dell'associazione.</p></div>}
     <slot />
   </main>
   <footer class="site-footer">
