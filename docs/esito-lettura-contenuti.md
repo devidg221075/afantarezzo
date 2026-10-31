@@ -2,7 +2,7 @@
 
 Letti il 31/10/2026: 135 articoli, 20 pagine, 73 schede-documento (26 sono curricula: contati, non letti, dati personali). Restano 2 voci da recuperare (`/stage/`, bloccata dal firewall; `/newsletter-2-giugno-2023-2/`, connessione interrotta).
 
-**Limite importante**: delle schede-documento sono stati letti solo i metadati (titolo, data, dimensione). **I contenuti dei PDF non sono stati letti**: i file non sono stati scaricati (link con token temporanei). Vanno recuperati dal cliente.
+**Limite importante**: delle schede-documento sono stati letti solo i metadati (titolo, data, dimensione). Il cliente ha inviato un archivio con **5 PDF distinti** (28 file, ma 23 sono copie identiche), letti e collegati: piattaforma CCNL 2024-2027 (scheda documenti), convocazioni assemblea Conasfa 2024 e 2026, lettera dell'Ordine con i risultati elettorali 2024, locandina della serata del 16/2/2024. **Mancano i PDF delle altre 46 schede** (statuto, codice deontologico, CCNL, ECM, Enpaf, moduli, lettere Conasfa/Sinasfa…): vanno recuperati dal cliente.
 
 ## Che cosa contiene il sito
 
@@ -40,7 +40,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 
 ## Decisioni da prendere con il cliente (una alla volta)
 
-1. Recupero dei PDF e degli allegati (blocca la lettura dei documenti).
+1. Recupero dei PDF e degli allegati: **5 ricevuti, 46 schede ancora senza file** (e gli allegati degli articoli 2014-2023).
 2. Le 2 pagine ancora da leggere.
 3. ~~Telefono ufficiale~~ **deciso: 370 3613108** (l'altro numero non è riportato); resta da decidere se serve un modulo contatti online.
 4. ~~Area Lavoro~~ **deciso: tenerla, curricula compresi**. Pagina `/lavoro/` creata; i curricula non stanno nel repository pubblico (file privato escluso da Git). Da fare: consenso scritto aggiornato di ciascuno (26 curricula del 2015-2023), dove ospitare i file, scadenze.
