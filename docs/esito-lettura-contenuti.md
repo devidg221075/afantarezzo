@@ -40,7 +40,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 
 ## Decisioni da prendere con il cliente (una alla volta)
 
-1. Recupero dei PDF e degli allegati: **5 ricevuti, 46 schede ancora senza file** (e gli allegati degli articoli 2014-2023).
+1. Recupero dei PDF e degli allegati: **42 schede su 55 con file**. Il cliente manda per primi codice deontologico e delega assemblea; gli altri 11 (storici) restano da recuperare.
 2. Le 2 pagine ancora da leggere.
 3. ~~Telefono ufficiale~~ **deciso: 370 3613108** (l'altro numero non è riportato); resta da decidere se serve un modulo contatti online.
 4. ~~Area Lavoro~~ **deciso: tenerla, curricula compresi**. Pagina `/lavoro/` creata; i curricula non stanno nel repository pubblico (file privato escluso da Git). Da fare: consenso scritto aggiornato di ciascuno (26 curricula del 2015-2023), dove ospitare i file, scadenze.
@@ -48,7 +48,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 6. Cariche e nomi: quali pubblicare (consiglio attuale, storico).
 7. Documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018): archivio con filtri per anno e tema.
 8. Doppioni e articoli vuoti: unire, completare o archiviare.
-9. Link utili: indirizzi da recuperare e verificare.
+9. ~~Link utili~~ **indirizzi recuperati** dall'HTML del sito vecchio (14 voci; il duplicato "Regione Toscana" tolto); da verificare che funzionino ancora (quasi tutti `http`).
 10. Privacy e cookie: collegare i documenti ufficiali del cliente.
 11. HERO senza evento futuro: cosa mostrare.
 
@@ -68,3 +68,7 @@ Dal secondo archivio (76 file) sono stati collegati **42 schede su 55** (27 PDF,
 - **Dati del sito vecchio inaffidabili**: dimensioni e date delle schede erano spesso sbagliate (es. molte "237,05 KB"; il CCNL 7/9/2021 risultava del 27/12/2024). Nel sito nuovo la dimensione è quella reale e la colonna "Pubblicato" riporta la data della scheda, non del documento.
 - **Versioni precedenti non pubblicate** (3 moduli iscrizione 2020 con prefisso `wpdm_`, il Contratto integrativo regionale in Word, copie duplicate): da confermare con il cliente.
 - **Avviso ESTAR e schema di domanda**: nessun articolo li cita; probabile allegato di un articolo non letto (`/stage/`?).
+
+## Pagine riportate (aggiornamento)
+
+Riportate: Home, La nostra storia, Iscrizione, Contatti, Notizie, Documenti, CCNL, Lavoro, **Link utili** (14 voci) e **Presentazione Sinasfa** (testo originale). **Ancora da fare**: Privacy (si collegano i documenti ufficiali del cliente, che non ho), pagine "Codice deontologico" e "Statuto" (sono schede di documenti: il codice aspetta il file), `/stage/` e `/newsletter-2-giugno-2023-2/` (da leggere).
