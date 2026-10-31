@@ -3,3 +3,5 @@ dist
 .astro
 src/data/curricula.json
 public/curricula/
+anteprima/
+anteprima.zip
