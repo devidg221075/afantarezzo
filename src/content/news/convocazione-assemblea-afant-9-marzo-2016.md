@@ -5,7 +5,7 @@ categoria: "Assemblee ed elezioni"
 slug: "convocazione-assemblea-afant-9-marzo-2016"
 vecchioUrl: "/convocazione-assemblea-afant-9-marzo-2016/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-storico"]
 ---
 A tutti gli iscritti, si informa:
 
@@ -27,7 +27,7 @@ Conasfa: FarmacistaPiù e abusivismo professionale.
 
 Proposte e idee dall’assemblea: la parola ai colleghi.
 
-Nell’occasione si potrà ancora rinnovare l’iscrizione, per coloro che ancora non hanno aderito per il 2016 ad Afant oppure: iscrizione di 15,00 Euro da versare con bonifico al numero di CC bancario Iban: [IBAN: da confermare con l'associazione]estato ad A.F.A.N.T. Arezzo, [coordinate bancarie: da confermare con l'associazione], Conto Corrente 1108, causale: Iscrizione 2016.
+Nell’occasione si potrà ancora rinnovare l’iscrizione, per coloro che ancora non hanno aderito per il 2016 ad Afant oppure: iscrizione di 15,00 Euro da versare con bonifico al numero di CC bancario Iban: IT27U0308314100000000001108 intestato ad A.F.A.N.T. Arezzo, ABI 03083 CAB 14100, Conto Corrente 1108, causale: Iscrizione 2016.
 
 Il modulo è da riempire ed inviare per posta elettronica o consegnare a mano ai componenti del consiglio di Afant.
 

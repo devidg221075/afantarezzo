@@ -44,7 +44,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 2. Le 2 pagine ancora da leggere.
 3. ~~Telefono ufficiale~~ **deciso: 370 3613108** (l'altro numero non è riportato); resta da decidere se serve un modulo contatti online.
 4. ~~Area Lavoro~~ **deciso: tenerla, curricula compresi**. Pagina `/lavoro/` creata; i curricula non stanno nel repository pubblico (file privato escluso da Git). Da fare: consenso scritto aggiornato di ciascuno (26 curricula del 2015-2023), dove ospitare i file, scadenze.
-5. IBAN e dati bancari: pubblicarli o no, e in che forma.
+5. ~~IBAN~~ **deciso: pubblicare anche negli articoli storici.** Rimessi i due conti dell'associazione (attuale, nella pagina Iscrizione e negli articoli 2024; precedente `…1108`, in 12 articoli 2015-2020, da verificare se ancora attivo). Il conto BancoPosta intestato a un privato (2 circolari ECM) resta non riportato.
 6. Cariche e nomi: quali pubblicare (consiglio attuale, storico).
 7. Documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018): archivio con filtri per anno e tema.
 8. Doppioni e articoli vuoti: unire, completare o archiviare.
@@ -54,7 +54,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 
 ## Stato della migrazione (aggiornato)
 
-- **Articoli**: 135 migrati in `src/content/news/` come **riportati, da rivedere**. Rimossi IBAN e coordinate bancarie (sostituiti da una nota), e il nome del privato intestatario del conto nelle due circolari ECM. I testi vuoti o minimi, i "LINK" senza indirizzo e gli allegati da recuperare sono segnalati nel file (campo `segnalazioni`) e nell'anteprima.
+- **Articoli**: 135 migrati in `src/content/news/` come **riportati, da rivedere**. IBAN dell'associazione ripristinati (scelta del cliente); rimosso solo il conto personale di un privato, con il suo nome, nelle due circolari ECM. I testi vuoti o minimi, i "LINK" senza indirizzo e gli allegati da recuperare sono segnalati nel file (campo `segnalazioni`) e nell'anteprima.
 - **Pagine**: riportate "La nostra storia" (senza composizione del consiglio, da confermare), Iscrizione (IBAN da confermare, modulo online da decidere), Contatti (telefono da decidere), CCNL e Documenti (schede senza file). **Non ancora riportate**: Codice deontologico e Statuto (solo con i PDF), Presentazione Sinasfa, Link utili (mancano gli indirizzi), Lavoro e Cerco lavoro, Privacy (si collegano i documenti ufficiali).
 - **Documenti**: 47 schede con tema e stato proposti automaticamente; PDF da recuperare.
 - **Ancora da leggere**: `/stage/` e `/newsletter-2-giugno-2023-2/`.

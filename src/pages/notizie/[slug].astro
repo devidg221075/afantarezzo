@@ -20,7 +20,8 @@ const Content = n.Content;
         Da sistemare: {[
           s.includes('testo-assente-o-minimo') && 'testo assente o minimo nel sito vecchio',
           s.includes('link-mancante') && 'link "LINK" senza indirizzo',
-          s.includes('dati-bancari-rimossi') && 'coordinate bancarie non riportate (da confermare)',
+          s.includes('iban-storico') && 'contiene l\'IBAN di un conto precedente (banca 03083): verificare se è ancora attivo, il conto attuale è nella pagina Iscrizione',
+          s.includes('dati-bancari-rimossi') && 'conto personale di un privato non riportato',
           s.includes('allegati-da-recuperare') && `allegati da recuperare: ${n.allegati.join(', ')}`,
         ].filter(Boolean).join('; ')}.
       </p>

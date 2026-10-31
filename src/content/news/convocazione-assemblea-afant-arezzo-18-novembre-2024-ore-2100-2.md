@@ -5,7 +5,7 @@ categoria: "Assemblee ed elezioni"
 slug: "convocazione-assemblea-afant-arezzo-18-novembre-2024-ore-2100-2"
 vecchioUrl: "/convocazione-assemblea-afant-arezzo-18-novembre-2024-ore-2100-2/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-associazione"]
 ---
 A tutti gli iscritti:
 
@@ -25,7 +25,7 @@ A seguire l’incontro con il Dr Danilo Tacconi dirigente U.O Infettivologia osp
 
 Durante la serata i presenti potranno rinnovare l’iscrizione per il 2025 ad Afant; o comunque versare la quota di 15,00 Euro anche on line tramite conto corrente:
 
-Iban: [IBAN: da confermare con l'associazione]
+Iban: IT 62 G 01030 14100 000004943392
 
 intestato ad A.F.A.N.T. Arezzo
 

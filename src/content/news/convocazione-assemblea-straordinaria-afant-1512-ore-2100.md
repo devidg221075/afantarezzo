@@ -5,7 +5,7 @@ categoria: "Assemblee ed elezioni"
 slug: "convocazione-assemblea-straordinaria-afant-1512-ore-2100"
 vecchioUrl: "/convocazione-assemblea-straordinaria-afant-1512-ore-2100/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-storico"]
 ---
 A tutti gli iscritti, si ricorda
 
@@ -27,7 +27,7 @@ varie ed eventuali.
 
 Durante la serata i presenti potranno rinnovare l’iscrizione per il 2017 ad Afant; coloro che non potranno intervenire, potranno comunque versare la quota di 15,00 € direttamente ad un consigliere o ad un revisore dei conti, oppure è possibile effettuare il pagamento anche tramite conto corrente
 
-Iban: [IBAN: da confermare con l'associazione]estato A.F.A.N.T. Arezzo
+Iban: IT27U0308314100000000001108 intestato A.F.A.N.T. Arezzo
 
 Causale iscrizione Afant 2017.
 

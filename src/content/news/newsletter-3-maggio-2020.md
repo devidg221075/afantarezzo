@@ -5,7 +5,7 @@ categoria: "Newsletter"
 slug: "newsletter-3-maggio-2020"
 vecchioUrl: "/newsletter-3-maggio-2020/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi", "link-mancante"]
+segnalazioni: ["iban-storico", "link-mancante"]
 ---
 Newsletter 3 – Maggio 2020
 
@@ -63,7 +63,7 @@ Rinnovo iscrizione Afant Arezzo 2020
 
 Il rinnovo dell’iscrizione ad Afant Arezzo per l’anno 2020 termina il 31 Maggio . Per chi non l’avesse ancora fatto e fosse intenzionato a continuare l’adesione all’associazione è possibile versare la quota annuale di 15,00 Euro attualmente solo tramite bonifico bancario, vista la situazione d’emergenza.
 
-IBAN : [IBAN: da confermare con l'associazione]
+IBAN : IT27U0308314100000000001108
 
 intestatazione: A.F.A.N.T. Arezzo
 

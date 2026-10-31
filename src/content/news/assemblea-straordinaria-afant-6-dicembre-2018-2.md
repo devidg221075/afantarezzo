@@ -5,7 +5,7 @@ categoria: "Assemblee ed elezioni"
 slug: "assemblea-straordinaria-afant-6-dicembre-2018-2"
 vecchioUrl: "/assemblea-straordinaria-afant-6-dicembre-2018-2/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-storico"]
 ---
 A tutti gli iscritti:
 
@@ -23,7 +23,7 @@ Varie ed eventuali
 
 Durante la serata si potrà rinnovare l’iscrizione per il 2019 ad Afant; coloro che non saranno presenti, potranno comunque versare la quota di 15,00 € direttamente ad un consigliere o ad un revisore dei conti, oppure è possibile effettuare il pagamento anche tramite conto corrente:
 
-Iban: [IBAN: da confermare con l'associazione]
+Iban: IT27U0308314100000000001108
 
 intestato ad A.F.A.N.T. Arezzo
 

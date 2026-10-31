@@ -51,7 +51,7 @@ e indicando i corsi scelti ( ordinefarmacistiar@fofi.it – fax 0575.984249)
 
 Dove fare il versamento per le quote dei corsi:
 
-Cod. IBAN : [IBAN: da confermare con l'associazione] [conto personale intestato a un privato: non riportato]
+Cod. IBAN : [conto personale intestato a un privato: non riportato]
 
 Causale: CORSI AREZZO / corso del …………….
 

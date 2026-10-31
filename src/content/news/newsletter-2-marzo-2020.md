@@ -5,7 +5,7 @@ categoria: "Newsletter"
 slug: "newsletter-2-marzo-2020"
 vecchioUrl: "/newsletter-2-marzo-2020/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi", "link-mancante"]
+segnalazioni: ["iban-storico", "link-mancante"]
 ---
 Arezzo, Marzo 2020
 
@@ -53,7 +53,7 @@ Rinnovo iscrizione Afant Arezzo 2020
 
 Si ricorda che è ancora possibile rinnovare l’iscrizione ad Afant Arezzo per l’anno 2020. Per chi non l’avesse ancora fatto è possibile versare la quota annuale di 15,00 Euro attualmente solo tramite bonifico bancario, data la situazione d’emergenza.
 
-IBAN : [IBAN: da confermare con l'associazione]
+IBAN : IT27U0308314100000000001108
 
 intestatazione: A.F.A.N.T. Arezzo
 

@@ -5,7 +5,7 @@ categoria: "Assemblee ed elezioni"
 slug: "assemblea-straordinaria-afant-8-novembre-2017"
 vecchioUrl: "/assemblea-straordinaria-afant-8-novembre-2017/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-storico"]
 ---
 A tutti gli iscritti:
 
@@ -23,7 +23,7 @@ Breve sintesi delle attività svolte da Afant nel 2017 e iniziative future
 
 varie ed eventuali.
 
-Durante la serata i presenti potranno rinnovare l’iscrizione per il 2018 ad Afant; coloro che non potranno intervenire, potranno comunque versare la quota di 15,00 € direttamente ad un consigliere o ad un revisore dei conti, oppure è possibile effettuare il pagamento anche tramite conto corrente (Iban:[IBAN: da confermare con l'associazione]estato A.F.A.N.T. Arezzo
+Durante la serata i presenti potranno rinnovare l’iscrizione per il 2018 ad Afant; coloro che non potranno intervenire, potranno comunque versare la quota di 15,00 € direttamente ad un consigliere o ad un revisore dei conti, oppure è possibile effettuare il pagamento anche tramite conto corrente (Iban:IT27U0308314100000000001108 intestato A.F.A.N.T. Arezzo
 
 causale iscrizione Afant 2018).
 

@@ -5,7 +5,7 @@ categoria: "Newsletter"
 slug: "newsletter-4-dicembre-2019"
 vecchioUrl: "/newsletter-4-dicembre-2019/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi"]
+segnalazioni: ["iban-storico"]
 ---
 A tutti gli iscritti,
 
@@ -67,7 +67,7 @@ Si ricorda che sono aperte le iscrizioni ad Afant per 2020.
 
 Il contributo è di 15 Euro, si può consegnare a mano ad uno dei componenti del consiglio di Afant oppure effettuare il pagamento tramite conto corrente:
 
-Iban: [IBAN: da confermare con l'associazione]
+Iban: IT27U0308314100000000001108
 
 intestato ad A.F.A.N.T. Arezzo
 

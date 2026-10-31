@@ -5,7 +5,7 @@ categoria: "Newsletter"
 slug: "newsletter-6-dicembre-2020"
 vecchioUrl: "/newsletter-6-dicembre-2020/"
 allegati: []
-segnalazioni: ["dati-bancari-rimossi", "link-mancante"]
+segnalazioni: ["iban-storico", "link-mancante"]
 ---
 Newsletter 6 – Dicembre 2020
 
@@ -19,7 +19,7 @@ I dettagli per il collegamento verranno inviati a breve su Whatsapp. Rinnovo isc
 
 Contributo di 15 Euro
 
-iban: [IBAN: da confermare con l'associazione], intestato ad A.F.A.N.T. Arezzo, causale” iscrizione 2021”.
+iban: IT27U0308314100000000001108, intestato ad A.F.A.N.T. Arezzo, causale” iscrizione 2021”.
 
 Il modulo allegato è da riempire ed inviare per posta elettronica o consegnare a mano ad uno dei componenti del consiglio di Afant.
 
