@@ -1,0 +1,64 @@
+---
+import '../styles/main.css';
+const { title, description = "Associazione Farmacisti Non Titolari della provincia di Arezzo", current = '' } = Astro.props;
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const full = title ? `${title} | A.FA.N.T. Arezzo` : 'A.FA.N.T. Arezzo | Associazione Farmacisti Non Titolari di Arezzo';
+const menu = [
+  ['/', 'Home'], ['/chi-siamo/', 'Chi siamo'], ['/iscrizione/', 'Iscrizione'],
+  ['/notizie/', 'Notizie'], ['/documenti/', 'Documenti'], ['/ccnl/', 'CCNL'], ['/contatti/', 'Contatti'],
+];
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full}</title>
+  <meta name="description" content={description} />
+  <meta name="color-scheme" content="light" />
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><b>A.FA.N.T. Arezzo</b><span>Associazione Farmacisti Non Titolari</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="nav" id="menu" aria-label="Principale">
+        <ul>
+          {menu.map(([href, label]) => (
+            <li><a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenuto">
+    {PREVIEW && <div class="wrap" style="padding-top:1rem"><p class="preview-note"><strong>Anteprima per il cliente.</strong> Le note arancioni indicano cosa è ancora da decidere o da recuperare. Non compariranno nel sito finale.</p></div>}
+    <slot />
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h2>A.FA.N.T. Arezzo</h2>
+        <p>Associazione Farmacisti Non Titolari della provincia di Arezzo</p>
+        <p class="small">P.IVA / C.F. IT92058170512</p>
+      </div>
+      <div>
+        <h2>Contatti</h2>
+        <p>Via Newton 48, 52100 Arezzo (AR)</p>
+        <p><a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a></p>
+      </div>
+      <div>
+        <h2>Per gli iscritti</h2>
+        <p><a href="/iscrizione/">Come iscriversi</a></p>
+        <p><a href="/documenti/">Documenti e moduli</a></p>
+        <p><a href="/notizie/">Tutte le notizie</a></p>
+      </div>
+    </div>
+  </footer>
+  <script is:inline>
+    (function(){var b=document.querySelector('.nav-toggle'),n=document.getElementById('menu');
+    b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});})();
+  </script>
+</body>
+</html>

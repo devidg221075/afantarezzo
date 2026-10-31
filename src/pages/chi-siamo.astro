@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import * as chi from '../content/pagine/chi-siamo.md';
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const Content = chi.Content;
+---
+<Base title="La nostra storia" current="/chi-siamo/" description="La storia di A.FA.N.T. Arezzo, associazione dei farmacisti non titolari della provincia di Arezzo.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Chi siamo</p>
+    <h1>La nostra storia</h1>
+    {PREVIEW && <p class="preview-note">Da decidere con il cliente: composizione attuale del Consiglio Direttivo e dei Revisori (nel sito vecchio era ferma a maggio 2023, quindi non riportata), firma della presidente, e il richiamo al mandato di presidenza dell'Ordine 2014-2020 presente nel testo.</p>}
+    <div class="prose"><Content /></div>
+    <p class="actions" style="margin-top:1.5rem"><a class="btn" href="/iscrizione/">Come iscriversi</a><a class="btn sec" href="/documenti/">Statuto e codice deontologico</a></p>
+  </div>
+</Base>

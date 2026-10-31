@@ -1,0 +1,22 @@
+---
+title: "Iscrizione 2016"
+date: "2015-01-15"
+categoria: "Altro"
+slug: "iscrizione-2016"
+vecchioUrl: "/iscrizione-2016/"
+allegati: []
+segnalazioni: ["dati-bancari-rimossi"]
+---
+A tutti gli iscritti e ai simpatizzanti, si ricorda che è ancora possibile rinnovare l’iscrizione ad Afant Arezzo per l’anno 2016. Per chi non l’avesse ancora fatto, è possibile versare la quota annuale di 15 euro a un consigliere o a un revisore dei conti.
+
+Per chi volesse optare per il pagamento tramite conto corrente, si ricorda il numero di CC bancario Iban:
+
+[IBAN: da confermare con l'associazione]
+
+intestato A.F.A.N.T. Arezzo [coordinate bancarie: da confermare con l'associazione] conto corrente 1108.
+
+Nella sezione “download” del sito è possibile scaricare il modulo per iscriversi.
+
+Per info 331 8452555
+
+Tags: iscrizione 2016

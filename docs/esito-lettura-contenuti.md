@@ -51,3 +51,10 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 9. Link utili: indirizzi da recuperare e verificare.
 10. Privacy e cookie: collegare i documenti ufficiali del cliente.
 11. HERO senza evento futuro: cosa mostrare.
+
+## Stato della migrazione (aggiornato)
+
+- **Articoli**: 135 migrati in `src/content/news/` come **riportati, da rivedere**. Rimossi IBAN e coordinate bancarie (sostituiti da una nota), e il nome del privato intestatario del conto nelle due circolari ECM. I testi vuoti o minimi, i "LINK" senza indirizzo e gli allegati da recuperare sono segnalati nel file (campo `segnalazioni`) e nell'anteprima.
+- **Pagine**: riportate "La nostra storia" (senza composizione del consiglio, da confermare), Iscrizione (IBAN da confermare, modulo online da decidere), Contatti (telefono da decidere), CCNL e Documenti (schede senza file). **Non ancora riportate**: Codice deontologico e Statuto (solo con i PDF), Presentazione Sinasfa, Link utili (mancano gli indirizzi), Lavoro e Cerco lavoro, Privacy (si collegano i documenti ufficiali).
+- **Documenti**: 47 schede con tema e stato proposti automaticamente; PDF da recuperare.
+- **Ancora da leggere**: `/stage/` e `/newsletter-2-giugno-2023-2/`.

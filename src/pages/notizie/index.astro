@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { news, categorie, formatDate } from '../../lib/news.js';
+const anni = [...new Set(news.map((n) => n.date.slice(0, 4)))].sort((a, b) => b.localeCompare(a));
+---
+<Base title="Notizie" current="/notizie/" description="Comunicazioni, convocazioni, newsletter e iniziative di A.FA.N.T. Arezzo dal 2014.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Notizie</p>
+    <h1>Notizie</h1>
+    <p>{news.length} comunicazioni dal {anni[anni.length - 1]} a oggi.</p>
+    <div class="filters" role="group" aria-label="Filtra per argomento">
+      <button type="button" data-f="tutte" aria-pressed="true">Tutte</button>
+      {categorie.map((c) => <button type="button" data-f={c} aria-pressed="false">{c}</button>)}
+    </div>
+    {anni.map((a) => (
+      <section class="anno" aria-labelledby={`a-${a}`}>
+        <h2 class="year" id={`a-${a}`}>{a}</h2>
+        <ul class="list">
+          {news.filter((n) => n.date.startsWith(a)).map((n) => (
+            <li data-cat={n.categoria}>
+              <span class="date">{formatDate(n.date)}</span>
+              <span><a href={`/notizie/${n.slug}/`}>{n.title}</a><small>{n.categoria}</small></span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <script is:inline>
+    (function(){var bs=document.querySelectorAll('.filters button');
+    function apply(f){bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f)});
+      document.querySelectorAll('.list li').forEach(function(l){l.classList.toggle('hidden',f!=='tutte'&&l.dataset.cat!==f)});
+      document.querySelectorAll('.anno').forEach(function(s){s.classList.toggle('hidden',!s.querySelector('li:not(.hidden)'))});}
+    bs.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.f)})});})();
+  </script>
+</Base>

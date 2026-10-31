@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { news, formatDate, excerpt } from '../../lib/news.js';
+export function getStaticPaths() {
+  return news.map((n) => ({ params: { slug: n.slug }, props: { n } }));
+}
+const { n } = Astro.props;
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const s = n.segnalazioni || [];
+const Content = n.Content;
+---
+<Base title={n.title} current="/notizie/" description={excerpt(n.raw, 25)}>
+  <article class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / <a href="/notizie/">Notizie</a></p>
+    <span class="tag">{n.categoria}</span>
+    <h1>{n.title}</h1>
+    <p class="date">{formatDate(n.date)}</p>
+    {PREVIEW && s.length > 0 && (
+      <p class="preview-note">
+        Da sistemare: {[
+          s.includes('testo-assente-o-minimo') && 'testo assente o minimo nel sito vecchio',
+          s.includes('link-mancante') && 'link "LINK" senza indirizzo',
+          s.includes('dati-bancari-rimossi') && 'coordinate bancarie non riportate (da confermare)',
+          s.includes('allegati-da-recuperare') && `allegati da recuperare: ${n.allegati.join(', ')}`,
+        ].filter(Boolean).join('; ')}.
+      </p>
+    )}
+    <div class="prose"><Content /></div>
+    <p style="margin-top:2rem"><a href="/notizie/">← Tutte le notizie</a></p>
+  </article>
+</Base>

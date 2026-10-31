@@ -1,0 +1,16 @@
+{
+  "name": "afantarezzo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:anteprima": "PUBLIC_PREVIEW=1 astro build",
+    "preview": "astro preview",
+    "check:css": "node tools/check-css.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.4"
+  }
+}
