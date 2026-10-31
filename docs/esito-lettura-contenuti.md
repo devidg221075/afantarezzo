@@ -2,7 +2,7 @@
 
 Letti il 31/10/2026: 135 articoli, 20 pagine, 73 schede-documento (26 sono curricula: contati, non letti, dati personali). Restano 2 voci da recuperare (`/stage/`, bloccata dal firewall; `/newsletter-2-giugno-2023-2/`, connessione interrotta).
 
-**Limite importante**: delle schede-documento sono stati letti solo i metadati (titolo, data, dimensione). Il cliente ha inviato un archivio con **5 PDF distinti** (28 file, ma 23 sono copie identiche), letti e collegati: piattaforma CCNL 2024-2027 (scheda documenti), convocazioni assemblea Conasfa 2024 e 2026, lettera dell'Ordine con i risultati elettorali 2024, locandina della serata del 16/2/2024. **Mancano i PDF delle altre 46 schede** (statuto, codice deontologico, CCNL, ECM, Enpaf, moduli, lettere Conasfa/Sinasfa…): vanno recuperati dal cliente.
+**Limite importante**: delle schede-documento sono stati letti solo i metadati (titolo, data, dimensione). Il cliente ha inviato prima un archivio con **5 PDF distinti** (28 file, ma 23 sono copie identiche), letti e collegati: piattaforma CCNL 2024-2027 (scheda documenti), convocazioni assemblea Conasfa 2024 e 2026, lettera dell'Ordine con i risultati elettorali 2024, locandina della serata del 16/2/2024. **Mancano i PDF delle altre 46 schede** (statuto, codice deontologico, CCNL, ECM, Enpaf, moduli, lettere Conasfa/Sinasfa…): vanno recuperati dal cliente.
 
 ## Che cosa contiene il sito
 
@@ -58,3 +58,13 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 - **Pagine**: riportate "La nostra storia" (senza composizione del consiglio, da confermare), Iscrizione (IBAN da confermare, modulo online da decidere), Contatti (telefono da decidere), CCNL e Documenti (schede senza file). **Non ancora riportate**: Codice deontologico e Statuto (solo con i PDF), Presentazione Sinasfa, Link utili (mancano gli indirizzi), Lavoro e Cerco lavoro, Privacy (si collegano i documenti ufficiali).
 - **Documenti**: 47 schede con tema e stato proposti automaticamente; PDF da recuperare.
 - **Ancora da leggere**: `/stage/` e `/newsletter-2-giugno-2023-2/`.
+
+## Documenti: archivio completo ricevuto (aggiornato)
+
+Dal secondo archivio (76 file) sono stati collegati **42 schede su 55** (27 PDF, 12 Word, 2 immagini, 1 ODT); i 29 curriculum **non sono stati aperti né copiati** (dati personali). Aggiunte 8 schede che nel sito vecchio non avevano scheda propria (moduli di iscrizione 2015, 2016, 2017, 2020, 2021; versione 8/9/2015 del volantino del convegno; avviso ESTAR 2015 e relativo schema di domanda).
+
+- **Ancora senza file (13)**: codice deontologico, CCNL 2009, ECM 2014, delega assemblea, lettera Conasfa a Federfarma, lettera Conasfa a FOFI, lettera al Ministero della Salute e AIFA, newsletter Enpaf 2015, domanda borsa di studio 2015 Enpaf, comunicato Conasfa e comunicato Enpaf del 23/5/2018, circolare PEC gennaio 2015, circolare accordo Afant-Federfarma.
+- **Statuto**: il PDF è una scansione da iPhone senza testo (3 pagine, circa 13 MB): non accessibile e pesante. Da sostituire con una versione leggibile.
+- **Dati del sito vecchio inaffidabili**: dimensioni e date delle schede erano spesso sbagliate (es. molte "237,05 KB"; il CCNL 7/9/2021 risultava del 27/12/2024). Nel sito nuovo la dimensione è quella reale e la colonna "Pubblicato" riporta la data della scheda, non del documento.
+- **Versioni precedenti non pubblicate** (3 moduli iscrizione 2020 con prefisso `wpdm_`, il Contratto integrativo regionale in Word, copie duplicate): da confermare con il cliente.
+- **Avviso ESTAR e schema di domanda**: nessun articolo li cita; probabile allegato di un articolo non letto (`/stage/`?).

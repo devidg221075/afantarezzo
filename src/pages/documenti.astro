@@ -5,13 +5,13 @@ import docs from '../data/documenti.json';
 const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
 const ordine = ['Statuto e codice', 'CCNL e contratti', 'Moduli', 'ECM', 'Enpaf', 'Conasfa e Sinasfa', 'Altro'];
 const temi = ordine.filter((t) => docs.some((d) => d.tema === t));
-const per = (t) => docs.filter((d) => d.tema === t).sort((a, b) => (a.stato === b.stato ? b.data.localeCompare(a.data) : a.stato === 'attuale' ? -1 : 1));
+const per = (t) => docs.filter((d) => d.tema === t).sort((a, b) => (a.stato === b.stato ? (b.data ?? `${b.anno}-01-01`).localeCompare(a.data ?? `${a.anno}-01-01`) : a.stato === 'attuale' ? -1 : 1));
 ---
 <Base title="Documenti" current="/documenti/" description="Statuto, codice deontologico, contratti, moduli e circolari di A.FA.N.T. Arezzo.">
   <div class="wrap page">
     <p class="crumbs"><a href="/">Home</a> / Documenti</p>
     <h1>Documenti</h1>
-    {PREVIEW && <p class="preview-note">Da recuperare: i PDF di quasi tutte le schede (ricevuto finora solo quello della piattaforma CCNL 2024-2027). Da decidere: quali documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018) tenere in archivio. I curricula dell'Area Lavoro non sono inclusi (dati personali). Temi e stato "in vigore/storico" sono una prima proposta automatica da rivedere.</p>}
+    {PREVIEW && <p class="preview-note">File collegati: 42 schede su 55. Ancora senza file (da recuperare): codice deontologico, CCNL 2009, ECM 2014, delega assemblea, lettere Conasfa a Federfarma e a FOFI, lettera al Ministero e AIFA, newsletter Enpaf 2015, domanda borsa di studio 2015, comunicati del 23/5/2018, circolare PEC 2015, circolare accordo Afant-Federfarma. Lo statuto è una scansione senza testo (3 pagine, 13 MB): va riletto o sostituito con una versione leggibile. Da decidere: quali documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018) tenere in archivio. I curricula dell'Area Lavoro non sono inclusi (dati personali). Temi e stato "in vigore/storico" sono una prima proposta automatica da rivedere.</p>}
     <div class="filters" role="group" aria-label="Filtra per stato">
       <button type="button" data-f="tutti" aria-pressed="true">Tutti</button>
       <button type="button" data-f="attuale" aria-pressed="false">In vigore</button>

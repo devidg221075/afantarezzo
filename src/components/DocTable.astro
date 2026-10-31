@@ -4,14 +4,15 @@ const { docs } = Astro.props;
 const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
 ---
 <table class="table">
-  <thead><tr><th>Documento</th><th>Data</th><th>Dimensione</th><th>Stato</th><th>File</th></tr></thead>
+  <thead><tr><th>Documento</th><th>Pubblicato</th><th>Formato</th><th>Dimensione</th><th>Stato</th><th>File</th></tr></thead>
   <tbody>
     {docs.map((d) => (
       <tr data-stato={d.stato}>
         <td>{d.titolo}</td>
-        <td>{formatDate(d.data)}</td>
+        <td class="nw">{d.data ? formatDate(d.data) : (d.anno ?? '—')}</td>
+        <td>{d.formato ?? '—'}</td>
         <td class="nw">{d.dimensione ? d.dimensione.replace(/([KMG]B)$/, ' $1').replace('.', ',') : '—'}</td>
-        <td><span class={d.stato === 'storico' ? 'pill old' : 'pill'}>{d.stato === 'storico' ? 'Storico' : 'In vigore'}</span></td>
+        <td class="nw"><span class={d.stato === 'storico' ? 'pill old' : 'pill'}>{d.stato === 'storico' ? 'Storico' : 'In vigore'}</span></td>
         <td class="nw">{d.file ? <a href={d.file} download>Scarica</a> : (PREVIEW ? <span class="preview-note nw" style="padding:.1rem .4rem;margin:0">da recuperare</span> : '—')}</td>
       </tr>
     ))}
