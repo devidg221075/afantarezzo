@@ -8,17 +8,17 @@ Stati: **da decidere** (letto, va riportato: si decide con il cliente pagina per
 
 | Gruppo | Voci | Stato |
 |---|---|---|
-| Pagine | 13 | da decidere |
-| Articoli (News) | 127 | da decidere |
-| Documenti scaricabili | 46 | da decidere |
+| Pagine | 14 | da decidere |
+| Articoli (News) | 135 | da decidere |
+| Documenti scaricabili | 47 | da decidere |
 | Residui del tema demo | 7 | da decidere |
-| Bloccate dal firewall anti-robot | 8 | bloccato |
-| Non ancora lette | 4 | non letto |
+| Bloccate dal firewall anti-robot | 2 | bloccato |
+| Non ancora lette | 0 | non letto |
 | Curricula (Area Lavoro) | 26 | da decidere (dati personali: non elencati qui) |
 
 Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati, non nominati. Il cliente decide se e come riportarli.
 
-## Pagine (13)
+## Pagine (14)
 
 | Titolo | Data | URL vecchio | Stato |
 |---|---|---|---|
@@ -32,11 +32,12 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | Iscrizione |  | `/iscrizione/` | da decidere |
 | Link Utili |  | `/link-utili/` | da decidere |
 | News A.FA.N.T. |  | `/news-a-fa-n-t/` | da decidere |
+| Presentazione Sinasfa |  | `/presentazione-sinasfa/` | da decidere |
 | Privacy |  | `/privacy/` | da decidere |
 | Lavoro |  | `/servizio-di-afant-arezzo-per-il-lavoro/` | da decidere |
 | Statuto dell’associazione Farmacisti non Titolari della provincia di Arezzo |  | `/statuto-dellassociazione-farmacisti-non-titolari-della-provincia-di-arezzo/` | da decidere |
 
-## Articoli (News) (127)
+## Articoli (News) (135)
 
 | Titolo | Data | URL vecchio | Stato |
 |---|---|---|---|
@@ -73,6 +74,7 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | Convocazione assemblea straordinaria di Afant Arezzo | 2022-12-01 | `/convocazione-assemblea-straordinaria-di-afant-arezzo/` | da decidere |
 | Newsletter 2 – Ottobre 2022 | 2022-10-26 | `/newsletter-2-ottobre-2022/` | da decidere |
 | Congresso Sinasfa 11 Settembre 2022 | 2022-09-06 | `/congresso-sinasfa-11-settembre-2022/` | da decidere |
+| Questionario CONASFA – Valutare il benessere organizzativo e il grado di soddisfazione nello sv | 2022-06-20 | `/questionario-conasfa-valutare-il-benessere-organizzativo-e-il-grado-di-soddisfazione/` | da decidere |
 | Newsletter 1 – Maggio 2022 | 2022-05-19 | `/newsletter-1-maggio-2022/` | da decidere |
 | IL LIVELLO Q2 – QUESTIONARIO CONASFA | 2022-04-26 | `/il-livello-q2-questionario-conasfa/` | da decidere |
 | I farmacisti incontrato i medici ospedalieri: LA STIPSI (31 Marzo e 6 Aprile) | 2022-03-28 | `/i-farmacisti-incontrato-i-medici-ospedalieri-la-stipsi-31-marzo-e-6-aprile/` | da decidere |
@@ -85,15 +87,18 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | Lettera Conasfa a Fofi | 2021-05-17 | `/lettera-conasfa-a-fofi/` | da decidere |
 | Newsletter 2 – Maggio 2021 | 2021-05-17 | `/newsletter-2-maggio-2021-2/` | da decidere |
 | Convocazione Assemblea per approvazione del bilancio 2020 | 2021-03-15 | `/convocazione-assemblea-per-approvazione-del-bilancio-2020/` | da decidere |
+| Newsletter 1 – Marzo 2021 | 2021-03-15 | `/newsletter-1-marzo-2021-2/` | da decidere |
 | Corso di formazione:  “INTESTINO: IL MONDO DEI PROBIOTICI E DEI PREBIOTICI” | 2021-01-17 | `/corso-di-formazione-intestino-il-mondo-dei-probiotici-e-dei-prebiotici/` | da decidere |
 | Newsletter 6 – Dicembre 2020 | 2020-12-08 | `/newsletter-6-dicembre-2020/` | da decidere |
 | Assemblea straordinaria Afant Arezzo 16 Dicembre 2020 | 2020-12-07 | `/assemblea-straordinaria-afant-arezzo-16-dicembre-2020/` | da decidere |
 | CS Conasfa: un incubo da cancellare | 2020-12-07 | `/cs-conasfa-un-incubo-da-cancellare/` | da decidere |
+| Risultati delle elezioni 10 Ottobre 2020 per il rinnovo del Consiglio Direttivo e Collegio revi | 2020-12-07 | `/risultati-delle-elezioni-10-ottobre-2020-per-il-rinnovo-del-consiglio-direttivo-e-collegio-revisori-dei-conti-dellordine-di-arezzo-quadriennio-2020-2024/` | da decidere |
 | Newsletter 5 – Ottobre 2020 | 2020-10-22 | `/newsletter-5-ottobre-2020/` | da decidere |
 | Risultati delle elezioni  del 23/09/2020 per il rinnovo del Consiglio Direttivo di Afant Arezzo | 2020-10-02 | `/risultati-delle-elezioni-del-23-09-2020-per-il-rinnovo-del-consiglio-direttivo-di-afant-arezzo/` | da decidere |
 | Afant Arezzo appoggia il CS di Conasfa: Vaccinazione?? | 2020-09-11 | `/afant-arezzo-appoggia-il-cs-di-conasfa-vaccinazione/` | da decidere |
 | Convocazione per elezioni Afant Arezzo triennio 2020-2023 | 2020-09-11 | `/convocazione-per-elezioni-afant-arezzo-triennio-2020-2023/` | da decidere |
 | Newsletter 4 – Luglio  2020 | 2020-07-22 | `/newsletter-4-luglio-2020/` | da decidere |
+| Newsletter 3 – Maggio  2020 | 2020-05-15 | `/newsletter-3-maggio-2020/` | da decidere |
 | Rinvio elezioni per rinnovo Consiglio Direttivo e Collegio dei Revisori Conti/Probiviri  di Afa | 2020-05-14 | `/rinvio-elezioni-per-rinnovo-consiglio-direttivo-e-collegio-dei-revisori-conti-probiviri-di-afant-arezzo-triennio-2020-2023/` | da decidere |
 | Focus sulla professione del farmacista “ai tempi del coronavirus” | 2020-03-27 | `/focus-sulla-professione-del-farmacista-ai-tempi-del-coronavirus/` | da decidere |
 | Newsletter 2 – Marzo  2020 | 2020-03-27 | `/newsletter-2-marzo-2020/` | da decidere |
@@ -104,6 +109,7 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | INCONTRO-DIBATTITO con il giornalista Rai di Report dr Giulio Valesini | 2020-01-13 | `/incontro-dibattito-con-il-giornalista-rai-di-report-dr-giulio-valesini/` | da decidere |
 | Assemblea Conasfa 19 gennaio 2020 | 2019-12-23 | `/assemblea-conasfa-19-gennaio-2020/` | da decidere |
 | Dimissioni ospedaliere | 2019-12-23 | `/dimissioni-ospedaliere/` | da decidere |
+| Lettera al Ministero della Salute ed Aifa | 2019-12-23 | `/lettera-al-ministero-della-salute-ed-aifa/` | da decidere |
 | Newsletter 4 – Dicembre  2019 | 2019-12-23 | `/newsletter-4-dicembre-2019/` | da decidere |
 | Assemblea straordinaria – 4 Dicembre 2019 | 2019-11-19 | `/assemblea-straordinaria-4-dicembre-2019/` | da decidere |
 | Guida pratica sulla Formazione continua del Farmacista | 2019-09-30 | `/guida-pratica-sulla-formazione-continua-del-farmacista/` | da decidere |
@@ -140,11 +146,14 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | Lettera al Direttore. Sinasfa: da Ccnl tutele nulle in caso di gravi patologie | 2016-04-21 | `/lettera-al-direttore-sinasfa-da-ccnl-tutele-nulle-in-caso-di-gravi-patologie/` | da decidere |
 | Newsletter Enpaf 2016 | 2016-04-21 | `/newsletter-enpaf-2016/` | da decidere |
 | Circolare corsi ECM 2016 | 2016-03-13 | `/circolare-corsi-ecm-2016/` | da decidere |
+| Modulo certificazione obbligo formativo ECM | 2016-03-13 | `/modulo-certificazione-obbligo-formativo-ecm/` | da decidere |
 | Convocazione assemblea Afant 9 Marzo 2016 | 2016-02-29 | `/convocazione-assemblea-afant-9-marzo-2016/` | da decidere |
+| SERATA  E.N.P.A.F. | 2016-01-17 | `/serata-e-n-p-a-f/` | da decidere |
 | Convocazione assemblea Afant 9 Dicembre 2015 ore 21,15 | 2015-12-03 | `/convocazione-assemblea-afant-9-dicembre-2015-ore-21_15/` | da decidere |
 | Report Convegno Afant-Arezzo 11 Ottobre 2015 | 2015-11-01 | `/report-convegno-afant-arezzo-11-ottobre-2015/` | da decidere |
 | Convegno Afant-Arezzo 11 Ottobre 2015 | 2015-10-03 | `/convegno-afant-arezzo-11-ottobre-2015/` | da decidere |
 | Intervista alla nostra consigliera Angela Noferi | 2015-10-02 | `/intervista-alla-nostra-consigliera-angela-noferi/` | da decidere |
+| Ulteriori chiarimenti su Enpaf: contributi e assistenza | 2015-09-13 | `/ulteriori-chiarimenti-su-enpaf-contributi-e-assistenza/` | da decidere |
 | Afant-Arezzo lancia l’allarme. | 2015-07-31 | `/afant-arezzo-lancia-lallarme/` | da decidere |
 | Audizioni Ddl concorrenza, al centro anche il contratto dipendenti | 2015-07-31 | `/audizioni-ddl-concorrenza-al-centro-anche-il-contratto-dipendenti/` | da decidere |
 | CONASFA Federazione Nazionale Associazioni Farmacisti Non Titolari | 2015-07-31 | `/conasfa-federazione-nazionale-associazioni-farmacisti-non-titolari/` | da decidere |
@@ -168,7 +177,7 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | Elezioni Consiglio A.FA.N.T- Maggio 2014 | 2014-05-20 | `/elezioni-consiglio-a-fa-n-t-maggio-2014/` | da decidere |
 | Approvazione bilancio A.FA.N.T. – Marzo 2014 | 2014-03-12 | `/approvazione-bilancio-a-fa-n-t-marzo-2014/` | da decidere |
 
-## Documenti scaricabili (46)
+## Documenti scaricabili (47)
 
 | Titolo | Data | URL vecchio | Stato |
 |---|---|---|---|
@@ -190,6 +199,7 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | cs Conasfa Tavolo Enapf 23 maggio 2018 | 2018-02-04 | `/download/cs-conasfa-tavolo-enapf-23-maggio-2018/` | da decidere |
 | CS Enpaf 23 maggio 2018 | 2018-02-04 | `/download/cs-enpaf-23-maggio-2018/` | da decidere |
 | Circolare status formativo ECM AREZZO sett 2016 | 2016-10-24 | `/download/circolare-status-formativo-ecm-arezzo-sett-2016/` | da decidere |
+| CS-controllo-busta-paga | 2016-10-24 | `/download/cs-controllo-busta-paga/` | da decidere |
 | Integrazioe al regolamento iscrizione Sinasfa | 2016-10-24 | `/download/integrazioe-al-regolamento-iscrizione-sinasfa/` | da decidere |
 | Lettera presidente di Conasfa Ballerini | 2016-10-24 | `/download/lettera-presidente-di-conasfa-ballerini/` | da decidere |
 | Sciopero del 6/5/16 – Modifica regolamento Enpaf | 2016-05-05 | `/download/sciopero-del-6516-modifica-regolamento-enpaf/` | da decidere |
@@ -231,27 +241,12 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 | My Account |  | `/my-account/` | da decidere |
 | Price Table |  | `/price-table/` | da decidere |
 
-## Bloccate dal firewall anti-robot (8)
+## Bloccate dal firewall anti-robot (2)
 
 | Titolo | Data | URL vecchio | Stato |
 |---|---|---|---|
-| bloccato |  | `/lettera-al-ministero-della-salute-ed-aifa/` | bloccato |
-| bloccato |  | `/modulo-certificazione-obbligo-formativo-ecm/` | bloccato |
 | bloccato |  | `/newsletter-2-giugno-2023-2/` | bloccato |
-| bloccato |  | `/newsletter-3-maggio-2020/` | bloccato |
-| bloccato |  | `/presentazione-sinasfa/` | bloccato |
-| bloccato |  | `/questionario-conasfa-valutare-il-benessere-organizzativo-e-il-grado-di-soddisfazione/` | bloccato |
-| bloccato |  | `/risultati-delle-elezioni-10-ottobre-2020-per-il-rinnovo-del-consiglio-direttivo-e-collegio-revisori-dei-conti-dellordine-di-arezzo-quadriennio-2020-2024/` | bloccato |
 | bloccato |  | `/stage/` | bloccato |
-
-## Non ancora lette (4)
-
-| Titolo | Data | URL vecchio | Stato |
-|---|---|---|---|
-| non letto |  | `/download/cs-controllo-busta-paga/` | non letto |
-| non letto |  | `/newsletter-1-marzo-2021-2/` | non letto |
-| non letto |  | `/serata-e-n-p-a-f/` | non letto |
-| non letto |  | `/ulteriori-chiarimenti-su-enpaf-contributi-e-assistenza/` | non letto |
 
 ## Altre voci censite ma non scaricate
 
@@ -262,4 +257,4 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 
 ## Nota sul firewall
 
-Il sito vecchio è protetto da BitNinja, che a volte risponde con la pagina "Visitor anti-robot validation". Le voci "bloccato" non sono state aggirate: dopo la rilettura lenta (una richiesta ogni 6 secondi) ne restano 8; il cliente gestisce BitNinja e può consentire l'accesso o fornire l'export WordPress.
+Il sito vecchio è protetto da BitNinja, che a volte risponde con la pagina "Visitor anti-robot validation". Le voci "bloccato" non sono state aggirate: dopo la rilettura lenta ne restano 2: `/stage/` (bloccata) e `/newsletter-2-giugno-2023-2/` (connessione interrotta, in precedenza bloccata). Il cliente gestisce BitNinja e può consentire l'accesso o fornire l'export WordPress.
