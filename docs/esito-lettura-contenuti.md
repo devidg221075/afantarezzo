@@ -42,7 +42,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 
 1. Recupero dei PDF e degli allegati (blocca la lettura dei documenti).
 2. Le 2 pagine ancora da leggere.
-3. Telefono ufficiale e quale pagina Contatti tenere.
+3. ~~Telefono ufficiale~~ **deciso: 370 3613108** (l'altro numero non è riportato); resta da decidere se serve un modulo contatti online.
 4. Area Lavoro: tenerla o no; se sì, senza curricula pubblici.
 5. IBAN e dati bancari: pubblicarli o no, e in che forma.
 6. Cariche e nomi: quali pubblicare (consiglio attuale, storico).
