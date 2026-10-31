@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import DocTable from '../components/DocTable.astro';
+import docs from '../data/documenti.json';
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const ordine = ['Statuto e codice', 'CCNL e contratti', 'Moduli', 'ECM', 'Enpaf', 'Conasfa e Sinasfa', 'Altro'];
+const temi = ordine.filter((t) => docs.some((d) => d.tema === t));
+const per = (t) => docs.filter((d) => d.tema === t).sort((a, b) => (a.stato === b.stato ? (b.data ?? `${b.anno}-01-01`).localeCompare(a.data ?? `${a.anno}-01-01`) : a.stato === 'attuale' ? -1 : 1));
+---
+<Base title="Documenti" current="/documenti/" description="Statuto, codice deontologico, contratti, moduli e circolari di A.FA.N.T. Arezzo.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Documenti</p>
+    <h1>Documenti</h1>
+    {PREVIEW && <p class="preview-note">File collegati: 42 schede su 55. Ancora senza file (da recuperare): codice deontologico, CCNL 2009, ECM 2014, delega assemblea, lettere Conasfa a Federfarma e a FOFI, lettera al Ministero e AIFA, newsletter Enpaf 2015, domanda borsa di studio 2015, comunicati del 23/5/2018, circolare PEC 2015, circolare accordo Afant-Federfarma. Lo statuto è una scansione senza testo (3 pagine, 13 MB): va riletto o sostituito con una versione leggibile. Da decidere: quali documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018) tenere in archivio. I curricula dell'Area Lavoro non sono inclusi (dati personali). Temi e stato "in vigore/storico" sono una prima proposta automatica da rivedere.</p>}
+    <div class="filters" role="group" aria-label="Filtra per stato">
+      <button type="button" data-f="tutti" aria-pressed="true">Tutti</button>
+      <button type="button" data-f="attuale" aria-pressed="false">In vigore</button>
+      <button type="button" data-f="storico" aria-pressed="false">Storici</button>
+    </div>
+    {temi.map((t) => (
+      <section class="doc-tema" aria-labelledby={`t-${t}`}>
+        <h2 id={`t-${t}`}>{t}</h2>
+        <DocTable docs={per(t)} />
+      </section>
+    ))}
+  </div>
+  <script is:inline>
+    (function(){var bs=document.querySelectorAll('.filters button');
+    function apply(f){bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f)});
+      document.querySelectorAll('tbody tr').forEach(function(r){r.classList.toggle('hidden',f!=='tutti'&&r.dataset.stato!==f)});
+      document.querySelectorAll('.doc-tema').forEach(function(s){s.classList.toggle('hidden',!s.querySelector('tbody tr:not(.hidden)'))});}
+    bs.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.f)})});})();
+  </script>
+</Base>

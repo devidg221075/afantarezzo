@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototipo A · Salute | A.FA.N.T. Arezzo</title>
+<meta name="robots" content="noindex">
+<style>@font-face{font-family:'Jakarta';src:url(fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
+a{text-underline-offset:.18em}
+.pbar{display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:center;background:#111;color:#fff;font:500 13px/1.3 system-ui,sans-serif;padding:.55rem 1rem}
+.pbar a{color:#fff;opacity:.8;text-decoration:none;padding:.1rem .15rem}.pbar a:hover{opacity:1;text-decoration:underline}.pbar a[aria-current=page]{opacity:1;border-bottom:2px solid #fff}
+.pbar span{opacity:.65;margin-right:.4rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:.4rem .7rem;z-index:9}
+:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--bg:#f4faf8;--ink:#0f2a2e;--mut:#4a6266;--brand:#0b6b5d;--brand2:#12a58e;--soft:#dff2ec;--line:#cfe5df;--acc:#f2a900}
+body{font:400 17px/1.65 'Jakarta',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.mono{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px}
+.brand b{display:block;font-size:20px;letter-spacing:-.01em;line-height:1.1}.brand small{color:var(--mut);font-size:12.5px;font-weight:500}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+.nav a{display:block;padding:9px 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{background:var(--soft)}.nav a[aria-current=page]{background:var(--brand);color:#fff}
+.hero{padding:40px 0 24px}
+.hero .box{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center;background:linear-gradient(135deg,#e5f6f0 0%,#d4efe7 55%,#c7e9df 100%);border-radius:32px;padding:56px 52px;position:relative;overflow:hidden}
+.hero .box:before{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(18,165,142,.16)}
+.hero .box:after{content:"";position:absolute;left:38%;bottom:-120px;width:260px;height:260px;border-radius:50%;background:rgba(242,169,0,.18)}
+.kick{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:#fff;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+h1{font-size:clamp(34px,5.2vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:0 0 18px;color:#073f37}
+h1 span{color:var(--brand2)}
+.lead{font-size:19px;color:#244247;max-width:34em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:#fff}
+.btn:hover{background:#08524a;border-color:#08524a}.btn.g{background:#fff;color:var(--brand)}.btn.g:hover{background:var(--soft)}
+.news-card{background:#fff;border-radius:24px;padding:26px;box-shadow:0 18px 40px -18px rgba(7,63,55,.35);position:relative;z-index:1}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);background:var(--soft);padding:4px 11px;border-radius:999px}
+.news-card h2{font-size:23px;line-height:1.25;margin:12px 0 6px;letter-spacing:-.01em}.news-card p{margin:0 0 10px;color:var(--mut)}.news-card a{color:var(--brand);font-weight:700}
+.date{font-size:14px;color:var(--mut);font-weight:500}
+.sec{padding:44px 0}.sec h2.t{font-size:30px;letter-spacing:-.02em;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(7,63,55,.35)}
+.card h3{font-size:20px;line-height:1.3;margin:12px 0 8px;letter-spacing:-.01em}.card p{margin:0;color:var(--mut);font-size:15.5px}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.q{background:var(--brand);color:#fff;border-radius:22px;padding:24px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.q:nth-child(2){background:#0e8a77}.q:nth-child(3){background:#12a58e;color:#06332d}.q:nth-child(4){background:#073f37}
+.q b{font-size:20px}.q span{font-size:15px;opacity:.95}
+.foot{background:#073f37;color:#d7efe9;margin-top:30px}.foot .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding-top:36px;padding-bottom:36px}
+.foot h2{font-size:16px;margin:0 0 8px;color:#fff}.foot p{margin:0 0 4px;font-size:15px}.foot .s{opacity:.8;font-size:13.5px}
+@media (max-width:900px){.hero .box{grid-template-columns:1fr;padding:34px 24px;border-radius:26px}.grid,.quick,.foot .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid,.quick,.foot .wrap{grid-template-columns:1fr}.top .wrap{padding-top:12px;padding-bottom:12px}.nav a{padding:8px 11px;font-size:14px}}
+</style>
+</head>
+<body class="v-a">
+<a class="skip" href="#main">Vai al contenuto</a>
+<nav class="pbar" aria-label="Prototipi"><span>Proposte:</span><a href="a-salute.html" aria-current=page>A · Salute</a><a href="b-editoriale.html">B · Editoriale</a><a href="c-blu-logo.html">C · Blu del logo</a><a href="d-notte.html">D · Notte</a><span>Ritocchi sulla C:</span><a href="c1-luce.html">C1 · Luce</a><a href="c2-intensa.html">C2 · Intensa</a><a href="index.html">Indice</a></nav>
+
+<header class="top"><div class="wrap"><a class="brand" href="#"><span class="mono" aria-hidden="true">A</span><span><b>A.FA.N.T. Arezzo</b><small>Associazione Farmacisti Non Titolari</small></span></a>
+<nav class="nav" aria-label="Principale"><ul><li><a href="#" aria-current=page>Home</a></li><li><a href="#">Chi siamo</a></li><li><a href="#">Iscrizione</a></li><li><a href="#">Notizie</a></li><li><a href="#">Documenti</a></li><li><a href="#">CCNL</a></li><li><a href="#">Lavoro</a></li><li><a href="#">Contatti</a></li></ul></nav></div></header>
+<main id="main">
+<section class="hero"><div class="wrap"><div class="box">
+<div><span class="kick">Arezzo · dal 2008</span><h1>A.FA.N.T. Arezzo<br><span>Associazione Farmacisti Non Titolari</span></h1><p class="lead">Dal maggio 2008 Afant-Arezzo raggruppa i farmacisti non titolari della provincia di Arezzo, con un proprio statuto e un Consiglio Direttivo.</p>
+<div class="btns"><a class="btn" href="#">Iscriviti</a><a class="btn g" href="#">Chi siamo</a></div></div>
+<aside class="news-card" aria-label="Ultima comunicazione"><span class="tag">Ultima comunicazione</span><h2>Newsletter 1 – Giugno 2026</h2><p class="date">26 giugno 2026</p><p>A tutti gli iscritti. Sciopero dei dipendenti delle farmacie Come associazione abbiamo partecipato in modo attivo agli scioperi che dal 2025 stanno interessando la categoria dei…</p><a href="#">Leggi tutto →</a></aside>
+</div></div></section>
+<section class="sec"><div class="wrap"><h2 class="t">Ultime comunicazioni</h2><div class="grid"><article class="card"><span class="tag">Assemblee ed elezioni</span><h3>Risultati delle elezioni per il rinnovo del Consiglio Direttivo ed il Collegio dei Revisore dei Conti/Probiviri di Afant Arezzo triennio 2026-2029.</h3><p class="date">17 giugno 2026</p><p>Il 25 Maggio 2026 si sono svolte ad Arezzo le elezioni per il rinnovo del consiglio direttivo e collegio revisori dei conti/probiviri di Afant, triennio 2026-2029.…</p></article><article class="card"><span class="tag">Assemblee ed elezioni</span><h3>ASSEMBLEA GENERALE 2026</h3><p class="date">2 giugno 2026</p><p>A S S E M B L E A G E N E R A L E 2026 Siete tutti invitati all’Assemblea Generale che si terrà,…</p></article><article class="card"><span class="tag">Assemblee ed elezioni</span><h3>Convocazione assemblea per elezioni  di Afant Arezzo triennio 2026-2029</h3><p class="date">15 maggio 2026</p><p>E’ indetta l’assemblea di tutti gli iscritti per il rinnovo del Consiglio Direttivo ed il collegio dei Revisore dei Conti/Probiviri di Afant Arezzo triennio 2026-2029. In…</p></article></div></div></section>
+<section class="sec" style="padding-top:8px"><div class="wrap"><h2 class="t">Per gli iscritti</h2><div class="quick"><div class="q"><b>Iscrizione</b><span>Quota annuale e come pagarla.</span></div><div class="q"><b>CCNL</b><span>I contratti collettivi, con quelli in vigore in evidenza.</span></div><div class="q"><b>Documenti e moduli</b><span>Statuto, codice deontologico, deleghe, circolari.</span></div><div class="q"><b>Contatti</b><span>Scrivici per informazioni e consulenza.</span></div></div></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div><h2>A.FA.N.T. Arezzo</h2><p>Associazione Farmacisti Non Titolari della provincia di Arezzo</p><p class="s">P.IVA / C.F. IT92058170512</p></div><div><h2>Contatti</h2><p>Via Newton 48, 52100 Arezzo (AR)</p><p>info@afantarezzo.it</p><p>Tel. 370 3613108</p></div><div><h2>Per gli iscritti</h2><p>Come iscriversi</p><p>Documenti e moduli</p><p>Tutte le notizie</p></div></div></footer>
+</body>
+</html>
