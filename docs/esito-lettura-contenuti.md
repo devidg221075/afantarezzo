@@ -43,7 +43,7 @@ About us, About us 2, Price Table, My Account, 29 voci "portfolio", barra latera
 1. Recupero dei PDF e degli allegati (blocca la lettura dei documenti).
 2. Le 2 pagine ancora da leggere.
 3. ~~Telefono ufficiale~~ **deciso: 370 3613108** (l'altro numero non è riportato); resta da decidere se serve un modulo contatti online.
-4. Area Lavoro: tenerla o no; se sì, senza curricula pubblici.
+4. ~~Area Lavoro~~ **deciso: tenerla, curricula compresi**. Pagina `/lavoro/` creata; i curricula non stanno nel repository pubblico (file privato escluso da Git). Da fare: consenso scritto aggiornato di ciascuno (26 curricula del 2015-2023), dove ospitare i file, scadenze.
 5. IBAN e dati bancari: pubblicarli o no, e in che forma.
 6. Cariche e nomi: quali pubblicare (consiglio attuale, storico).
 7. Documenti storici (Covid, ECM 2014-2016, Enpaf 2015-2018): archivio con filtri per anno e tema.

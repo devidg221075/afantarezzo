@@ -21,5 +21,5 @@ Le regole del cliente valgono per questo sito e per qualsiasi altro sito svilupp
 
 ## Scelte tecniche concordate
 - Astro statico con contenuti in Markdown, aggiornati dal cliente chiedendo a Claude.
-- Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro da decidere (curricula = dati personali).
+- Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro: tenuta, curricula compresi, ma solo con consenso scritto non scaduto e file fuori dal repository pubblico (vedi `src/data/README.md`).
 - HERO della home: prossimo evento o assemblea, pulsante Iscriviti, ultime comunicazioni, logo e presentazione.
