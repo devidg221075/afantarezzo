@@ -1,0 +1,57 @@
+# Pubblica la build di prova su nuovo.afantarezzo.it via FTPS.
+# Non cancella file sul server (nessun --delete), non tocca .htaccess, config.php,
+# cartelle private o api/. La produzione è in un workflow separato, da attivare dopo approvazione.
+name: Pubblica prova
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "progetto/**"
+      - ".github/workflows/pubblica-prova.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pubblica-prova
+  cancel-in-progress: false
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    environment: prova
+    defaults:
+      run:
+        working-directory: progetto
+    env:
+      PUBLIC_FORMS_ENABLED: "1"
+      PUBLIC_TURNSTILE_SITEKEY: "0x4AAAAAAFxvf9xc30R8n2pH"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.23.4"
+          cache: npm
+          cache-dependency-path: progetto/package-lock.json
+
+      - run: npm ci
+
+      - run: npm run build:prova
+
+      - name: Invio via FTPS (solo aggiunte e modifiche)
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR_PROVA }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          lftp -u "$FTP_USER","$FTP_PASSWORD" -e "
+            set ftp:ssl-force true;
+            set ssl:verify-certificate true;
+            set net:max-retries 2;
+            mirror -R --verbose --exclude-glob .htaccess --exclude-glob api/ dist-prova/ $FTP_REMOTE_DIR;
+            bye" "$FTP_HOST"
