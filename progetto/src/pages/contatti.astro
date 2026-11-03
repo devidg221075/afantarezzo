@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import FormFeedback from '../components/FormFeedback.astro';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '';
+const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!siteKey;
+---
+<Base title="Contatti" current="/contatti/" description="Contatta A.FA.N.T. Arezzo.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Contatti</p>
+    <h1>Contattaci</h1>
+    <p>Compila il modulo per inviare una richiesta. Ti risponderemo appena possibile.</p>
+    {!formEnabled && <p><strong>Modulo in preparazione:</strong> l’invio e la verifica antispam non sono ancora attivi. Per contattarci usa <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>.</p>}
+    <FormFeedback />
+    <form class="iscrizione-form" data-async-form method="post" action="/api/invia.php" enctype="multipart/form-data">
+      <input type="hidden" name="tipo" value="contatto" />
+      <fieldset><legend>Modulo contatti</legend>
+        <p>I campi contrassegnati con * sono obbligatori.</p>
+        <div class="form-grid">
+          <label>Nome *<input name="nome" autocomplete="given-name" required maxlength="100" /></label>
+          <label>Cognome *<input name="cognome" autocomplete="family-name" required maxlength="100" /></label>
+          <label>Email *<input type="email" name="email" autocomplete="email" required maxlength="254" /></label>
+          <label>Conferma email *<input type="email" name="conferma_email" required maxlength="254" /></label>
+          <label>Telefono<input type="tel" name="telefono" autocomplete="tel" maxlength="40" /></label>
+          <label>Oggetto della richiesta *<input name="oggetto" required maxlength="180" /></label>
+        </div>
+        <label>La tua richiesta *<textarea name="messaggio" rows="6" required maxlength="5000"></textarea></label>
+        <label>Puoi inviarci un file<input type="file" name="allegati[]" multiple accept=".pdf,.jpg,.jpeg,.png" /><small>PDF, JPG o PNG; fino a 3 file da 5 MB ciascuno.</small></label>
+        <label class="form-check"><input type="checkbox" name="privacy" required /> Ho letto l’<a href="/privacy/">informativa privacy</a>. *</label>
+        {formEnabled ? <div class="cf-turnstile" data-sitekey={siteKey} data-action="afant_contatto"></div> : <p>La verifica antispam sarà disponibile all’attivazione del modulo.</p>}
+        <button class="btn" type="submit" disabled={!formEnabled}>{formEnabled ? 'Invia richiesta' : 'Invio non ancora attivo'}</button>
+      </fieldset>
+    </form>
+    <div class="prose">
+      <h2>I nostri dati</h2>
+      <p>Via Newton 48 – 52100 Arezzo (AR)<br />E-mail: <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a><br />Tel. <a href="tel:+393703613108">370 3613108</a></p>
+      <p>Per gli iscritti: servizio di consulenza gratuita su problematiche contrattuali e buste paga, scrivendo a <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>. Il servizio è puramente tecnico/informativo; in caso di difficoltà nel vedersi riconosciuto quanto previsto dal contratto si rimanda al sindacato.</p>
+    </div>
+    {formEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+  </div>
+</Base>

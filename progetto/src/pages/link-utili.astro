@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import links from '../data/link-utili.json';
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+---
+<Base title="Link utili" description="Collegamenti utili per i farmacisti: Conasfa, Sinasfa, FOFI, Ordine, fondi pensione.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Link utili</p>
+    <h1>Link utili</h1>
+    {PREVIEW && <p class="preview-note">Da verificare: gli indirizzi sono quelli del sito vecchio (quasi tutti con http, non https) e non ho controllato che funzionino ancora. Nel sito vecchio "Regione Toscana" e "Regione Toscana - Graduatorie" puntavano allo stesso indirizzo (probabile errore di copia): qui resta una sola voce. "AFNT Torino" e "AFANT Venezia" sono i nomi delle altre associazioni come scritti nel sito vecchio.</p>}
+    <ul class="list">
+      {links.map((l) => (
+        <li>
+          <span class="date">Sito esterno</span>
+          <span><a href={l.url} rel="noopener">{l.titolo}</a><small>{new URL(l.url).hostname.replace(/^www\./, '')}</small></span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

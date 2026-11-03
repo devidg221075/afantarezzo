@@ -1,0 +1,18 @@
+{
+  "name": "afantarezzo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node tools/genera-seo.mjs dist",
+    "build:produzione": "PUBLIC_SITE_ORIGIN=https://www.afantarezzo.it astro build --outDir dist-produzione && PUBLIC_SITE_ORIGIN=https://www.afantarezzo.it node tools/genera-seo.mjs dist-produzione",
+    "build:prova": "PUBLIC_SITE_ORIGIN=https://nuovo.afantarezzo.it astro build --outDir dist-prova && PUBLIC_SITE_ORIGIN=https://nuovo.afantarezzo.it node tools/genera-seo.mjs dist-prova",
+    "build:anteprima": "PUBLIC_PREVIEW=1 astro build",
+    "preview": "astro preview",
+    "check:css": "node tools/check-css.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.4"
+  }
+}

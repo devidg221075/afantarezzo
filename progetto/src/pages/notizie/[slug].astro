@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { news, formatDate, excerpt } from '../../lib/news.js';
+import allegati from '../../data/allegati.json';
+export function getStaticPaths() {
+  return news.map((n) => ({ params: { slug: n.slug }, props: { n } }));
+}
+const { n } = Astro.props;
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const s = n.segnalazioni || [];
+const Content = n.Content;
+const files = allegati[n.slug] ?? [];
+---
+<Base title={n.title} current="/notizie/" description={excerpt(n.raw, 25)}>
+  <article class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / <a href="/notizie/">Notizie</a></p>
+    <span class="tag">{n.categoria}</span>
+    <h1>{n.title}</h1>
+    <p class="date">{formatDate(n.date)}</p>
+    {PREVIEW && s.length > 0 && (
+      <p class="preview-note">
+        Da sistemare: {[
+          s.includes('testo-assente-o-minimo') && 'testo assente o minimo nel sito vecchio',
+          s.includes('link-mancante') && 'link "LINK" senza indirizzo',
+          s.includes('iban-storico') && 'contiene l\'IBAN di un conto precedente (banca 03083): verificare se è ancora attivo, il conto attuale è nella pagina Iscrizione',
+          s.includes('dati-bancari-rimossi') && 'conto personale di un privato non riportato',
+          s.includes('allegati-da-recuperare') && files.length === 0 && `allegati da recuperare: ${n.allegati.join(', ')}`,
+        ].filter(Boolean).join('; ')}.
+      </p>
+    )}
+    <div class="prose"><Content /></div>
+    {files.length > 0 && (
+      <section aria-labelledby="alleg">
+        <h2 id="alleg" style="font-size:1.2rem">Allegati</h2>
+        <ul>{files.map((f) => <li><a href={f.file} download>{f.titolo}</a></li>)}</ul>
+      </section>
+    )}
+    <p style="margin-top:2rem"><a href="/notizie/">← Tutte le notizie</a></p>
+  </article>
+</Base>
