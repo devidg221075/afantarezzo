@@ -39,6 +39,8 @@ Nota: i curricula contengono dati personali di farmacisti; qui sono solo contati
 
 ## Articoli (News) (135)
 
+> Nota (4 novembre 2026): le notizie nel sito nuovo sono 136. In più rispetto a questo elenco c'è `convegno-conasfa-farmacistapiu-2026`, notizia nuova, confermata dal cliente.
+
 | Titolo | Data | URL vecchio | Stato |
 |---|---|---|---|
 | Newsletter 1 – Giugno 2026 | 2026-06-26 | `/newsletter-1-giugno-2026/` | da decidere |
