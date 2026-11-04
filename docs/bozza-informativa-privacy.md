@@ -1,0 +1,36 @@
+# Bozza informativa privacy: parti da completare
+
+Stato: **bozza, non pubblicata**. La pagina `src/pages/privacy.astro` resta com'è finché il cliente non approva queste parti. Il testo va fatto rivedere a chi segue la privacy dell'associazione (consulente o DPO) prima della pubblicazione: non è consulenza legale.
+
+Le parole tra [parentesi quadre] sono fatti che solo il cliente o il server conoscono. Non vanno inventate: vanno confermate prima di inserirle nella pagina.
+
+## 1. Appartenenza all'associazione (sostituisce "AFANT sta verificando…")
+
+> L'iscrizione ad A.FA.N.T. Arezzo, associazione di farmacisti non titolari, può far emergere che l'iscritto è un lavoratore dipendente [e l'adesione a un'associazione di natura [sindacale / professionale: DA CONFERMARE dallo statuto]]. Tali informazioni sono trattate solo da AFANT, nell'ambito delle proprie finalità associative e a favore dei propri iscritti, con le garanzie previste dall'art. 9, par. 2, lett. d del GDPR, e non vengono comunicate all'esterno senza il consenso dell'interessato.
+
+Da verificare con il consulente: se la lett. d (trattamento da parte di associazione senza scopo di lucro, solo per gli iscritti) è la condizione corretta, e se lo statuto lo prevede. Serve lo statuto, già presente tra i documenti del sito.
+
+## 2. Conservazione e cancellazione (sostituisce "da verificare e attuare")
+
+> I dati delle richieste di contatto sono conservati per 12 mesi dalla chiusura della richiesta. I dati degli iscritti sono conservati per la durata del rapporto associativo e per [10 anni] dopo la sua cessazione. Le richieste di iscrizione rifiutate o non completate sono conservate per 12 mesi. Trascorsi questi periodi i dati sono cancellati [dall'archivio del sito, dalla casella di posta e dal registro; le copie di backup sono sovrascritte entro [N] giorni: DA CONFERMARE sul server].
+
+Da fare tecnicamente: oggi la cancellazione non è automatica. O si imposta una procedura manuale con scadenza annuale, o si scrive uno script. Decide il cliente.
+
+## 3. Fornitori e trasferimenti fuori SEE (sostituisce "da verificare")
+
+> I dati sono ospitati su un server [VPS Serverplan, in [PAESE: DA CONFERMARE]]. La posta è gestita da [FORNITORE: DA CONFERMARE]. Per proteggere i moduli dalle richieste automatiche si usa Cloudflare Turnstile, che comunica con Cloudflare, società con sede fuori dallo Spazio economico europeo; il trasferimento è coperto da [decisione di adeguatezza / clausole contrattuali standard: DA CONFERMARE con le condizioni Cloudflare].
+
+## 4. Cookie e memoria del browser (sostituisce "da verificare")
+
+> Il sito non usa cookie di profilazione né strumenti di analisi. Usa la sola memoria di sessione del browser per ricordare la chiusura dell'avviso privacy. [Il server di hosting non imposta cookie: DA CONFERMARE controllando le risposte del server.]
+
+Controllabile da me sul sito pubblicato (intestazioni di risposta, assenza di cookie).
+
+## 5. Elenco delle conferme richieste al cliente
+
+1. Natura dell'associazione secondo lo statuto (sindacale, professionale o altro).
+2. Durata di conservazione dei dati degli iscritti (10 anni è già nella pagina: confermare).
+3. Dove si trova il server e chi gestisce la posta.
+4. Esistenza e durata dei backup.
+5. Chi è la persona autorizzata a ricevere le richieste e le email dei moduli.
+6. Chi deve rivedere il testo finale (consulente privacy).
