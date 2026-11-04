@@ -17,9 +17,13 @@ Le regole del cliente valgono per questo sito e per qualsiasi altro sito svilupp
 - Non inventare testi, numeri o certificazioni. Testi legali (privacy, cookie): collegare i documenti ufficiali del cliente, non scriverli.
 - Foto: solo quelle del cliente.
 - I dati personali (per esempio i curricula) non vanno copiati in questo repository pubblico.
-- Velocità e accessibilità: `main.css` sotto i 30 KB, CLS 0, nessuna richiesta esterna, nessun font web, `prefers-reduced-motion` rispettato.
+- Velocità e accessibilità: `main.css` sotto i 30 KB, CLS 0, nessuna richiesta esterna, `prefers-reduced-motion` rispettato.
+- Font web ammessi per scelta del cliente (direzione grafica C), ma **incorporati nel sito** (nessuna richiesta a Google o ad altri), solo sottoinsieme latino, massimo 2 famiglie e 150 KB in tutto.
 
 ## Scelte tecniche concordate
+- Direzione grafica scelta: **C "Blu del logo"**, variante **C2 "Intensa"** (palette della locandina: blu, ciano, viola; titoli Outfit, testi Inter; HERO centrato con riquadro della notizia sovrapposto e tre cifre chiave). Prototipi in `prototipi/`.
 - Astro statico con contenuti in Markdown, aggiornati dal cliente chiedendo a Claude.
-- Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro da decidere (curricula = dati personali).
-- HERO della home: prossimo evento o assemblea, pulsante Iscriviti, ultime comunicazioni, logo e presentazione.
+- Funzioni: iscrizione online, archivio news completo, documenti e CCNL filtrabili. Area Lavoro: tenuta, curricula compresi, ma solo con consenso scritto non scaduto e file fuori dal repository pubblico (vedi `src/data/README.md`).
+- HERO della home: pulsante Iscriviti, presentazione, e in evidenza il prossimo evento (da `src/data/eventi.json`) oppure l'ultima comunicazione.
+- Logo ufficiale SVG e favicon JPG forniti dal cliente il 1 novembre 2026, conservati in `public/brand/afant.svg` e `public/favicon.jpg`. Il logo originale resta integro: il layout ne inquadra solo l'area visibile. Intestazione bianca e menù blu con effetto vetro, richiesti dal cliente nella stessa data.
+- Hero fotografica predisposta in `src/data/hero.json`, in attesa delle foto del cliente. Le foto cambiano solo sullo sfondo; struttura, titolo, pulsanti e riquadro della newsletter restano invariati come richiesto dal cliente. Nessuna foto di stock da inserire senza sua richiesta.

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototipo C · Blu del logo | A.FA.N.T. Arezzo</title>
+<meta name="robots" content="noindex">
+<style>@font-face{font-family:'Outfit';src:url(fonts/outfit-latin-wght-normal.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:'Inter';src:url(fonts/inter-latin-wght-normal.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
+a{text-underline-offset:.18em}
+.pbar{display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:center;background:#111;color:#fff;font:500 13px/1.3 system-ui,sans-serif;padding:.55rem 1rem}
+.pbar a{color:#fff;opacity:.8;text-decoration:none;padding:.1rem .15rem}.pbar a:hover{opacity:1;text-decoration:underline}.pbar a[aria-current=page]{opacity:1;border-bottom:2px solid #fff}
+.pbar span{opacity:.65;margin-right:.4rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:.4rem .7rem;z-index:9}
+:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--blue:#0739c2;--navy:#02088f;--violet:#a257dc;--cyan:#70d0f7;--sky:#aee1f8;--bg:#f2f6ff;--ink:#0b1440;--mut:#4a5588}
+body{font:400 17px/1.65 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(120deg,#02088f 0%,#0739c2 45%,#6a3fd4 100%);color:#fff;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(112,208,247,.55),rgba(112,208,247,0) 68%)}
+.hero:after{content:"";position:absolute;left:-90px;bottom:-130px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(220,116,253,.5),rgba(220,116,253,0) 66%)}
+.rib{position:absolute;left:46%;top:-20%;width:150px;height:150%;background:linear-gradient(180deg,rgba(174,225,248,.35),rgba(174,225,248,0));transform:skewX(-24deg)}
+.head{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.mono{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font:700 22px 'Outfit',sans-serif}
+.brand b{display:block;font:700 22px/1.05 'Outfit',sans-serif;letter-spacing:.01em}.brand small{font-size:12.5px;opacity:.85}
+.nav ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;flex-wrap:wrap;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;backdrop-filter:blur(8px)}
+.nav a{display:block;padding:8px 15px;border-radius:999px;color:#fff;text-decoration:none;font-weight:500;font-size:15px}
+.nav a:hover{background:rgba(255,255,255,.18)}.nav a[aria-current=page]{background:#fff;color:var(--blue);font-weight:600}
+.hg{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:50px 0 84px}
+h1{font:700 clamp(38px,5.6vw,68px)/1.02 'Outfit',sans-serif;letter-spacing:-.025em;margin:0 0 20px}
+h1 span{background:linear-gradient(90deg,#aee1f8,#dc74fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:#e5ecff;max-width:33em;margin:0 0 28px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font:600 16px 'Outfit',sans-serif;text-decoration:none;background:#fff;color:var(--blue)}
+.btn:hover{background:var(--sky)}.btn.g{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);margin-left:8px}.btn.g:hover{background:rgba(255,255,255,.14)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.chips span{font-size:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px}
+.glass{background:rgba(255,255,255,.96);color:var(--ink);border-radius:28px;padding:28px;box-shadow:0 30px 60px -25px rgba(2,8,143,.6)}
+.tag{display:inline-block;font:600 12px 'Outfit',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--blue),var(--violet));padding:5px 12px;border-radius:999px}
+.glass h2{font:600 25px/1.2 'Outfit',sans-serif;margin:14px 0 6px;letter-spacing:-.01em}.glass p{margin:0 0 10px;color:var(--mut)}.glass a{color:var(--blue);font-weight:600}
+.date{font-size:14px;color:var(--mut)}
+.sec{padding:60px 0 8px}.sec h2.t{font:700 32px 'Outfit',sans-serif;letter-spacing:-.02em;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border-radius:24px;padding:0 0 24px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(7,57,194,.45);transition:transform .2s}.card:hover{transform:translateY(-4px)}
+.card .bar{height:8px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet))}
+.card .in{padding:22px 24px 0}.card h3{font:600 21px/1.28 'Outfit',sans-serif;margin:12px 0 8px}.card p{margin:0;color:var(--mut);font-size:15.5px}
+.tags{display:inline-block;font:600 12px 'Outfit',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#e4ebff;padding:4px 11px;border-radius:999px}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.q{background:#fff;border-radius:24px;padding:24px;box-shadow:0 10px 30px -18px rgba(7,57,194,.45)}
+.q i{display:block;width:46px;height:46px;border-radius:14px;margin-bottom:16px;background:linear-gradient(135deg,var(--cyan),var(--blue))}
+.q:nth-child(2) i{background:linear-gradient(135deg,var(--blue),var(--violet))}.q:nth-child(3) i{background:linear-gradient(135deg,var(--violet),#dc74fd)}.q:nth-child(4) i{background:linear-gradient(135deg,#dc74fd,var(--cyan))}
+.q b{display:block;font:600 20px 'Outfit',sans-serif;margin-bottom:4px}.q span{color:var(--mut);font-size:15.5px}
+.foot{background:var(--navy);color:#d9e1ff;margin-top:64px}.foot .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding-top:40px;padding-bottom:40px}
+.foot h2{font:600 18px 'Outfit',sans-serif;margin:0 0 8px;color:#fff}.foot p{margin:0 0 4px;font-size:15px}.foot .s{opacity:.8;font-size:13.5px}
+@media (max-width:900px){.hg{grid-template-columns:1fr;padding:30px 0 56px}.grid,.quick{grid-template-columns:1fr 1fr}.foot .wrap{grid-template-columns:1fr}.rib{display:none}}
+@media (max-width:620px){.grid,.quick{grid-template-columns:1fr}.btn.g{margin:10px 0 0}.nav a{padding:7px 11px;font-size:14px}.nav ul{border-radius:22px}}
+</style>
+</head>
+<body class="v-c">
+<a class="skip" href="#main">Vai al contenuto</a>
+<nav class="pbar" aria-label="Prototipi"><span>Proposte:</span><a href="a-salute.html">A · Salute</a><a href="b-editoriale.html">B · Editoriale</a><a href="c-blu-logo.html" aria-current=page>C · Blu del logo</a><a href="d-notte.html">D · Notte</a><span>Ritocchi sulla C:</span><a href="c1-luce.html">C1 · Luce</a><a href="c2-intensa.html">C2 · Intensa</a><a href="index.html">Indice</a></nav>
+
+<main id="main">
+<section class="hero"><div class="rib" aria-hidden="true"></div><div class="wrap">
+<div class="head"><a class="brand" href="#"><span class="mono" aria-hidden="true">A</span><span><b>A.FA.N.T. Arezzo</b><small>Associazione Farmacisti Non Titolari</small></span></a><nav class="nav" aria-label="Principale"><ul><li><a href="#" aria-current=page>Home</a></li><li><a href="#">Chi siamo</a></li><li><a href="#">Iscrizione</a></li><li><a href="#">Notizie</a></li><li><a href="#">Documenti</a></li><li><a href="#">CCNL</a></li><li><a href="#">Lavoro</a></li><li><a href="#">Contatti</a></li></ul></nav></div>
+<div class="hg"><div><h1>A.FA.N.T. Arezzo<br><span>Farmacisti Non Titolari</span></h1><p class="lead">Dal maggio 2008 Afant-Arezzo raggruppa i farmacisti non titolari della provincia di Arezzo, con un proprio statuto e un Consiglio Direttivo.</p><a class="btn" href="#">Iscriviti</a><a class="btn g" href="#">Chi siamo</a>
+<div class="chips"><span>Dal 2008</span><span>Quota 15 € l'anno</span><span>135 comunicazioni dal 2014</span></div></div>
+<aside class="glass" aria-label="Ultima comunicazione"><span class="tag">Ultima comunicazione</span><h2>Newsletter 1 – Giugno 2026</h2><p class="date">26 giugno 2026</p><p>A tutti gli iscritti. Sciopero dei dipendenti delle farmacie Come associazione abbiamo partecipato in modo attivo agli scioperi che dal 2025 stanno interessando la categoria dei…</p><a href="#">Leggi tutto →</a></aside></div>
+</div></section>
+<section class="sec"><div class="wrap"><h2 class="t">Ultime comunicazioni</h2><div class="grid"><article class="card"><div class="bar"></div><div class="in"><span class="tags">Assemblee ed elezioni</span><h3>Risultati delle elezioni per il rinnovo del Consiglio Direttivo ed il Collegio dei Revisore dei Conti/Probiviri di Afant Arezzo triennio 2026-2029.</h3><p class="date">17 giugno 2026</p><p>Il 25 Maggio 2026 si sono svolte ad Arezzo le elezioni per il rinnovo del consiglio direttivo e collegio revisori dei conti/probiviri di Afant, triennio 2026-2029.…</p></div></article><article class="card"><div class="bar"></div><div class="in"><span class="tags">Assemblee ed elezioni</span><h3>ASSEMBLEA GENERALE 2026</h3><p class="date">2 giugno 2026</p><p>A S S E M B L E A G E N E R A L E 2026 Siete tutti invitati all’Assemblea Generale che si terrà,…</p></div></article><article class="card"><div class="bar"></div><div class="in"><span class="tags">Assemblee ed elezioni</span><h3>Convocazione assemblea per elezioni  di Afant Arezzo triennio 2026-2029</h3><p class="date">15 maggio 2026</p><p>E’ indetta l’assemblea di tutti gli iscritti per il rinnovo del Consiglio Direttivo ed il collegio dei Revisore dei Conti/Probiviri di Afant Arezzo triennio 2026-2029. In…</p></div></article></div></div></section>
+<section class="sec"><div class="wrap"><h2 class="t">Per gli iscritti</h2><div class="quick"><div class="q"><i></i><b>Iscrizione</b><span>Quota annuale e come pagarla.</span></div><div class="q"><i></i><b>CCNL</b><span>I contratti collettivi, con quelli in vigore in evidenza.</span></div><div class="q"><i></i><b>Documenti e moduli</b><span>Statuto, codice deontologico, deleghe, circolari.</span></div><div class="q"><i></i><b>Contatti</b><span>Scrivici per informazioni e consulenza.</span></div></div></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div><h2>A.FA.N.T. Arezzo</h2><p>Associazione Farmacisti Non Titolari della provincia di Arezzo</p><p class="s">P.IVA / C.F. IT92058170512</p></div><div><h2>Contatti</h2><p>Via Newton 48, 52100 Arezzo (AR)</p><p>info@afantarezzo.it</p><p>Tel. 370 3613108</p></div><div><h2>Per gli iscritti</h2><p>Come iscriversi</p><p>Documenti e moduli</p><p>Tutte le notizie</p></div></div></footer>
+</body>
+</html>

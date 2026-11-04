@@ -1,0 +1,33 @@
+{
+  "intervallo": 8000,
+  "slides": [
+    {
+      "src": "/hero/01-laboratorio.jpg",
+      "larghezza": 3000,
+      "altezza": 1688,
+      "posizione": "50% 50%",
+      "posizioneMobile": "50% 50%"
+    },
+    {
+      "src": "/hero/02-farmacista.jpg",
+      "larghezza": 3000,
+      "altezza": 1688,
+      "posizione": "50% 50%",
+      "posizioneMobile": "50% 50%"
+    },
+    {
+      "src": "/hero/03-galenica.jpg",
+      "larghezza": 3000,
+      "altezza": 1688,
+      "posizione": "50% 50%",
+      "posizioneMobile": "50% 50%"
+    },
+    {
+      "src": "/hero/04-scienza.jpg",
+      "larghezza": 3000,
+      "altezza": 1688,
+      "posizione": "50% 50%",
+      "posizioneMobile": "50% 50%"
+    }
+  ]
+}

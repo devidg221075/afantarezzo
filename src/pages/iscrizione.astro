@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import FormFeedback from '../components/FormFeedback.astro';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '';
+const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!siteKey;
+import associazione from '../data/associazione.json';
+const anno = new Date().getFullYear();
+---
+<Base title="Iscrizione" current="/iscrizione/" description="Richiesta di iscrizione ad A.FA.N.T. Arezzo.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Iscrizione</p>
+    <h1>Iscrizione ad Afant Arezzo</h1>
+    {!formEnabled && <p><strong>Modulo in preparazione:</strong> l'invio non è ancora attivo. Per informazioni sull'iscrizione scrivi a <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>.</p>}
+    <div class="prose">
+      <h2>Modalità di iscrizione</h2>
+      <p>AFANT AREZZO richiede una quota di iscrizione annuale di <strong>15,00 €</strong>. È possibile inviare la ricevuta del bonifico a <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>.</p>
+      <h2>Come si effettua il pagamento</h2>
+      <p>La quota può essere versata tramite bonifico intestato a <strong>{associazione.intestatario}</strong>.</p>
+      <p>IBAN: <strong>{associazione.iban}</strong><br />Causale: <strong>iscrizione Afant {anno}</strong></p>
+      <h2>Richiesta di iscrizione {anno}</h2>
+      <p>I campi contrassegnati con * sono obbligatori.</p>
+    </div>
+    <FormFeedback />
+    <form class="iscrizione-form" data-async-form method="post" action="/api/invia.php" enctype="multipart/form-data">
+      <input type="hidden" name="tipo" value="iscrizione" />
+      <fieldset><legend>Dati personali</legend>
+        <div class="form-grid">
+          <label>Nome *<input name="nome" autocomplete="given-name" required /></label>
+          <label>Cognome *<input name="cognome" autocomplete="family-name" required /></label>
+          <label>Codice fiscale *<input name="codice_fiscale" autocomplete="off" required /></label>
+          <label>Causale *<input name="causale" required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
+          <label>Email *<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Conferma email *<input type="email" name="conferma_email" required /></label>
+          <label>Email PEC *<input type="email" name="pec" required /></label>
+          <label>Conferma email PEC *<input type="email" name="conferma_pec" required /></label>
+          <label>Telefono *<input type="tel" name="telefono" autocomplete="tel" required /></label>
+          <label>Via, piazza o corso e numero civico *<input name="indirizzo" autocomplete="street-address" required /></label>
+          <label>Località *<input name="localita" autocomplete="address-level2" required /></label>
+          <label>Provincia o regione *<input name="provincia" autocomplete="address-level1" required /></label>
+          <label>CAP *<input name="cap" autocomplete="postal-code" required /></label>
+          <label>Paese *<input name="paese" autocomplete="country-name" required /></label>
+          <label>Luogo di nascita *<input name="luogo_nascita" required /></label>
+          <label>Data di nascita *<input type="date" name="data_nascita" required /></label>
+          <label>Ordine di appartenenza<input name="ordine" /></label>
+          <label>Luogo di lavoro<input name="luogo_lavoro" /></label>
+        </div>
+        <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
+      </fieldset>
+      <fieldset><legend>Modalità di pagamento</legend>
+        <fieldset class="form-choice"><legend>Metodo di pagamento *</legend><label><input type="radio" name="pagamento" value="bonifico" required /> Bonifico</label><label><input type="radio" name="pagamento" value="contante" required /> Contante</label></fieldset>
+        <p>Per il pagamento in contanti, indica nelle note a quale consigliere hai consegnato la quota.</p>
+        <label>Allega ricevuta del bonifico<input type="file" name="ricevuta" accept=".pdf,.jpg,.jpeg,.png" /><small>Formati accettati: PDF, JPG e PNG; massimo 5 MB.</small></label>
+        <label>Note aggiuntive<textarea name="note" rows="4"></textarea></label>
+      </fieldset>
+      <fieldset><legend>Trattamento dei dati</legend>
+        <p>Consulta l'<a href="/privacy/">informativa privacy</a>.</p>
+        <label class="form-check"><input type="checkbox" name="privacy" required /> Ho letto l'informativa privacy. *</label>
+      </fieldset>
+      {formEnabled && <div class="cf-turnstile" data-sitekey={siteKey} data-action="afant_iscrizione"></div>}
+      <button class="btn" type="submit" disabled={!formEnabled}>{formEnabled ? 'Invia richiesta' : 'Invio non ancora attivo'}</button>
+    </form>
+    {formEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+  </div>
+</Base>
