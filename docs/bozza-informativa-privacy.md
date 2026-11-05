@@ -6,9 +6,11 @@ Le parole tra [parentesi quadre] sono fatti che solo il cliente o il server cono
 
 ## 1. Appartenenza all'associazione (sostituisce "AFANT sta verificando…")
 
-> L'iscrizione ad A.FA.N.T. Arezzo, associazione di farmacisti non titolari, può far emergere che l'iscritto è un lavoratore dipendente [e l'adesione a un'associazione di natura [sindacale / professionale: DA CONFERMARE dallo statuto]]. Tali informazioni sono trattate solo da AFANT, nell'ambito delle proprie finalità associative e a favore dei propri iscritti, con le garanzie previste dall'art. 9, par. 2, lett. d del GDPR, e non vengono comunicate all'esterno senza il consenso dell'interessato.
+Dallo statuto (pagina 1, già tra i documenti del sito): senza scopo di lucro, apolitica e apartitica (art. 2); tutela gli interessi morali, professionali ed economici degli iscritti e promuove contratti collettivi (art. 4); l'adesione prescinde dall'iscrizione a sindacati (art. 2).
 
-Da verificare con il consulente: se la lett. d (trattamento da parte di associazione senza scopo di lucro, solo per gli iscritti) è la condizione corretta, e se lo statuto lo prevede. Serve lo statuto, già presente tra i documenti del sito.
+> L'iscrizione ad A.FA.N.T. Arezzo, associazione senza scopo di lucro dei farmacisti non titolari della provincia di Arezzo, può rivelare che l'iscritto è un lavoratore dipendente e l'adesione a un'associazione che tutela gli interessi professionali degli iscritti. Tali informazioni sono trattate solo da AFANT, nell'ambito delle proprie finalità associative e a favore dei propri iscritti, con le garanzie previste dall'art. 9, par. 2, lett. d del GDPR, e non vengono comunicate all'esterno senza il consenso dell'interessato.
+
+Resta da far confermare al consulente privacy se la lett. d è la condizione corretta per questa associazione.
 
 ## 2. Conservazione e cancellazione (sostituisce "da verificare e attuare")
 
@@ -28,9 +30,11 @@ Verificato il 5 novembre 2026 sulle pagine pubblicate (Contatti, Iscrizione, Not
 
 ## 5. Elenco delle conferme richieste al cliente
 
-1. Natura dell'associazione secondo lo statuto (sindacale, professionale o altro).
-2. Durata di conservazione dei dati degli iscritti (10 anni è già nella pagina: confermare).
-3. Dove si trova il server e chi gestisce la posta.
-4. Esistenza e durata dei backup.
-5. Chi è la persona autorizzata a ricevere le richieste e le email dei moduli.
-6. Chi deve rivedere il testo finale (consulente privacy).
+Risolto dallo statuto (art. 1): la sede è in via Newton 48, presso l'Ordine dei farmacisti. L'indirizzo nel sito è quindi corretto. Natura dell'associazione: vedi sezione 1.
+
+1. Durata di conservazione dei dati degli iscritti (10 anni è già nella pagina: confermare).
+2. Dove si trova il server e chi gestisce la posta.
+3. Esistenza e durata dei backup.
+4. Chi è la persona autorizzata a ricevere le richieste e le email dei moduli.
+5. Chi deve rivedere il testo finale (consulente privacy).
+6. P.IVA / codice fiscale: lo statuto non li riporta.
