@@ -12,15 +12,9 @@ Dallo statuto (pagina 1, già tra i documenti del sito): senza scopo di lucro, a
 
 Resta da far confermare al consulente privacy se la lett. d è la condizione corretta per questa associazione.
 
-## 2. Conservazione e cancellazione (sostituisce "da verificare e attuare")
+## 2. e 3. Conservazione, fornitori, trasferimenti (inseriti nella pagina Privacy il 5 novembre 2026)
 
-> I dati delle richieste di contatto sono conservati per 12 mesi dalla chiusura della richiesta. I dati degli iscritti sono conservati per la durata del rapporto associativo e per [10 anni] dopo la sua cessazione. Le richieste di iscrizione rifiutate o non completate sono conservate per 12 mesi. Trascorsi questi periodi i dati sono cancellati [dall'archivio del sito, dalla casella di posta e dal registro; le copie di backup sono sovrascritte entro [N] giorni: DA CONFERMARE sul server].
-
-Da fare tecnicamente: oggi la cancellazione non è automatica. O si imposta una procedura manuale con scadenza annuale, o si scrive uno script. Decide il cliente.
-
-## 3. Fornitori e trasferimenti fuori SEE (sostituisce "da verificare")
-
-> I dati sono ospitati su un server [VPS Serverplan, in [PAESE: DA CONFERMARE]]. La posta è gestita da [FORNITORE: DA CONFERMARE]. Per proteggere i moduli dalle richieste automatiche si usa Cloudflare Turnstile, che comunica con Cloudflare, società con sede fuori dallo Spazio economico europeo; il trasferimento è coperto da [decisione di adeguatezza / clausole contrattuali standard: DA CONFERMARE con le condizioni Cloudflare].
+Conferme del cliente: dati degli iscritti 10 anni dopo la fine del rapporto; sito e posta in un datacenter Serverplan; backup giornalieri conservati un anno; ricevono le email dei moduli solo i componenti del Consiglio Direttivo. La cancellazione non è automatica: la fa il Consiglio Direttivo alla scadenza o su richiesta. Il paese del datacenter non è stato indicato e non compare nella pagina.
 
 ## 4. Cookie e memoria del browser (già inserito nella pagina Privacy, 5 novembre 2026)
 
@@ -28,13 +22,6 @@ Da fare tecnicamente: oggi la cancellazione non è automatica. O si imposta una 
 
 Verificato il 5 novembre 2026 sulle pagine pubblicate (Contatti, Iscrizione, Notizie, Privacy): l'unico `set-cookie` è `backend-port=` con `Max-Age=0` (cancella un valore, lo invia il sistema BitNinja). La home non è stata controllata perché il server ha chiuso la connessione.
 
-## 5. Elenco delle conferme richieste al cliente
+## 5. Stato
 
-Risolto dallo statuto (art. 1): la sede è in via Newton 48, presso l'Ordine dei farmacisti. L'indirizzo nel sito è quindi corretto. Natura dell'associazione: vedi sezione 1.
-
-1. Durata di conservazione dei dati degli iscritti (10 anni è già nella pagina: confermare).
-2. Dove si trova il server e chi gestisce la posta.
-3. Esistenza e durata dei backup.
-4. Chi è la persona autorizzata a ricevere le richieste e le email dei moduli.
-5. Chi deve rivedere il testo finale (consulente privacy).
-6. P.IVA / codice fiscale: lo statuto non li riporta.
+Tutte le sezioni sono ora nella pagina Privacy. Nessun professionista può rivedere il testo: resta una bozza scritta senza revisione legale, e il cliente ne è a conoscenza. P.IVA / C.F. IT92058170512 confermati dal cliente. Sede: via Newton 48 (statuto, art. 1).
