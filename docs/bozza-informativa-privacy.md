@@ -20,11 +20,11 @@ Da fare tecnicamente: oggi la cancellazione non è automatica. O si imposta una 
 
 > I dati sono ospitati su un server [VPS Serverplan, in [PAESE: DA CONFERMARE]]. La posta è gestita da [FORNITORE: DA CONFERMARE]. Per proteggere i moduli dalle richieste automatiche si usa Cloudflare Turnstile, che comunica con Cloudflare, società con sede fuori dallo Spazio economico europeo; il trasferimento è coperto da [decisione di adeguatezza / clausole contrattuali standard: DA CONFERMARE con le condizioni Cloudflare].
 
-## 4. Cookie e memoria del browser (sostituisce "da verificare")
+## 4. Cookie e memoria del browser (già inserito nella pagina Privacy, 5 novembre 2026)
 
-> Il sito non usa cookie di profilazione né strumenti di analisi. Usa la sola memoria di sessione del browser per ricordare la chiusura dell'avviso privacy. [Il server di hosting non imposta cookie: DA CONFERMARE controllando le risposte del server.]
+> Il sito non imposta cookie e non usa strumenti di analisi o profilazione. Usa solo la memoria di sessione del browser per ricordare la chiusura dell'avviso privacy fino alla fine della sessione.
 
-Controllabile da me sul sito pubblicato (intestazioni di risposta, assenza di cookie).
+Verificato il 5 novembre 2026 sulle pagine pubblicate (Contatti, Iscrizione, Notizie, Privacy): l'unico `set-cookie` è `backend-port=` con `Max-Age=0` (cancella un valore, lo invia il sistema BitNinja). La home non è stata controllata perché il server ha chiuso la connessione.
 
 ## 5. Elenco delle conferme richieste al cliente
 
