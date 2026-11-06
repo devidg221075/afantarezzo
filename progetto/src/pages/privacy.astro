@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!import.meta.env.PUBLIC_TURNSTILE_SITEKEY;
+---
+<Base title="Privacy e cookie" description="Informazioni sulla privacy e sui cookie di A.FA.N.T. Arezzo.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / Privacy e cookie</p>
+    <h1>Informativa privacy e cookie</h1>
+    <div class="prose">
+      <h2>Titolare del trattamento</h2>
+      <p>Il titolare è A.FA.N.T. Arezzo, Via Newton 48, 52100 Arezzo (AR), codice fiscale 92058170512. Per informazioni e richieste relative ai dati personali: <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>.</p>
+      <h2>Dati di navigazione e sicurezza</h2>
+      <p>Durante la navigazione i sistemi che ospitano il sito possono registrare indirizzo IP, data e ora della richiesta, risorsa richiesta e informazioni tecniche sul browser e sulla risposta del server. Sono trattati per fornire il sito, proteggerlo e accertare eventuali anomalie o abusi, sulla base dell’interesse legittimo del titolare alla sicurezza e al funzionamento del servizio (art. 6, par. 1, lett. f GDPR).</p>
+      <h2>Contatti e richieste</h2>
+      <p>Se scrivi ad AFANT o {formEnabled ? 'usi il modulo contatti' : 'quando sarà disponibile userai il modulo contatti'}, trattiamo nome, cognome, recapiti, oggetto e contenuto della richiesta e gli eventuali allegati per risponderti e gestire quanto richiesto. La base giuridica è l’esecuzione di misure richieste dall’interessato o, secondo il contenuto, l’interesse legittimo a gestire le comunicazioni (art. 6, par. 1, lett. b o f GDPR). Indica solo i dati necessari ed evita di inviare informazioni sulla salute o altri dati particolari non richiesti.</p>
+      <h2>Richieste di iscrizione</h2>
+      <p>{formEnabled ? 'Il modulo di iscrizione raccoglie' : 'Il modulo di iscrizione è in preparazione e non invia ancora dati. Quando sarà attivato, raccoglierà'} i dati anagrafici e di contatto, il codice fiscale, i dati professionali e le informazioni sul pagamento indicati nel modulo, oltre all’eventuale ricevuta, per valutare e gestire la richiesta e il rapporto associativo. Il conferimento dei dati contrassegnati come obbligatori è necessario per esaminare la richiesta; senza tali dati non sarà possibile inviarla. I dati facoltativi possono non essere forniti.</p>
+      <p>Per la gestione della richiesta e del rapporto associativo la base giuridica prevista è l’esecuzione di misure richieste dall’interessato e del rapporto associativo (art. 6, par. 1, lett. b GDPR); per eventuali obblighi di legge si applica l’art. 6, par. 1, lett. c. Le richieste e gli eventuali allegati sono conservati nell’archivio riservato del sito e trasmessi alle persone autorizzate di AFANT anche tramite email. L’iscrizione non comporta una decisione esclusivamente automatizzata.</p>
+      <p>Le informazioni relative all’iscrizione potrebbero rivelare l’appartenenza sindacale e richiedere le garanzie previste dall’art. 9 GDPR per le categorie particolari di dati. AFANT sta verificando la corretta qualificazione del trattamento e la relativa condizione di liceità.</p>
+      <h2>Fornitori e destinatari</h2>
+      <p>Accedono ai dati le persone autorizzate da AFANT e, per quanto necessario, i fornitori di hosting, manutenzione e posta elettronica, secondo gli accordi applicabili. Il sito è ospitato su una VPS Serverplan. I dati dei moduli non sono pubblicati. Eventuali ulteriori destinatari e trasferimenti verso Paesi extra SEE, con le relative garanzie, devono essere verificati in relazione ai servizi effettivamente attivati.</p>
+      {formEnabled && <p>Per proteggere i moduli dalle richieste automatiche è utilizzato Cloudflare Turnstile: il browser comunica con Cloudflare per eseguire la verifica di sicurezza. Consulta l’<a href="https://www.cloudflare.com/turnstile-privacy-policy/">informativa specifica di Cloudflare Turnstile</a>. Le modalità di trattamento, i ruoli dei fornitori e gli eventuali trasferimenti internazionali sono da verificare rispetto alla configurazione e agli accordi applicabili.</p>}
+      <h2>Conservazione</h2>
+      <p>AFANT ha previsto per le richieste di contatto e i relativi allegati 12 mesi dalla chiusura; per le richieste di iscrizione rifiutate o non completate e i relativi allegati 12 mesi dalla chiusura. Per i dati necessari alla gestione del rapporto associativo è previsto il periodo del rapporto e 10 anni dalla sua cessazione, salvo specifici obblighi di legge o esigenze di tutela dei diritti da valutare. I periodi applicabili ai singoli allegati degli iscritti devono essere verificati in base al loro contenuto e alla finalità.</p>
+      <p>Questi periodi e le procedure effettive di cancellazione, comprese le copie nella posta elettronica, nel registro, negli eventuali file esportati e nei backup, sono ancora da verificare e attuare. La cancellazione non è attualmente automatica. Anche la conservazione dei registri tecnici e dei backup è da definire.</p>
+      <h2>Cookie e memoria del browser</h2>
+      <p>La versione attuale usa la memoria di sessione del browser per ricordare la chiusura dell’avviso privacy fino alla fine della sessione. Nel sito esaminato non sono stati individuati strumenti di analisi o profilazione; la presenza di altri strumenti o cookie eventualmente introdotti dall’hosting o da servizi aggiuntivi deve essere verificata. I siti esterni collegati applicano le proprie informative.</p>
+      <h2>I tuoi diritti</h2>
+      <p>Nei casi previsti dal GDPR puoi chiedere accesso, rettifica, cancellazione, limitazione o portabilità dei dati e opporti al trattamento, rivolgendoti a <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>. Quando un trattamento si basa sul consenso, puoi revocarlo senza pregiudicare la liceità del trattamento precedente. Puoi presentare reclamo al <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
+    </div>
+  </div>
+</Base>

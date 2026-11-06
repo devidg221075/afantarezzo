@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-produzione
+dist-prova
+.astro
+src/data/curricula.json
+public/curricula/
+anteprima/
+anteprima.zip

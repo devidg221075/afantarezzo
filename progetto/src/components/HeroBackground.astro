@@ -1,0 +1,103 @@
+---
+interface Slide {
+  src: string;
+  larghezza: number;
+  altezza: number;
+  posizione?: string;
+  posizioneMobile?: string;
+}
+interface Props {
+  slides: Slide[];
+  intervallo?: number;
+}
+const { slides, intervallo = 8000 } = Astro.props;
+---
+{slides.length > 0 && (
+  <div class="hero-slideshow" data-hero-slideshow data-intervallo={Math.max(5000, intervallo)}>
+    <div class="hero-photos" aria-hidden="true">
+      {slides.map((slide, index) => (
+        <img
+          class:list={['hero-photo', { 'is-active': index === 0 }]}
+          src={slide.src}
+          width={slide.larghezza}
+          height={slide.altezza}
+          alt=""
+          loading={index === 0 ? 'eager' : 'lazy'}
+          fetchpriority={index === 0 ? 'high' : 'low'}
+          decoding="async"
+          style={`--hero-position:${slide.posizione ?? '50% 50%'};--hero-position-mobile:${slide.posizioneMobile ?? slide.posizione ?? '50% 50%'}`}
+        />
+      ))}
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    {slides.length > 1 && (
+      <div class="hero-slider-controls" role="group" aria-label="Fotografie di sfondo" hidden>
+        <button type="button" data-hero-prev aria-label="Foto precedente">←</button>
+        <span data-hero-count aria-hidden="true">1 / {slides.length}</span>
+        <button type="button" data-hero-next aria-label="Foto successiva">→</button>
+        <button type="button" data-hero-pause aria-label="Metti in pausa le fotografie">Pausa</button>
+      </div>
+    )}
+  </div>
+)}
+
+{slides.length > 1 && <script is:inline>
+  document.querySelectorAll('[data-hero-slideshow]').forEach((slider) => {
+    const photos = [...slider.querySelectorAll('.hero-photo')];
+    const controls = slider.querySelector('.hero-slider-controls');
+    const pause = slider.querySelector('[data-hero-pause]');
+    const count = slider.querySelector('[data-hero-count]');
+    if (photos.length < 2 || !controls || !pause || !count) return;
+
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const delay = Number(slider.dataset.intervallo) || 8000;
+    let current = 0;
+    let automatic = !motion.matches;
+    let timer;
+    let request = 0;
+
+    const stop = () => { clearInterval(timer); timer = undefined; };
+    const show = async (index) => {
+      const next = (index + photos.length) % photos.length;
+      const ticket = ++request;
+      // Non lasciare uno sfondo vuoto se la foto successiva non è ancora pronta.
+      try { await photos[next].decode(); } catch { return; }
+      if (ticket !== request) return;
+      photos[current].classList.remove('is-active');
+      photos[next].classList.add('is-active');
+      current = next;
+      count.textContent = `${current + 1} / ${photos.length}`;
+    };
+    const schedule = () => {
+      stop();
+      if (automatic && !motion.matches && !document.hidden && !controls.matches(':hover, :focus-within')) {
+        timer = setInterval(() => { void show(current + 1); }, delay);
+      }
+    };
+    const updatePause = () => {
+      pause.textContent = automatic ? 'Pausa' : 'Riprendi';
+      pause.setAttribute('aria-label', automatic ? 'Metti in pausa le fotografie' : 'Riprendi le fotografie');
+      pause.hidden = motion.matches;
+      schedule();
+    };
+    const step = (direction) => {
+      automatic = false;
+      updatePause();
+      void show(current + direction);
+    };
+
+    slider.querySelector('[data-hero-prev]')?.addEventListener('click', () => step(-1));
+    slider.querySelector('[data-hero-next]')?.addEventListener('click', () => step(1));
+    pause.addEventListener('click', () => { automatic = !automatic; updatePause(); });
+    controls.addEventListener('pointerenter', stop);
+    controls.addEventListener('pointerleave', schedule);
+    controls.addEventListener('focusin', stop);
+    controls.addEventListener('focusout', () => { setTimeout(schedule, 0); });
+    document.addEventListener('visibilitychange', schedule);
+    motion.addEventListener('change', () => { automatic = !motion.matches; updatePause(); });
+    window.addEventListener('pagehide', stop);
+    window.addEventListener('pageshow', schedule);
+    controls.hidden = false;
+    updatePause();
+  });
+</script>}

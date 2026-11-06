@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import DocTable from '../components/DocTable.astro';
+import docs from '../data/documenti.json';
+const lista = docs.filter((d) => d.tema === 'CCNL e contratti').sort((a, b) => (a.stato === b.stato ? (b.data ?? `${b.anno}-01-01`).localeCompare(a.data ?? `${a.anno}-01-01`) : a.stato === 'attuale' ? -1 : 1));
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+---
+<Base title="CCNL" current="/ccnl/" description="I contratti collettivi nazionali per i dipendenti di farmacia, con quelli in vigore in evidenza.">
+  <div class="wrap page">
+    <p class="crumbs"><a href="/">Home</a> / CCNL</p>
+    <h1>CCNL</h1>
+    {PREVIEW && <p class="preview-note">Da verificare con il cliente: quali testi sono in vigore (la proposta qui segna come "in vigore" il CCNL del 7 settembre 2021, il contratto Assofarm 2022-2024 per le imprese gestite o partecipate e la piattaforma 2024-2027; il rinnovo del contratto privato è in trattativa). Manca il file di "CCNL 2009". Le dimensioni che il sito vecchio mostrava erano sbagliate per molte schede: qui sono quelle reali.</p>}
+    <DocTable docs={lista} />
+  </div>
+</Base>
