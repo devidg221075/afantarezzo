@@ -78,4 +78,37 @@ const vetrina = prossimo
       <a class="card" href="/contatti/"><strong>Contatti</strong>Scrivici per informazioni e consulenza.</a>
     </div>
   </section>
+  <script is:inline>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var sl = document.querySelector('[data-hero-slideshow]');
+      if (sl) {
+        var bar = document.createElement('div');
+        bar.className = 'hero-progress';
+        bar.setAttribute('aria-hidden', 'true');
+        bar.style.setProperty('--hp', (Math.max(5000, Number(sl.dataset.intervallo) || 8000) / 1000) + 's');
+        sl.appendChild(bar);
+        var restart = function () { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; };
+        sl.querySelectorAll('.hero-photo').forEach(function (p) {
+          new MutationObserver(function () { if (p.classList.contains('is-active')) restart(); }).observe(p, { attributes: true, attributeFilter: ['class'] });
+        });
+        var pb = sl.querySelector('[data-hero-pause]');
+        if (pb) new MutationObserver(function () { bar.style.animationPlayState = pb.textContent.trim() === 'Riprendi' ? 'paused' : 'running'; }).observe(pb, { childList: true, characterData: true, subtree: true });
+      }
+      document.querySelectorAll('.stats3 b').forEach(function (b) {
+        var t = b.textContent, m = t.match(/\d+/);
+        if (!m) return;
+        var end = +m[0], pre = t.slice(0, m.index), post = t.slice(m.index + m[0].length), t0 = null;
+        b.setAttribute('aria-label', t);
+        b.textContent = pre + '0' + post;
+        var run = function (ts) { t0 = t0 || ts; var k = Math.min(1, (ts - t0) / 1500), e = 1 - Math.pow(1 - k, 3); b.textContent = pre + Math.round(end * e) + post; if (k < 1) requestAnimationFrame(run); };
+        setTimeout(function () { requestAnimationFrame(run); }, 900);
+      });
+      var els = document.querySelectorAll('main section.section h2, main section.section .card, main section.section .more');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.15 });
+        els.forEach(function (el, i) { el.classList.add('rv'); el.style.transitionDelay = ((i % 4) * 90) + 'ms'; io.observe(el); });
+      }
+    })();
+  </script>
 </Base>

@@ -163,3 +163,35 @@ h1,h2,h3{font-family:var(--fh)}
 .form-feedback p{margin:.35rem 0;color:var(--ink);overflow-wrap:anywhere}
 .form-feedback-contact{font-size:.95rem}.form-feedback-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
 @media(max-width:42rem){.form-feedback{flex-direction:column;gap:.8rem}.form-feedback-actions .btn{width:100%;text-align:center}}
+/* Home: movimento (solo transform e opacity; tutto fermo con "riduci movimento") */
+@media (prefers-reduced-motion:no-preference){
+.hero .eyebrow,.hero h1,.hero .lead,.hero .actions{opacity:0;transform:translateY(22px);animation:su .85s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1{animation-delay:.14s}.hero .lead{animation-delay:.3s}.hero .actions{animation-delay:.46s}
+.hero .eyebrow{animation:su .85s cubic-bezier(.2,.7,.2,1) forwards,pulsa 3.2s ease-in-out 1.2s infinite}
+@keyframes su{to{opacity:1;transform:none}}
+@keyframes pulsa{50%{box-shadow:0 0 0 .5rem rgba(174,225,248,.12)}}
+.hero h1 span{background:linear-gradient(90deg,#9fe3ff,#e58bff,#8fd0ff,#9fe3ff);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:riflesso 7s ease-in-out infinite alternate}
+@keyframes riflesso{to{background-position:100% 0}}
+.hero-photo{animation:kb1 24s ease-in-out infinite alternate;transform-origin:30% 60%}
+.hero-photo:nth-child(even){animation-name:kb2;transform-origin:70% 40%;animation-delay:-9s}
+@keyframes kb1{from{transform:scale(1)}to{transform:scale(1.1) translate3d(-1.2%,-.8%,0)}}
+@keyframes kb2{from{transform:scale(1.1) translate3d(1.2%,.6%,0)}to{transform:scale(1)}}
+.hero-shade::before,.hero-shade::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;will-change:transform}
+.hero-shade::before{width:34rem;height:34rem;left:-8rem;top:-6rem;background:radial-gradient(circle,#2fa8ff,transparent 65%);animation:orb1 14s ease-in-out infinite alternate}
+.hero-shade::after{width:30rem;height:30rem;right:-6rem;bottom:-8rem;background:radial-gradient(circle,#c25cff,transparent 65%);animation:orb2 17s ease-in-out infinite alternate}
+@keyframes orb1{to{transform:translate3d(14rem,5rem,0) scale(1.15)}}
+@keyframes orb2{to{transform:translate3d(-12rem,-4rem,0) scale(1.2)}}
+.hero-progress{position:absolute;left:0;bottom:0;width:100%;height:4px;transform-origin:0 50%;background:linear-gradient(90deg,#8fd9ff,#dc74fd);animation:prog var(--hp,8s) linear forwards}
+@keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero .btn:not(.sec){box-shadow:0 10px 30px -8px rgba(174,225,248,.7);animation:respira 3.4s ease-in-out 1.6s infinite}
+@keyframes respira{50%{box-shadow:0 10px 38px -4px rgba(220,116,253,.75)}}
+.hero .btn:not(.sec):hover{transform:translateY(-3px)}
+.hero .btn:not(.sec)::after{content:"\2192";margin-left:.45em;display:inline-block;transition:transform .2s}
+.hero .btn:not(.sec):hover::after{transform:translateX(4px)}
+.fnews{animation:sale 1s cubic-bezier(.2,.7,.2,1) .6s both}
+@keyframes sale{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+.stats3 div{transition:transform .25s}.stats3 div:hover{transform:translateY(-4px)}
+.card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(7,57,194,.55)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+}
