@@ -40,11 +40,11 @@ const testoPagina = (url) => {
 for (const [t, u, d] of pagine) voci.push({ t, u, k: 'Pagina', x: `${d} ${testoPagina(u)}`.trim() });
 
 for (const n of news) {
-  voci.push({ t: n.title, u: `/notizie/${n.slug}/`, k: n.categoria === 'Appuntamenti' ? 'Appuntamenti' : 'Notizie', c: n.categoria, d: formatDate(n.date), x: pulito(n.raw, 1000) });
+  voci.push({ t: n.title, u: `/notizie/${n.slug}/`, k: n.categoria === 'Appuntamenti' ? 'Appuntamenti' : 'Notizie', c: n.categoria, d: formatDate(n.date), i: n.date, x: pulito(n.raw, 1000) });
 }
 
 for (const d of documenti) {
-  voci.push({ t: d.titolo, u: d.file ?? '/documenti/', k: 'Documento', c: d.tema, d: d.data ? formatDate(d.data) : (d.anno ? String(d.anno) : ''), x: '' });
+  voci.push({ t: d.titolo, u: d.file ?? '/documenti/', k: 'Documento', c: d.tema, d: d.data ? formatDate(d.data) : (d.anno ? String(d.anno) : ''), i: d.data ?? (d.anno ? `${d.anno}-01-01` : ''), x: '' });
 }
 
 export function GET() {

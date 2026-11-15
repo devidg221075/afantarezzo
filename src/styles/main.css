@@ -233,3 +233,9 @@ h1,h2,h3{font-family:var(--fh)}
 .privacy-notice p{text-align:left}
 .privacy-notice button{flex:none;white-space:nowrap}
 @media (min-width:48rem){.privacy-notice{flex-wrap:nowrap;justify-content:space-between;gap:1.2rem;padding:.6rem max(1rem,calc((100% - 73rem)/2 + 1.5rem))}}
+@media (max-width:56rem){
+.search-panel:not([hidden]){position:fixed;inset:0;z-index:40;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border:0;box-shadow:none}
+.search-inner{padding-top:.8rem;padding-bottom:45vh}
+.search-results{max-height:none;overflow:visible}
+.search-row input{font-size:1rem}
+}

@@ -56,7 +56,7 @@
       });
       if (ok) { if (v._t === q) score += 20; if (v.k === 'Pagina') score += 2; res.push({ v: v, s: score }); }
     });
-    res.sort(function (a, b) { return b.s - a.s || String(b.v.d).localeCompare(String(a.v.d)); });
+    res.sort(function (a, b) { return b.s - a.s || String(b.v.i || '').localeCompare(String(a.v.i || '')); });
     status.textContent = res.length ? res.length + (res.length === 1 ? ' risultato' : ' risultati') + (res.length > 12 ? ' (mostrati i primi 12)' : '') : 'Nessun risultato per “' + input.value.trim() + '”.';
     res.slice(0, 12).forEach(function (r) {
       var v = r.v, li = document.createElement('li'), a = document.createElement('a');
@@ -81,14 +81,20 @@
     new IntersectionObserver(function (es) { fab.classList.toggle('show', !es[0].isIntersecting); }).observe(head);
   }
   var timer;
+  var narrow = window.matchMedia('(max-width: 56rem)');
+  function lock(on) { document.documentElement.style.overflow = on && narrow.matches ? 'hidden' : ''; }
   function open() {
-    // Il pannello sta in cima alla pagina: se si è scesi, si torna su.
+    // Su telefono il menu si richiude e la ricerca occupa tutto lo schermo; altrove il pannello sta in cima alla pagina.
+    var menu = document.getElementById('menu'), mt = document.querySelector('.nav-toggle');
+    if (menu && menu.classList.contains('open')) { menu.classList.remove('open'); if (mt) mt.setAttribute('aria-expanded', 'false'); }
     if (window.scrollY > 0) window.scrollTo(0, 0);
+    lock(true);
     panel.hidden = false; toggle.setAttribute('aria-expanded', 'true');
     load(function () { if (input.value) search(); });
     input.focus({ preventScroll: true }); input.select();
   }
   function close(back) {
+    lock(false);
     panel.hidden = true; toggle.setAttribute('aria-expanded', 'false');
     if (back) toggle.focus();
   }
