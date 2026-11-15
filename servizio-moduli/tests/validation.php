@@ -11,4 +11,8 @@ $q=$p;unset($q['privacy']);check(rejects($q),'privacy obbligatoria');
 $q=$p;$q['tipo']='ignoto';check(rejects($q),'tipo inesistente');
 $p=['tipo'=>'iscrizione','nome'=>'Anna','cognome'=>'Rossi','email'=>'anna@example.org','conferma_email'=>'anna@example.org','pec'=>'anna@example.org','conferma_pec'=>'anna@example.org','codice_fiscale'=>'RSSNNA90A01A390X','causale'=>'Rinnovo','telefono'=>'12345','indirizzo'=>'Via Roma 1','localita'=>'Arezzo','provincia'=>'AR','cap'=>'52100','paese'=>'Italia','luogo_nascita'=>'Arezzo','data_nascita'=>'1990-01-01','iscritto_precedente'=>'si','pagamento'=>'bonifico','privacy'=>'on'];
 check(validate_form($p)['tipo']==='iscrizione','iscrizione valida');$q=$p;$q['data_nascita']='2099-01-01';check(rejects($q),'data futura');$q=$p;$q['codice_fiscale']='x';check(rejects($q),'codice fiscale');
+$q=$p;$cur=(int)date('Y');$q['anno_iscrizione']=(string)($cur+1);check(validate_form($q)['anno_iscrizione']===(string)($cur+1),'anno iscrizione prossimo');
+$q=$p;$q['anno_iscrizione']=(string)($cur+2);check(rejects($q),'anno iscrizione lontano');
+$q=$p;$q['anno_iscrizione']='abc';check(rejects($q),'anno iscrizione non numerico');
+check(validate_form($p)['anno_iscrizione']===(string)$cur,'anno iscrizione predefinito');
 echo "Controlli validazione superati\n";

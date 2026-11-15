@@ -24,10 +24,10 @@ try {
     if ($data['tipo']==='iscrizione') {
         $dir=$storage.'/allegati'; if (!is_dir($dir) && !mkdir($dir,0700,true)) throw new RuntimeException('Archivio allegati non disponibile');
         foreach ($files as $i=>$f) { $name=$id.'-'.$i.'.'.pathinfo($f['nome'],PATHINFO_EXTENSION);if (!move_uploaded_file($f['tmp'],$dir.'/'.$name)) throw new RuntimeException('Salvataggio allegato non riuscito');chmod($dir.'/'.$name,0600);$stored[]=$name;$files[$i]['tmp']=$dir.'/'.$name; }
-        $q=$db->prepare('INSERT INTO iscrizioni VALUES(?,?,?,?,?,?)');$q->execute([$id,$now->format('c'),(int)$now->format('Y'),json_encode($data,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR),json_encode($stored,JSON_THROW_ON_ERROR),'da inviare']);
+        $q=$db->prepare('INSERT INTO iscrizioni VALUES(?,?,?,?,?,?)');$q->execute([$id,$now->format('c'),(int)($data['anno_iscrizione']??$now->format('Y')),json_encode($data,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR),json_encode($stored,JSON_THROW_ON_ERROR),'da inviare']);
     }
     $m=create_mailer($c);$m->addAddress($c['recipient']);$m->addReplyTo($data['email'],$data['nome'].' '.$data['cognome']);
-    $m->Subject=$data['tipo']==='contatto'?'Richiesta dal sito AFANT':'Richiesta iscrizione AFANT '.$now->format('Y');
+    $m->Subject=$data['tipo']==='contatto'?'Richiesta dal sito AFANT':'Richiesta iscrizione AFANT '.($data['anno_iscrizione']??$now->format('Y'));
     $body="Riferimento: $id\nData: ".$now->format('d/m/Y H:i')."\n\n";
     foreach ($data as $k=>$v) if ($k!=='tipo') $body.=str_replace('_',' ',ucfirst($k)).': '.$v."\n";
     $m->Body=$body;foreach($files as $f)$m->addAttachment($f['tmp'],$f['nome']);

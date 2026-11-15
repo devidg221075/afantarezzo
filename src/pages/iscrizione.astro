@@ -4,7 +4,7 @@ import FormFeedback from '../components/FormFeedback.astro';
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '';
 const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!siteKey;
 import associazione from '../data/associazione.json';
-const anno = new Date().getFullYear();
+const anno = associazione.annoIscrizione;
 ---
 <Base title="Iscrizione" current="/iscrizione/" description="Richiesta di iscrizione ad A.FA.N.T. Arezzo.">
   <div class="wrap page">
@@ -23,12 +23,13 @@ const anno = new Date().getFullYear();
     <FormFeedback />
     <form class="iscrizione-form" data-async-form method="post" action="/api/invia.php" enctype="multipart/form-data">
       <input type="hidden" name="tipo" value="iscrizione" />
+      <input type="hidden" name="anno_iscrizione" value={anno} />
       <fieldset><legend>Dati personali</legend>
         <div class="form-grid">
           <label>Nome *<input name="nome" autocomplete="given-name" required /></label>
           <label>Cognome *<input name="cognome" autocomplete="family-name" required /></label>
           <label>Codice fiscale *<input name="codice_fiscale" autocomplete="off" required /></label>
-          <label>Causale *<input name="causale" required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
+          <label>Causale *<input name="causale" value={`Iscrizione Afant ${anno}`} required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
           <label>Email *<input type="email" name="email" autocomplete="email" required /></label>
           <label>Conferma email *<input type="email" name="conferma_email" required /></label>
           <label>Email PEC *<input type="email" name="pec" required /></label>
