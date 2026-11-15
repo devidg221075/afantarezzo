@@ -1,0 +1,18 @@
+INSTALLAZIONE DEL SERVIZIO MODULI SU CPANEL (A.FA.N.T. Arezzo)
+
+Prima: in cPanel, "MultiPHP Manager": scegli PHP 8.3 per www.afantarezzo.it.
+
+1. File Manager > cartella principale (home), carica questo ZIP e "Extract" in una cartella nuova, per esempio "afant-installazione" (non dentro public_html).
+2. Apri "Terminal" (cPanel) e scrivi:
+      cd ~/afant-installazione
+      bash installa-su-cpanel.sh
+3. Leggi i punti [DA FARE]. Con il File Manager (o "nano ~/afant-privato/config.php" nel Terminale) compila a mano in config.php:
+      smtp_user, smtp_password, from_email (la casella da cui parte la posta)
+      turnstile_secret (chiave segreta Cloudflare)
+      admin_user e admin_password_hash (hash creato sul tuo computer con crea-hash-locale.php)
+   NON scrivere password o chiavi in chat.
+4. Copia archivio-iscritti-storico.xls in ~/afant-privato/dati/
+5. Rilancia "bash installa-su-cpanel.sh": deve dire "Tutto a posto".
+6. Solo dopo le prove: in config.php cambia 'enabled' => false in true.
+
+Lo script non sovrascrive mai config.php né i dati: si può rilanciare quante volte serve.
