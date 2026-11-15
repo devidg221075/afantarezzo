@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { news, formatDate, excerpt } from '../lib/news.js';
+import { news, appuntamenti, allegatiDi, formatDate, excerpt } from '../lib/news.js';
 import eventi from '../data/eventi.json';
 import HeroBackground from '../components/HeroBackground.astro';
 import hero from '../data/hero.json';
@@ -10,7 +10,9 @@ const prossimo = eventi.filter((e) => e.data >= oggi).sort((a, b) => a.data.loca
 const ultima = news[0];
 const primoAnno = news.reduce((m, n) => (n.date < m ? n.date : m), news[0].date).slice(0, 4);
 // Se il riquadro in evidenza mostra l'ultima comunicazione, la griglia parte dalla successiva per non ripeterla.
-const ultime = prossimo ? news.slice(0, 3) : news.slice(1, 4);
+// Le convocazioni hanno la loro sezione "Appuntamenti AFANT": qui restano le altre comunicazioni.
+const altre = news.filter((n) => n.categoria !== 'Appuntamenti');
+const ultime = prossimo ? altre.slice(0, 3) : altre.filter((n) => n !== ultima).slice(0, 3);
 // Riquadro in evidenza: prossimo evento se c'è, altrimenti l'ultima comunicazione.
 const iso = prossimo ? prossimo.data : ultima.date;
 const [anno, mese, giorno] = iso.split('-').map(Number);
@@ -53,6 +55,25 @@ const vetrina = prossimo
       <div><b>{news.length}</b><span>comunicazioni dal {primoAnno}</span></div>
     </div>
   </div>
+
+  <section class="section wrap" aria-labelledby="appuntamenti">
+    <h2 id="appuntamenti">Appuntamenti AFANT</h2>
+    <div class="grid">
+      {appuntamenti.slice(0, 3).map((n) => (
+        <article class="card">
+          <span class="tag">Appuntamenti</span>
+          <h3><a href={`/notizie/${n.slug}/`}>{n.title}</a></h3>
+          <p class="date">{formatDate(n.date)}</p>
+          <p>{excerpt(n.raw)}</p>
+          <p class="file-links">
+            <a href={`/notizie/${n.slug}/`}>Leggi</a>
+            {allegatiDi(n.slug).map((f) => <a href={f.file} download>Scarica il file</a>)}
+          </p>
+        </article>
+      ))}
+    </div>
+    <p class="more"><a class="btn" href="/appuntamenti/">Tutti gli appuntamenti</a></p>
+  </section>
 
   <section class="section wrap" aria-labelledby="ultime">
     <h2 id="ultime">Ultime comunicazioni</h2>

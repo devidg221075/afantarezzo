@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea straordinaria Afant Arezzo 15 Dicembre 2021"
 date: "2021-12-06"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-straordinaria-afant-arezzo-15-dicembre-2021-2"
 vecchioUrl: "/convocazione-assemblea-straordinaria-afant-arezzo-15-dicembre-2021-2/"
 allegati: []

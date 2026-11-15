@@ -1,7 +1,7 @@
 ---
 title: "Convocazione Assemblea per approvazione del bilancio 2025"
 date: "2026-03-14"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-approvazione-del-bilancio-2025"
 vecchioUrl: "/convocazione-assemblea-per-approvazione-del-bilancio-2025/"
 allegati: []

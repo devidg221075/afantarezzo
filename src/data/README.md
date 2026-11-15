@@ -34,3 +34,13 @@ Il nome e le dimensioni sopra sono un esempio: usare quelli reali del file. Le p
 `src/data/curricula.json` e `public/curricula/` sono esclusi da Git. Formato di ogni voce:
 `{ "nome": "...", "profilo": "...", "file": "/curricula/nome.pdf", "data": "2026-01-15", "consensoScritto": true, "scadenza": "2027-01-15" }`.
 La pagina mostra solo le voci con `consensoScritto: true` e `scadenza` non superata. Senza il file, la sezione resta vuota.
+
+## Appuntamenti (convocazioni)
+
+Le convocazioni di assemblee e incontri sono notizie con `categoria: "Appuntamenti"` in `src/content/news`. Compaiono nella sezione "Appuntamenti AFANT" della home (le ultime tre), nella pagina `/appuntamenti/` (tutte, per anno) e nel filtro "Appuntamenti" di Notizie.
+Per aggiungerne una: nuova notizia con quella categoria, il file (PDF) in `public/documenti/`, la voce in `src/data/allegati.json` (con lo slug della notizia) e, per il riquadro "Prossimo evento" della home, la voce in `src/data/eventi.json`. Il PDF va pubblicato senza dati personali nelle proprietà del file (autore).
+La home sceglie il prossimo evento al momento della costruzione del sito: va ricostruito dopo la data dell'evento.
+
+## Ricerca nel sito
+
+Il pulsante "Cerca" del menu legge l'indice `/scripts/indice-ricerca.js`, generato a ogni costruzione da notizie, pagine e documenti (`src/pages/scripts/indice-ricerca.js.js`). Non c'è nessun servizio esterno. I contenuti della pagina Lavoro (curricula) non sono nell'indice.

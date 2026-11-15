@@ -1,7 +1,7 @@
 ---
 title: "ASSEMBLEA GENERALE 2026"
 date: "2026-06-02"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-generale-2026"
 vecchioUrl: "/assemblea-generale-2026/"
 allegati: []

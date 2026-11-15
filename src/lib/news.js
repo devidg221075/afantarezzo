@@ -1,3 +1,5 @@
+import allegati from '../data/allegati.json';
+
 const mods = import.meta.glob('../content/news/*.md', { eager: true });
 
 const MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
@@ -19,3 +21,7 @@ export const news = Object.values(mods)
 
 export const categorie = [...new Set(news.map((n) => n.categoria))].sort((a, b) =>
   a === 'Altro' ? 1 : b === 'Altro' ? -1 : a.localeCompare(b, 'it'));
+
+// Sottocategoria "Appuntamenti": convocazioni di assemblee e incontri.
+export const appuntamenti = news.filter((n) => n.categoria === 'Appuntamenti');
+export const allegatiDi = (slug) => allegati[slug] ?? [];

@@ -1,7 +1,7 @@
 ---
 title: "Assemblea straordinaria – 4 Dicembre 2019"
 date: "2019-11-19"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-straordinaria-4-dicembre-2019"
 vecchioUrl: "/assemblea-straordinaria-4-dicembre-2019/"
 allegati: []

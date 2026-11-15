@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea Afant 9 Marzo 2016"
 date: "2016-02-29"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-afant-9-marzo-2016"
 vecchioUrl: "/convocazione-assemblea-afant-9-marzo-2016/"
 allegati: []

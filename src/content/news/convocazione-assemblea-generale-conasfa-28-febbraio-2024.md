@@ -1,7 +1,7 @@
 ---
 title: "CONVOCAZIONE ASSEMBLEA GENERALE CONASFA 28 FEBBRAIO 2024"
 date: "2024-02-21"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-generale-conasfa-28-febbraio-2024"
 vecchioUrl: "/convocazione-assemblea-generale-conasfa-28-febbraio-2024/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "CONVOCAZIONE ASSEMBLEA AFANT AREZZO PER APPROVAZIONE BILANCIO 2024  04 MARZO 2025 ORE 21,00"
 date: "2025-03-01"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-afant-arezzo-per-approvazione-bilancio-2024-04-marzo-2025-ore-2100"
 vecchioUrl: "/convocazione-assemblea-afant-arezzo-per-approvazione-bilancio-2024-04-marzo-2025-ore-2100/"
 allegati: []

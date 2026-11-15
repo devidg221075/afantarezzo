@@ -1,7 +1,7 @@
 ---
 title: "Convocazione Assemblea per approvazione del bilancio 2020"
 date: "2021-03-15"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-approvazione-del-bilancio-2020"
 vecchioUrl: "/convocazione-assemblea-per-approvazione-del-bilancio-2020/"
 allegati: []

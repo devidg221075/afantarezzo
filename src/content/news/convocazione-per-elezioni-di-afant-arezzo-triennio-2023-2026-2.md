@@ -1,7 +1,7 @@
 ---
 title: "Convocazione per elezioni di Afant Arezzo triennio 2023-2026"
 date: "2023-05-10"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-per-elezioni-di-afant-arezzo-triennio-2023-2026-2"
 vecchioUrl: "/convocazione-per-elezioni-di-afant-arezzo-triennio-2023-2026-2/"
 allegati: []

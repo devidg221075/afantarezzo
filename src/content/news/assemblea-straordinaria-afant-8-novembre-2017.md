@@ -1,7 +1,7 @@
 ---
 title: "Assemblea straordinaria Afant, 8 Novembre 2017"
 date: "2017-10-11"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-straordinaria-afant-8-novembre-2017"
 vecchioUrl: "/assemblea-straordinaria-afant-8-novembre-2017/"
 allegati: []

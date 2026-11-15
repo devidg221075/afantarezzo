@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea bilancio"
 date: "2019-03-17"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "corso-di-cosmetica-12-19-28-marzo-2019-arezzo"
 vecchioUrl: "/corso-di-cosmetica-12-19-28-marzo-2019-arezzo/"
 allegati: []

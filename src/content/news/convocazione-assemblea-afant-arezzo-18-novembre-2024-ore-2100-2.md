@@ -1,7 +1,7 @@
 ---
 title: "CONVOCAZIONE ASSEMBLEA AFANT AREZZO – 18 NOVEMBRE 2024 ORE 21,00"
 date: "2024-11-06"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-afant-arezzo-18-novembre-2024-ore-2100-2"
 vecchioUrl: "/convocazione-assemblea-afant-arezzo-18-novembre-2024-ore-2100-2/"
 allegati: []

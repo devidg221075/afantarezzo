@@ -1,7 +1,7 @@
 ---
 title: "Convocazione Assemblea per approvazione del bilancio 2023"
 date: "2024-02-01"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-approvazione-del-bilancio-2023"
 vecchioUrl: "/convocazione-assemblea-per-approvazione-del-bilancio-2023/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "Convocazione Assemblea per approvazione del bilancio 2021   – 17 Marzo 2022 ore 21,15"
 date: "2022-03-13"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-approvazione-del-bilancio-2021-17-marzo-2022-ore-2115"
 vecchioUrl: "/convocazione-assemblea-per-approvazione-del-bilancio-2021-17-marzo-2022-ore-2115/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea per elezioni  di Afant Arezzo triennio 2026-2029"
 date: "2026-05-15"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-elezioni-di-afant-arezzo-triennio-2026-2029"
 vecchioUrl: "/convocazione-assemblea-per-elezioni-di-afant-arezzo-triennio-2026-2029/"
 allegati: []

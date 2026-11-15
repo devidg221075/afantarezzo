@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea elezioni Afant triennio 2017-2019"
 date: "2017-05-12"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-elezioni-afant-triennio-2017-2019"
 vecchioUrl: "/convocazione-assemblea-elezioni-afant-triennio-2017-2019/"
 allegati: []

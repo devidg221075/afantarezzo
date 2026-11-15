@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea straordinaria Afant 22/03 ore 21,15"
 date: "2017-03-16"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-straordinaria-afant-2203-ore-2115"
 vecchioUrl: "/convocazione-assemblea-straordinaria-afant-2203-ore-2115/"
 allegati: []

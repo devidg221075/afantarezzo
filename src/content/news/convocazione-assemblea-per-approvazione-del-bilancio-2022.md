@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea per approvazione del bilancio 2022"
 date: "2023-02-04"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-per-approvazione-del-bilancio-2022"
 vecchioUrl: "/convocazione-assemblea-per-approvazione-del-bilancio-2022/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "A.FA.N.T. Arezzo – ODG ASSEMBLEA AFANT 18 MARZO"
 date: "2015-03-14"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "a-fa-n-t-arezzo-odg-assemblea-afant-18-marzo"
 vecchioUrl: "/a-fa-n-t-arezzo-odg-assemblea-afant-18-marzo/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "Assemblea Conasfa 19 gennaio 2020"
 date: "2019-12-23"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-conasfa-19-gennaio-2020"
 vecchioUrl: "/assemblea-conasfa-19-gennaio-2020/"
 allegati: [""]

@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea straordinaria Afant 27 Novembre 2025"
 date: "2025-11-19"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-straordinaria-afant-27-novembre-2025"
 vecchioUrl: "/convocazione-assemblea-straordinaria-afant-27-novembre-2025/"
 allegati: []

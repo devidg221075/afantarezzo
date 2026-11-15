@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea straordinaria di Afant Arezzo"
 date: "2022-12-01"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-straordinaria-di-afant-arezzo"
 vecchioUrl: "/convocazione-assemblea-straordinaria-di-afant-arezzo/"
 allegati: []

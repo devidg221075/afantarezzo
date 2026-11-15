@@ -192,7 +192,7 @@
  {
   "titolo": "Assemblea Conasfa 19 gennaio 2020",
   "data": "2019-09-30",
-  "tema": "Conasfa e Sinasfa",
+  "tema": "Appuntamenti",
   "dimensione": "112KB",
   "stato": "storico",
   "vecchioUrl": "/download/assemblea-conasfa-19-gennaio-2020-2/",
@@ -556,5 +556,15 @@
   "vecchioUrl": null,
   "file": "/documenti/schema-di-domanda-per-l-avviso-estar-sezione-territoriale-sud-est.odt",
   "formato": "ODT"
+ },
+ {
+  "titolo": "Convocazione assemblea straordinaria Afant 25 novembre 2026",
+  "data": "2026-11-15",
+  "tema": "Appuntamenti",
+  "dimensione": "31KB",
+  "stato": "attuale",
+  "vecchioUrl": null,
+  "file": "/documenti/convocazione-assemblea-afant-25-novembre-2026.pdf",
+  "formato": "PDF"
  }
 ]

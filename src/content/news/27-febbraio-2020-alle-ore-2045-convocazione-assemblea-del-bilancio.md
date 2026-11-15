@@ -1,7 +1,7 @@
 ---
 title: "27 Febbraio 2020 alle ore 20,45 – Convocazione Assemblea del bilancio"
 date: "2020-02-17"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "27-febbraio-2020-alle-ore-2045-convocazione-assemblea-del-bilancio"
 vecchioUrl: "/27-febbraio-2020-alle-ore-2045-convocazione-assemblea-del-bilancio/"
 allegati: []

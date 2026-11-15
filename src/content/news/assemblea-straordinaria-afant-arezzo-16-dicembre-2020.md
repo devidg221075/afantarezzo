@@ -1,7 +1,7 @@
 ---
 title: "Assemblea straordinaria Afant Arezzo 16 Dicembre 2020"
 date: "2020-12-07"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-straordinaria-afant-arezzo-16-dicembre-2020"
 vecchioUrl: "/assemblea-straordinaria-afant-arezzo-16-dicembre-2020/"
 allegati: []

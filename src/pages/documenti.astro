@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import DocTable from '../components/DocTable.astro';
 import docs from '../data/documenti.json';
 const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
-const ordine = ['Statuto e codice', 'CCNL e contratti', 'Moduli', 'ECM', 'Enpaf', 'Conasfa e Sinasfa', 'Altro'];
+const ordine = ['Statuto e codice', 'CCNL e contratti', 'Moduli', 'Appuntamenti', 'ECM', 'Enpaf', 'Conasfa e Sinasfa', 'Altro'];
 const temi = ordine.filter((t) => docs.some((d) => d.tema === t));
 const per = (t) => docs.filter((d) => d.tema === t).sort((a, b) => (a.stato === b.stato ? (b.data ?? `${b.anno}-01-01`).localeCompare(a.data ?? `${a.anno}-01-01`) : a.stato === 'attuale' ? -1 : 1));
 ---

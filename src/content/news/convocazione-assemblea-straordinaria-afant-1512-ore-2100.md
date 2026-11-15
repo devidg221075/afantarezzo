@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea straordinaria Afant 15/12 ore 21,00"
 date: "2016-12-07"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-straordinaria-afant-1512-ore-2100"
 vecchioUrl: "/convocazione-assemblea-straordinaria-afant-1512-ore-2100/"
 allegati: []

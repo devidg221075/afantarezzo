@@ -1,7 +1,7 @@
 ---
 title: "Assemblea straordinaria A.FA.N.T. – 29 Gennaio 2015"
 date: "2015-01-18"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-a-fa-n-t-29-gennaio-2015"
 vecchioUrl: "/assemblea-a-fa-n-t-29-gennaio-2015/"
 allegati: []

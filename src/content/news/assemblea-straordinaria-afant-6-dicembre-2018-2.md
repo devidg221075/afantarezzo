@@ -1,7 +1,7 @@
 ---
 title: "Assemblea straordinaria Afant – 6 Dicembre 2018"
 date: "2018-11-13"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "assemblea-straordinaria-afant-6-dicembre-2018-2"
 vecchioUrl: "/assemblea-straordinaria-afant-6-dicembre-2018-2/"
 allegati: []

@@ -1,7 +1,7 @@
 ---
 title: "CONVOCAZIONE ASSEMBLEA PRESSO OSPEDALE – DOMENICA 11 FEBBRAIO 2018"
 date: "2018-01-27"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-presso-ospedale-domenica-11-febbraio-2018"
 vecchioUrl: "/convocazione-assemblea-presso-ospedale-domenica-11-febbraio-2018/"
 allegati: []

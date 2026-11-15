@@ -1,7 +1,7 @@
 ---
 title: "CONVOCAZIONE ASSEMBLEA ORDINARIA 2023 CONASFA"
 date: "2023-03-28"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-ordinaria-2023-conasfa"
 vecchioUrl: "/convocazione-assemblea-ordinaria-2023-conasfa/"
 allegati: []

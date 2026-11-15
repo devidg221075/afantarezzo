@@ -1,7 +1,7 @@
 ---
 title: "Convocazione assemblea Afant 9 Dicembre 2015 ore 21,15"
 date: "2015-12-03"
-categoria: "Assemblee ed elezioni"
+categoria: "Appuntamenti"
 slug: "convocazione-assemblea-afant-9-dicembre-2015-ore-21_15"
 vecchioUrl: "/convocazione-assemblea-afant-9-dicembre-2015-ore-21_15/"
 allegati: []
