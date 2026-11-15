@@ -14,7 +14,8 @@ return [
     'admin_user' => '',
     'admin_password_hash' => '',
     'rate_secret' => '',
-    // true: ogni nuova iscrizione arriva via email con il registro Excel aggiornato in allegato (contiene i dati di tutti gli iscritti).
-    'allega_registro' => false,
+    // true (scelta del cliente, 15 novembre 2026): ogni nuova iscrizione arriva via email con il registro Excel aggiornato in allegato.
+    // Il file contiene i dati di tutti gli iscritti: la casella 'recipient' deve essere protetta e usata solo dal Consiglio Direttivo.
+    'allega_registro' => true,
     'storage_dir' => '/home/afantarezzo/afant-privato/dati',
 ];

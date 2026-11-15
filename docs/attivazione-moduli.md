@@ -24,7 +24,7 @@ Copia `public/api/invia.php` e `public/api/registro.php` nella radice web, carte
    - posta: `smtp_user`, `smtp_password`, `from_email`; destinatario `recipient`;
    - `turnstile_secret`: la chiave segreta (solo qui, mai in chat né nel sito);
    - `admin_user` e `admin_password_hash`: l'hash si crea sul tuo computer con `crea-hash-locale.php`, **non** la password in chiaro;
-   - `allega_registro`: `false` (consigliato) o `true` se vuoi ricevere il file Excel aggiornato a ogni iscrizione;
+   - `allega_registro`: `true` (scelta del cliente): a ogni nuova iscrizione l'email arriva con il file Excel aggiornato in allegato. Il file contiene i dati di tutti gli iscritti: la casella `recipient` deve avere password robusta, accesso solo al Consiglio Direttivo e, se possibile, verifica in due passaggi;
    - `enabled`: lascialo `false` finché non finiscono i punti 4 e 5.
 2. Permessi di `config.php`: 0600.
 
