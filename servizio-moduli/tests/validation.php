@@ -15,4 +15,7 @@ $q=$p;$cur=(int)date('Y');$q['anno_iscrizione']=(string)($cur+1);check(validate_
 $q=$p;$q['anno_iscrizione']=(string)($cur+2);check(rejects($q),'anno iscrizione lontano');
 $q=$p;$q['anno_iscrizione']='abc';check(rejects($q),'anno iscrizione non numerico');
 check(validate_form($p)['anno_iscrizione']===(string)$cur,'anno iscrizione predefinito');
+$q=$p;unset($q['pec'],$q['conferma_pec']);check(validate_form($q)['pec']==='','PEC facoltativa assente');
+$q=$p;$q['pec']='';$q['conferma_pec']='';check(validate_form($q)['pec']==='','PEC facoltativa vuota');
+$q=$p;$q['conferma_pec']='diversa@pec.example.org';check(rejects($q),'PEC indicata ma diversa dalla conferma');
 echo "Controlli validazione superati\n";

@@ -4,6 +4,7 @@ const { title, description = "Associazione Farmacisti Non Titolari della provinc
 const full = title ? `${title} | A.FA.N.T. Arezzo` : 'A.FA.N.T. Arezzo | Associazione Farmacisti Non Titolari di Arezzo';
 const seoOrigin = (import.meta.env.PUBLIC_SITE_ORIGIN || 'https://www.afantarezzo.it').replace(/\/$/, '');
 const isProductionSite = seoOrigin === 'https://www.afantarezzo.it';
+const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!import.meta.env.PUBLIC_TURNSTILE_SITEKEY;
 const is404 = Astro.url.pathname === '/404' || Astro.url.pathname === '/404.html';
 const canonical = new URL(Astro.url.pathname, seoOrigin).href;
 const menu = [
@@ -78,6 +79,7 @@ const menu = [
         <h2>A.FA.N.T. Arezzo</h2>
         <p>Associazione Farmacisti Non Titolari della provincia di Arezzo</p>
         <p class="small">P.IVA / C.F. IT92058170512</p>
+        <p class="small">Associazione senza scopo di lucro. Dati personali trattati secondo il Regolamento (UE) 2016/679 (GDPR).</p>
       </div>
       <div>
         <h2>Contatti</h2>
@@ -96,9 +98,9 @@ const menu = [
       </div>
     </div>
   </footer>
-  <aside class="privacy-notice" data-privacy-notice hidden aria-label="Informazioni sulla privacy">
-    <p>Informazioni su privacy e cookie disponibili nella <a href="/privacy/">pagina dedicata</a>.</p>
-    <button type="button" data-privacy-close aria-label="Chiudi avviso privacy">Chiudi</button>
+  <aside class="privacy-notice" data-privacy-notice hidden aria-label="Informativa breve su privacy e cookie">
+    <p><strong>Privacy e cookie.</strong> Questo sito non imposta cookie e non usa strumenti di analisi, profilazione o pubblicità: non serve alcun consenso. {formEnabled ? 'Nei moduli la verifica antispam Cloudflare Turnstile è uno strumento tecnico necessario. ' : ''}I dati personali sono trattati secondo il GDPR (Reg. UE 2016/679). <a href="/privacy/">Leggi l’informativa completa</a>.</p>
+    <button type="button" data-privacy-close aria-label="Chiudi l’informativa breve su privacy e cookie">Ho capito</button>
   </aside>
   <script is:inline>
     (function(){var notice=document.querySelector('[data-privacy-notice]');if(!notice)return;

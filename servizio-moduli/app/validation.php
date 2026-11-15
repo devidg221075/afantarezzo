@@ -25,7 +25,7 @@ function validate_form(array $post): array {
     } else {
         foreach (['codice_fiscale'=>20,'causale'=>200,'telefono'=>40,'indirizzo'=>250,'localita'=>120,'provincia'=>120,'cap'=>20,'paese'=>100,'luogo_nascita'=>120,'data_nascita'=>10,'iscritto_precedente'=>3,'pagamento'=>20] as $key=>$max) $data[$key] = field($post, $key, $max);
         foreach (['ordine'=>150,'luogo_lavoro'=>200,'note'=>5000] as $key=>$max) $data[$key] = field($post, $key, $max, false);
-        $data['pec'] = email_field($post, 'pec', 'conferma_pec');
+        $data['pec'] = (trim((string)($post['pec'] ?? '')) === '' && trim((string)($post['conferma_pec'] ?? '')) === '') ? '' : email_field($post, 'pec', 'conferma_pec');
         $current = (int)(new DateTimeImmutable('now', new DateTimeZone('Europe/Rome')))->format('Y');
         $year = filter_var($post['anno_iscrizione'] ?? $current, FILTER_VALIDATE_INT);
         if ($year === false || $year < $current - 1 || $year > $current + 1) throw new InvalidArgumentException('Anno di iscrizione non valido.');

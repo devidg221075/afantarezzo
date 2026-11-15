@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import FormFeedback from '../components/FormFeedback.astro';
+import InformativaBreve from '../components/InformativaBreve.astro';
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '';
 const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!siteKey;
 ---
@@ -23,9 +24,10 @@ const formEnabled = import.meta.env.PUBLIC_FORMS_ENABLED === '1' && !!siteKey;
           <label>Telefono<input type="tel" name="telefono" autocomplete="tel" maxlength="40" /></label>
           <label>Oggetto della richiesta *<input name="oggetto" required maxlength="180" /></label>
         </div>
-        <label>La tua richiesta *<textarea name="messaggio" rows="6" required maxlength="5000"></textarea></label>
+        <label>La tua richiesta *<textarea name="messaggio" rows="6" required maxlength="5000"></textarea><small>Non inserire dati sulla salute o altre informazioni non necessarie.</small></label>
         <label>Puoi inviarci un file<input type="file" name="allegati[]" multiple accept=".pdf,.jpg,.jpeg,.png" /><small>PDF, JPG o PNG; fino a 3 file da 5 MB ciascuno.</small></label>
-        <label class="form-check"><input type="checkbox" name="privacy" required /> Ho letto l’<a href="/privacy/">informativa privacy</a>. *</label>
+        <InformativaBreve tipo="contatto" />
+        <label class="form-check"><input type="checkbox" name="privacy" required /> Ho letto l’<a href="/privacy/">informativa privacy</a> (art. 13 GDPR). *</label>
         {formEnabled ? <div class="cf-turnstile" data-sitekey={siteKey} data-action="afant_contatto"></div> : <p>La verifica antispam sarà disponibile all’attivazione del modulo.</p>}
         <button class="btn" type="submit" disabled={!formEnabled}>{formEnabled ? 'Invia richiesta' : 'Invio non ancora attivo'}</button>
       </fieldset>

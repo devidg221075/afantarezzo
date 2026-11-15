@@ -1,0 +1,11 @@
+---
+const { tipo = 'contatto' } = Astro.props;
+---
+<aside class="info-breve" aria-label="Informativa breve sul trattamento dei dati">
+  <h3>Informativa breve (art. 13 GDPR)</h3>
+  {tipo === 'iscrizione' ? (
+    <p><strong>Titolare:</strong> A.FA.N.T. Arezzo, Via Newton 48, 52100 Arezzo, <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>. <strong>Finalità:</strong> esaminare la richiesta di iscrizione, gestire il rapporto associativo e adempiere agli obblighi amministrativi, contabili e fiscali. <strong>Base giuridica:</strong> art. 6, par. 1, lett. b e c GDPR; per le informazioni che possono rivelare l’adesione all’associazione, art. 9, par. 2, lett. d. <strong>Destinatari:</strong> Consiglio Direttivo, fornitore di hosting e posta, commercialista per la contabilità. <strong>Conservazione:</strong> durata del rapporto e 10 anni dopo la sua cessazione; richieste non completate 12 mesi. I dati con * sono necessari: senza non si può inviare la richiesta. Nessuna decisione automatizzata. Hai diritto di accesso, rettifica, cancellazione, limitazione, portabilità, opposizione e di reclamo al Garante: <a href="/privacy/">informativa completa</a>.</p>
+  ) : (
+    <p><strong>Titolare:</strong> A.FA.N.T. Arezzo, Via Newton 48, 52100 Arezzo, <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>. <strong>Finalità:</strong> rispondere alla tua richiesta. <strong>Base giuridica:</strong> art. 6, par. 1, lett. b o f GDPR. <strong>Destinatari:</strong> Consiglio Direttivo e fornitore di hosting e posta. <strong>Conservazione:</strong> 12 mesi dalla chiusura della richiesta. I dati con * sono necessari: senza non si può inviare la richiesta. Non inviare dati sulla salute o altre informazioni non richieste. Hai diritto di accesso, rettifica, cancellazione, limitazione, opposizione e di reclamo al Garante: <a href="/privacy/">informativa completa</a>.</p>
+  )}
+</aside>
