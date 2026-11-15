@@ -70,11 +70,23 @@
       li.appendChild(a); list.appendChild(li);
     });
   }
+  // Pulsante a lente sempre raggiungibile: compare quando il menu in alto non si vede più.
+  var fab = document.createElement('button');
+  fab.type = 'button'; fab.className = 'search-fab'; fab.setAttribute('aria-label', 'Cerca nel sito');
+  fab.innerHTML = '<svg viewBox="0 0 20 20" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  document.body.appendChild(fab);
+  fab.addEventListener('click', function () { open(); });
+  var head = document.querySelector('.site-header');
+  if (head && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { fab.classList.toggle('show', !es[0].isIntersecting); }).observe(head);
+  }
   var timer;
   function open() {
+    // Il pannello sta in cima alla pagina: se si è scesi, si torna su.
+    if (window.scrollY > 0) window.scrollTo(0, 0);
     panel.hidden = false; toggle.setAttribute('aria-expanded', 'true');
     load(function () { if (input.value) search(); });
-    input.focus(); input.select();
+    input.focus({ preventScroll: true }); input.select();
   }
   function close(back) {
     panel.hidden = true; toggle.setAttribute('aria-expanded', 'false');
@@ -94,6 +106,6 @@
     if (e.key === '/' && panel.hidden && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '') && !e.ctrlKey && !e.metaKey) { e.preventDefault(); open(); }
   });
   document.addEventListener('click', function (e) {
-    if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target)) close(false);
+    if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target) && !fab.contains(e.target)) close(false);
   });
 })();
