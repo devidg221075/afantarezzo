@@ -24,3 +24,7 @@ Prove locali svolte: sintassi PHP, validazione campi, rifiuto della configurazio
 ## Widget Turnstile creato
 
 Widget `AFANT - prova`, modalità Managed. La site key pubblica da usare per la build è `0x4AAAAAAFxvf9xc30R8n2pH`. Host associati: `afantarezzo.it` e `nuovo.afantarezzo.it`. La secret key deve essere inserita direttamente nel file di configurazione privato sulla VPS e non è riportata qui.
+
+## Registro Excel aggiornato (novembre 2026)
+
+A ogni nuova iscrizione il servizio riscrive nella cartella privata `dati/` il file `iscrizioni-afant-aggiornato.xlsx` (foglio "Iscrizioni" con le richieste online, più i due fogli dell'archivio storico `archivio-iscritti-storico.xls`) e conserva la versione precedente come `iscrizioni-afant-precedente.xlsx`. Se l'archivio storico manca il file non viene sovrascritto e l'errore va nel registro del server; l'iscrizione viene comunque registrata. Con `allega_registro => true` il file è anche allegato all'email di notifica (contiene i dati di tutti gli iscritti: usare solo con una casella protetta). `site_host` deve essere il dominio pubblico del sito (`www.afantarezzo.it`). Guida completa: `docs/attivazione-moduli.md`.

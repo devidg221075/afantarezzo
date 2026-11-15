@@ -25,12 +25,17 @@ try {
         $dir=$storage.'/allegati'; if (!is_dir($dir) && !mkdir($dir,0700,true)) throw new RuntimeException('Archivio allegati non disponibile');
         foreach ($files as $i=>$f) { $name=$id.'-'.$i.'.'.pathinfo($f['nome'],PATHINFO_EXTENSION);if (!move_uploaded_file($f['tmp'],$dir.'/'.$name)) throw new RuntimeException('Salvataggio allegato non riuscito');chmod($dir.'/'.$name,0600);$stored[]=$name;$files[$i]['tmp']=$dir.'/'.$name; }
         $q=$db->prepare('INSERT INTO iscrizioni VALUES(?,?,?,?,?,?)');$q->execute([$id,$now->format('c'),(int)($data['anno_iscrizione']??$now->format('Y')),json_encode($data,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR),json_encode($stored,JSON_THROW_ON_ERROR),'da inviare']);
+        // Tiene aggiornato il file Excel nella cartella privata; un errore qui non blocca l'iscrizione (i dati sono già nel registro).
+        require_once __DIR__ . '/registro-xlsx.php';
+        $registroFile=null;
+        try { $registroFile=salva_registro_aggiornato($db,$storage); } catch (Throwable $e) { error_log('AFANT: file registro non aggiornato, riferimento '.$id.': '.get_class($e)); }
     }
     $m=create_mailer($c);$m->addAddress($c['recipient']);$m->addReplyTo($data['email'],$data['nome'].' '.$data['cognome']);
     $m->Subject=$data['tipo']==='contatto'?'Richiesta dal sito AFANT':'Richiesta iscrizione AFANT '.($data['anno_iscrizione']??$now->format('Y'));
     $body="Riferimento: $id\nData: ".$now->format('d/m/Y H:i')."\n\n";
     foreach ($data as $k=>$v) if ($k!=='tipo') $body.=str_replace('_',' ',ucfirst($k)).': '.$v."\n";
     $m->Body=$body;foreach($files as $f)$m->addAttachment($f['tmp'],$f['nome']);
+    if (!empty($c['allega_registro']) && !empty($registroFile) && is_file($registroFile)) $m->addAttachment($registroFile,'iscrizioni-afant-aggiornato.xlsx');
     try { $m->send(); if($data['tipo']==='iscrizione'){$q=$db->prepare('UPDATE iscrizioni SET notifica=? WHERE id=?');$q->execute(['inviata',$id]);} }
     catch(Throwable $e){error_log('AFANT: invio non riuscito, riferimento '.$id);http_response_code(503);exit($data['tipo']==='iscrizione'?'La richiesta è stata registrata, ma la notifica non è partita. Contatta AFANT indicando il riferimento '.$id.'.':'Invio non riuscito. Riprova oppure scrivi a info@afantarezzo.it.');}
     try { $receipt=create_mailer($c);$receipt->addAddress($data['email']);$receipt->addReplyTo($c['recipient']);$receipt->Subject='Conferma ricezione richiesta - AFANT Arezzo';$receipt->Body="Buongiorno,\n\nabbiamo ricevuto la tua richiesta. Ti risponderemo appena possibile.\nRiferimento: $id\n\nA.FA.N.T. Arezzo\ninfo@afantarezzo.it";$receipt->send();$sent=true; } catch(Throwable $e) { error_log('AFANT: ricevuta non inviata, riferimento '.$id);$sent=false; }
