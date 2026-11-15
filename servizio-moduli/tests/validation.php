@@ -18,4 +18,11 @@ check(validate_form($p)['anno_iscrizione']===(string)$cur,'anno iscrizione prede
 $q=$p;unset($q['pec'],$q['conferma_pec']);check(validate_form($q)['pec']==='','PEC facoltativa assente');
 $q=$p;$q['pec']='';$q['conferma_pec']='';check(validate_form($q)['pec']==='','PEC facoltativa vuota');
 $q=$p;$q['conferma_pec']='diversa@pec.example.org';check(rejects($q),'PEC indicata ma diversa dalla conferma');
+check(captcha_diagnosi(['success'=>false,'error-codes'=>['invalid-input-secret']],200,'','www.afantarezzo.it','afant_contatto')==='rifiutato da Cloudflare: invalid-input-secret','codice Cloudflare nel registro');
+check(captcha_diagnosi(['success'=>false,'error-codes'=>['timeout-or-duplicate']],200,'','www.afantarezzo.it','afant_contatto')==='rifiutato da Cloudflare: timeout-or-duplicate','token scaduto nel registro');
+check(str_contains(captcha_diagnosi(null,0,'Could not resolve host: challenges.cloudflare.com','www.afantarezzo.it','afant_contatto'),'connessione a Cloudflare non riuscita'),'errore di rete nel registro');
+check(str_contains(captcha_diagnosi(['success'=>true,'hostname'=>'nuovo.afantarezzo.it','action'=>'afant_contatto'],200,'','www.afantarezzo.it','afant_contatto'),'dominio diverso'),'dominio diverso');
+check(str_contains(captcha_diagnosi(['success'=>true,'hostname'=>'www.afantarezzo.it','action'=>'altra'],200,'','www.afantarezzo.it','afant_contatto'),'azione diversa'),'azione diversa');
+check(captcha_diagnosi(['success'=>true,'hostname'=>'www.afantarezzo.it','action'=>'afant_contatto'],200,'','www.afantarezzo.it','afant_contatto')==='valido','valido');
+check(!str_contains(captcha_diagnosi(['success'=>false,'error-codes'=>["x\n<script>"]],200,'','h','a'),'<'),'nessun carattere pericoloso nel registro');
 echo "Controlli validazione superati\n";

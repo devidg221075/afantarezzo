@@ -38,3 +38,17 @@ function validate_form(array $post): array {
     }
     return $data;
 }
+
+// Motivo del rifiuto della verifica antispam, per il registro errori del server.
+// Contiene solo codici e nomi di dominio/azione: nessun dato personale, nessun token.
+function captcha_diagnosi(mixed $json, int $status, string $curlError, string $host, string $action): string {
+    if ($curlError !== '') return 'connessione a Cloudflare non riuscita: ' . substr(preg_replace('/[^A-Za-z0-9 .:_-]/', '', $curlError), 0, 120);
+    if ($status !== 200 || !is_array($json)) return 'risposta non valida di Cloudflare, stato HTTP ' . $status;
+    if (($json['success'] ?? false) !== true) {
+        $codes = array_filter((array)($json['error-codes'] ?? []), 'is_string');
+        return 'rifiutato da Cloudflare: ' . ($codes ? implode(',', array_map(fn($c) => preg_replace('/[^a-z0-9-]/i', '', $c), array_slice($codes, 0, 5))) : 'nessun codice');
+    }
+    if (($json['hostname'] ?? '') !== $host) return 'dominio diverso: atteso ' . $host . ', ricevuto ' . substr(preg_replace('/[^A-Za-z0-9.-]/', '', (string)($json['hostname'] ?? '')), 0, 80);
+    if (($json['action'] ?? '') !== $action) return 'azione diversa: attesa ' . $action . ', ricevuta ' . substr(preg_replace('/[^A-Za-z0-9_-]/', '', (string)($json['action'] ?? '')), 0, 40);
+    return 'valido';
+}

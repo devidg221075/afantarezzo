@@ -45,9 +45,11 @@ function verify_captcha(string $token, array $c, string $action): bool {
     if (strlen($token) < 1 || strlen($token) > 2048) return false;
     $ch=curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
     curl_setopt_array($ch,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>http_build_query(['secret'=>$c['turnstile_secret'],'response'=>$token]),CURLOPT_RETURNTRANSFER=>true,CURLOPT_TIMEOUT=>10,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_PROTOCOLS=>CURLPROTO_HTTPS]);
-    $result=curl_exec($ch);$status=curl_getinfo($ch,CURLINFO_RESPONSE_CODE);curl_close($ch);
+    $result=curl_exec($ch);$status=curl_getinfo($ch,CURLINFO_RESPONSE_CODE);$curlError=curl_errno($ch)?curl_error($ch):'';curl_close($ch);
     $json=is_string($result) ? json_decode($result,true) : null;
-    return captcha_result_valid($json, $status, $c['site_host'], $action);
+    $valid=captcha_result_valid($json, $status, $c['site_host'], $action);
+    if (!$valid) error_log('AFANT: turnstile ' . captcha_diagnosi($json, $status, $curlError, $c['site_host'], $action));
+    return $valid;
 }
 function create_mailer(array $c): PHPMailer\PHPMailer\PHPMailer {
     $m=new PHPMailer\PHPMailer\PHPMailer(true);$m->isSMTP();$m->Host=$c['smtp_host'];$m->Port=(int)($c['smtp_port']??465);$m->SMTPAuth=true;$m->Username=$c['smtp_user'];$m->Password=$c['smtp_password'];$m->SMTPSecure=PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;$m->CharSet='UTF-8';$m->setFrom($c['from_email'],'A.FA.N.T. Arezzo');return $m;
