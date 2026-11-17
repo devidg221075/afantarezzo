@@ -474,7 +474,7 @@
   "data": null,
   "anno": 2015,
   "tema": "Moduli",
-  "dimensione": "82KB",
+  "dimensione": "123KB",
   "stato": "storico",
   "vecchioUrl": null,
   "file": "/documenti/modulo-di-iscrizione-afant-2015.pdf",
@@ -503,11 +503,22 @@
   "formato": "PDF"
  },
  {
+  "titolo": "Modulo di iscrizione Afant 2019",
+  "data": null,
+  "anno": 2019,
+  "tema": "Moduli",
+  "dimensione": "127KB",
+  "stato": "storico",
+  "vecchioUrl": null,
+  "file": "/documenti/modulo-di-iscrizione-afant-2019.pdf",
+  "formato": "PDF"
+ },
+ {
   "titolo": "Modulo di iscrizione Afant 2020",
   "data": null,
   "anno": 2020,
   "tema": "Moduli",
-  "dimensione": "127KB",
+  "dimensione": "84KB",
   "stato": "storico",
   "vecchioUrl": null,
   "file": "/documenti/modulo-di-iscrizione-afant-2020.pdf",
@@ -519,9 +530,53 @@
   "anno": 2021,
   "tema": "Moduli",
   "dimensione": "84KB",
-  "stato": "attuale",
+  "stato": "storico",
   "vecchioUrl": null,
   "file": "/documenti/modulo-di-iscrizione-afant-2021.pdf",
+  "formato": "PDF"
+ },
+ {
+  "titolo": "Modulo di iscrizione Afant 2023",
+  "data": null,
+  "anno": 2023,
+  "tema": "Moduli",
+  "dimensione": "86KB",
+  "stato": "storico",
+  "vecchioUrl": null,
+  "file": "/documenti/modulo-di-iscrizione-afant-2023.pdf",
+  "formato": "PDF"
+ },
+ {
+  "titolo": "Modulo di iscrizione Afant 2024",
+  "data": null,
+  "anno": 2024,
+  "tema": "Moduli",
+  "dimensione": "88KB",
+  "stato": "storico",
+  "vecchioUrl": null,
+  "file": "/documenti/modulo-di-iscrizione-afant-2024.pdf",
+  "formato": "PDF"
+ },
+ {
+  "titolo": "Modulo di iscrizione Afant 2025",
+  "data": null,
+  "anno": 2025,
+  "tema": "Moduli",
+  "dimensione": "144KB",
+  "stato": "storico",
+  "vecchioUrl": null,
+  "file": "/documenti/modulo-di-iscrizione-afant-2025.pdf",
+  "formato": "PDF"
+ },
+ {
+  "titolo": "Modulo di iscrizione Afant 2027",
+  "data": null,
+  "anno": 2027,
+  "tema": "Moduli",
+  "dimensione": "79KB",
+  "stato": "attuale",
+  "vecchioUrl": null,
+  "file": "/documenti/modulo-di-iscrizione-afant-2027.pdf",
   "formato": "PDF"
  },
  {
