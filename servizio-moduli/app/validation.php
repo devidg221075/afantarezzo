@@ -23,7 +23,9 @@ function validate_form(array $post): array {
     if ($type === 'contatto') {
         $data += ['telefono' => field($post, 'telefono', 40, false), 'oggetto' => field($post, 'oggetto', 180), 'messaggio' => field($post, 'messaggio', 5000)];
     } else {
-        foreach (['codice_fiscale'=>20,'causale'=>200,'telefono'=>40,'indirizzo'=>250,'localita'=>120,'provincia'=>120,'cap'=>20,'paese'=>100,'luogo_nascita'=>120,'iscritto_precedente'=>3,'pagamento'=>20] as $key=>$max) $data[$key] = field($post, $key, $max);
+        $gia = (($post['iscritto_precedente'] ?? '') === 'si');
+        foreach (['codice_fiscale'=>20,'causale'=>200,'telefono'=>40,'iscritto_precedente'=>3,'pagamento'=>20] as $key=>$max) $data[$key] = field($post, $key, $max);
+        foreach (['indirizzo'=>250,'localita'=>120,'provincia'=>120,'cap'=>20,'paese'=>100,'luogo_nascita'=>120] as $key=>$max) $data[$key] = field($post, $key, $max, !$gia);
         $data['data_nascita'] = field($post, 'data_nascita', 10, false);
         foreach (['ordine'=>150,'luogo_lavoro'=>200,'note'=>5000] as $key=>$max) $data[$key] = field($post, $key, $max, false);
         $data['pec'] = (trim((string)($post['pec'] ?? '')) === '' && trim((string)($post['conferma_pec'] ?? '')) === '') ? '' : email_field($post, 'pec', 'conferma_pec');

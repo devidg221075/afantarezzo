@@ -32,9 +32,12 @@ const anno = associazione.annoIscrizione;
           <label>Codice fiscale *<input name="codice_fiscale" autocomplete="off" required /></label>
           <label>Causale *<input name="causale" value={`Iscrizione Afant ${anno}`} required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
           <label>Email *<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Telefono *<input type="tel" name="telefono" autocomplete="tel" required /></label>
+        </div>
+        <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
+        <div class="form-grid" id="dati-nuovi">
           <label>Email PEC (facoltativa)<input type="email" name="pec" /></label>
           <label>Conferma email PEC<input type="email" name="conferma_pec" /></label>
-          <label>Telefono *<input type="tel" name="telefono" autocomplete="tel" required /></label>
           <label>Via, piazza o corso e numero civico *<input name="indirizzo" autocomplete="street-address" required /></label>
           <label>Località *<input name="localita" autocomplete="address-level2" required /></label>
           <label>Provincia o regione *<input name="provincia" autocomplete="address-level1" required /></label>
@@ -44,7 +47,6 @@ const anno = associazione.annoIscrizione;
           <label>Ordine di appartenenza<input name="ordine" /></label>
           <label>Luogo di lavoro<input name="luogo_lavoro" /></label>
         </div>
-        <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
       </fieldset>
       <fieldset><legend>Modalità di pagamento</legend>
         <fieldset class="form-choice"><legend>Metodo di pagamento *</legend><label><input type="radio" name="pagamento" value="bonifico" required /> Bonifico</label><label><input type="radio" name="pagamento" value="contante" required /> Contante</label></fieldset>
@@ -59,6 +61,13 @@ const anno = associazione.annoIscrizione;
       {formEnabled && <div class="cf-turnstile" data-sitekey={siteKey} data-action="afant_iscrizione"></div>}
       <button class="btn" type="submit" disabled={!formEnabled}>{formEnabled ? 'Invia richiesta' : 'Invio non ancora attivo'}</button>
     </form>
+    <script is:inline>
+      (function(){var box=document.getElementById('dati-nuovi');if(!box)return;
+      var req=[].slice.call(box.querySelectorAll('[required]'));
+      function sync(){var si=document.querySelector('input[name=iscritto_precedente]:checked');var nasc=!!si&&si.value==='si';
+        box.hidden=nasc;[].slice.call(box.querySelectorAll('input,select,textarea')).forEach(function(e){e.disabled=nasc;});}
+      [].slice.call(document.querySelectorAll('input[name=iscritto_precedente]')).forEach(function(r){r.addEventListener('change',sync);});sync();})();
+    </script>
     {formEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
   </div>
 </Base>
