@@ -25,13 +25,17 @@ const anno = associazione.annoIscrizione;
     <form class="iscrizione-form" data-async-form method="post" action="/api/invia.php" enctype="multipart/form-data">
       <input type="hidden" name="tipo" value="iscrizione" />
       <input type="hidden" name="anno_iscrizione" value={anno} />
-      <fieldset><legend>Dati personali</legend>
-        <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
-        <div class="form-grid" id="dati-nuovi">
+      <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
+      <fieldset id="dati-base" hidden disabled><legend>Dati personali</legend>
+        <div class="form-grid">
           <label>Nome<input name="nome" autocomplete="given-name" /></label>
           <label>Cognome<input name="cognome" autocomplete="family-name" /></label>
           <label>Codice fiscale<input name="codice_fiscale" autocomplete="off" /></label>
           <label>Causale<input name="causale" value={`Iscrizione Afant ${anno}`} /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
+        </div>
+      </fieldset>
+      <fieldset id="dati-altri" hidden disabled><legend>Altri dati</legend>
+        <div class="form-grid">
           <label>Email<input type="email" name="email" autocomplete="email" /></label>
           <label>Telefono<input type="tel" name="telefono" autocomplete="tel" /></label>
           <label>Email PEC (facoltativa)<input type="email" name="pec" /></label>
@@ -60,11 +64,11 @@ const anno = associazione.annoIscrizione;
       <button class="btn" type="submit" disabled={!formEnabled}>{formEnabled ? 'Invia richiesta' : 'Invio non ancora attivo'}</button>
     </form>
     <script is:inline>
-      (function(){var box=document.getElementById('dati-nuovi');if(!box)return;
-      var req=[].slice.call(box.querySelectorAll('[required]'));
-      function sync(){var si=document.querySelector('input[name=iscritto_precedente]:checked');var nasc=!!si&&si.value==='si';
-        box.hidden=nasc;[].slice.call(box.querySelectorAll('input,select,textarea')).forEach(function(e){e.disabled=nasc;});}
-      [].slice.call(document.querySelectorAll('input[name=iscritto_precedente]')).forEach(function(r){r.addEventListener('change',sync);});sync();})();
+      (function(){var base=document.getElementById('dati-base'),altri=document.getElementById('dati-altri');if(!base||!altri)return;
+      function show(el,on){el.hidden=!on;el.disabled=!on;}
+      function sync(){var r=document.querySelector('input[name=iscritto_precedente]:checked');var v=r?r.value:'';
+        show(base,v==='si'||v==='no');show(altri,v==='no');}
+      [].slice.call(document.querySelectorAll('input[name=iscritto_precedente]')).forEach(function(i){i.addEventListener('change',sync);});sync();})();
     </script>
     {formEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
   </div>
