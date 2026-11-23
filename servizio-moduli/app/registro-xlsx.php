@@ -12,8 +12,15 @@ function costruisci_registro(PDO $db, string $storage, bool $conStorico = true):
     $keys=['anno','ricevuta_il','nome','cognome','codice_fiscale','causale','iscritto_precedente','email','pec','telefono','indirizzo','localita','provincia','cap','paese','luogo_nascita','data_nascita','ordine','luogo_lavoro','pagamento','allegati','note','privacy','notifica','id'];
     $book=new PhpOffice\PhpSpreadsheet\Spreadsheet();$sheet=$book->getActiveSheet();$sheet->setTitle('Iscrizioni');
     foreach($cols as $i=>$v) $sheet->setCellValueExplicit([$i+1,1],$v,PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-    foreach($rows as $n=>$row){$data=json_decode($row['dati'],true,512,JSON_THROW_ON_ERROR);$data['anno']=(string)$row['anno'];$data['ricevuta_il']=$row['ricevuta_il'];$data['allegati']=implode(', ',json_decode($row['allegati'],true,512,JSON_THROW_ON_ERROR));$data['privacy']='Sì';$data['notifica']=$row['notifica'];$data['id']=$row['id'];foreach($keys as $i=>$key)$sheet->setCellValueExplicit([$i+1,$n+2],(string)($data[$key]??''),PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);}
+    foreach($rows as $n=>$row){$data=json_decode($row['dati'],true,512,JSON_THROW_ON_ERROR);$data['anno']=(string)$row['anno'];$data['ricevuta_il']=$row['ricevuta_il'];$data['allegati']=implode(', ',json_decode($row['allegati'],true,512,JSON_THROW_ON_ERROR));$data['privacy']='Sì';$data['notifica']=$row['notifica'];$data['id']=$row['id'];foreach($keys as $i=>$key)$sheet->setCellValueExplicit([$i+1,$n+2],(string)($data[$key]??''),PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        // Blu = già iscritto l'anno precedente (rinnovo); verde = non iscritto l'anno precedente (nuova iscrizione).
+        $colore=(($data['iscritto_precedente']??'')==='si')?'FFBDD7EE':((($data['iscritto_precedente']??'')==='no')?'FFC6E0B4':null);
+        if($colore!==null)$sheet->getStyle([1,$n+2,count($keys),$n+2])->getFill()->setFillType(PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB($colore);}
     $sheet->freezePane('A2');$sheet->setAutoFilter($sheet->calculateWorksheetDimension());
+    $lc=count($keys)+2;
+    $sheet->setCellValue([$lc,1],'BLU = già iscritto l\'anno precedente');$sheet->getStyle([$lc,1])->getFill()->setFillType(PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('FFBDD7EE');
+    $sheet->setCellValue([$lc,2],'VERDE = nuova iscrizione (non iscritto l\'anno precedente)');$sheet->getStyle([$lc,2])->getFill()->setFillType(PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('FFC6E0B4');
+    $sheet->getColumnDimensionByColumn($lc)->setWidth(52);
     if ($conStorico) aggiungi_archivio_storico($book, $storage);
     return $book;
 }

@@ -11,7 +11,7 @@ try {
     $db = new PDO('sqlite:' . $dir . '/registro.sqlite', null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     $db->exec('CREATE TABLE iscrizioni (id TEXT PRIMARY KEY, ricevuta_il TEXT NOT NULL, anno INTEGER NOT NULL, dati TEXT NOT NULL, allegati TEXT NOT NULL, notifica TEXT NOT NULL)');
     $ins = function (string $id, string $nome, string $when) use ($db) {
-        $dati = ['tipo'=>'iscrizione','nome'=>$nome,'cognome'=>'Prova','email'=>'p@example.org','codice_fiscale'=>'RSSMRA80A01H501U','causale'=>'Iscrizione Afant 2027'];
+        $dati = ['tipo'=>'iscrizione','iscritto_precedente'=>($nome==='Bruno'?'no':'si'),'nome'=>$nome,'cognome'=>'Prova','email'=>'p@example.org','codice_fiscale'=>'RSSMRA80A01H501U','causale'=>'Iscrizione Afant 2027'];
         $db->prepare('INSERT INTO iscrizioni VALUES(?,?,?,?,?,?)')->execute([$id,$when,2027,json_encode($dati),'[]','inviata']);
     };
     // archivio storico finto: due fogli
@@ -37,6 +37,9 @@ try {
     $book = PhpOffice\PhpSpreadsheet\IOFactory::load($f);
     check($book->getSheet(0)->getHighestRow() === 3, 'due righe di iscrizione');
     check($book->getSheet(0)->getCell('C2')->getValue() === 'Bruno', 'la più recente in alto');
+    $sh = $book->getSheet(0);
+    check($sh->getStyle('C2')->getFill()->getStartColor()->getARGB() === 'FFC6E0B4', 'nuova iscrizione (no anno prima) in verde');
+    check($sh->getStyle('C3')->getFill()->getStartColor()->getARGB() === 'FFBDD7EE', 'già iscritto anno prima in blu');
     check(is_file($dir . '/iscrizioni-afant-precedente.xlsx'), 'copia della versione precedente');
     $prev = PhpOffice\PhpSpreadsheet\IOFactory::load($dir . '/iscrizioni-afant-precedente.xlsx');
     check($prev->getSheet(0)->getHighestRow() === 2, 'la copia precedente ha una sola iscrizione');
