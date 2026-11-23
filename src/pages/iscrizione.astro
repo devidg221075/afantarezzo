@@ -16,7 +16,6 @@ const anno = associazione.annoIscrizione;
       <h2>Modalità di iscrizione</h2>
       <p>AFANT AREZZO richiede una quota di iscrizione annuale di <strong>15,00 €</strong>. È possibile inviare la ricevuta del bonifico a <a href="mailto:info@afantarezzo.it">info@afantarezzo.it</a>.</p>
       <h2>Come si effettua il pagamento</h2>
-      <p>La contabilità dell'associazione è seguita da un commercialista professionista, di cui l'associazione si avvale per il supporto commerciale e consulenziale.</p>
       <p>La quota può essere versata tramite bonifico intestato a <strong>{associazione.intestatario}</strong>.</p>
       <p>IBAN: <strong>{associazione.iban}</strong><br />Causale: <strong>iscrizione Afant {anno}</strong></p>
       <h2>Richiesta di iscrizione {anno}</h2>
@@ -33,7 +32,6 @@ const anno = associazione.annoIscrizione;
           <label>Codice fiscale *<input name="codice_fiscale" autocomplete="off" required /></label>
           <label>Causale *<input name="causale" value={`Iscrizione Afant ${anno}`} required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
           <label>Email *<input type="email" name="email" autocomplete="email" required /></label>
-          <label>Conferma email *<input type="email" name="conferma_email" required /></label>
           <label>Email PEC (facoltativa)<input type="email" name="pec" /></label>
           <label>Conferma email PEC<input type="email" name="conferma_pec" /></label>
           <label>Telefono *<input type="tel" name="telefono" autocomplete="tel" required /></label>
@@ -43,7 +41,6 @@ const anno = associazione.annoIscrizione;
           <label>CAP *<input name="cap" autocomplete="postal-code" required /></label>
           <label>Paese *<input name="paese" autocomplete="country-name" required /></label>
           <label>Luogo di nascita *<input name="luogo_nascita" required /></label>
-          <label>Data di nascita *<input type="date" name="data_nascita" required /></label>
           <label>Ordine di appartenenza<input name="ordine" /></label>
           <label>Luogo di lavoro<input name="luogo_lavoro" /></label>
         </div>
