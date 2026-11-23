@@ -23,7 +23,7 @@ Dopo l’assemblea elettiva del 25 maggio 2026, il Consiglio Direttivo per il tr
 - Dr.ssa Stefania Tanania segreteria
 - Dr.ssa Simona Mengozzi tesoreria
 - Dr.ssa Gloria Caterini consiglio
-- Dr.ssa Jessika Lodovichi consiglio
+- Dr.ssa Jessica Lodovichi consiglio
 - Dr.ssa Flavia Sorbi consiglio
 
 ## Revisori dei conti

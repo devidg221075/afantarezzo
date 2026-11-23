@@ -21,7 +21,7 @@ Tesoriere – Dr.ssa Mengozzi Simona
 
 Consigliere – Dr.ssa Caterini Gloria
 
-Consigliere – Dr.ssa Lodovichi Jessika
+Consigliere – Dr.ssa Lodovichi Jessica
 
 Consigliere – Dr.ssa Sorbi Flavia
 
