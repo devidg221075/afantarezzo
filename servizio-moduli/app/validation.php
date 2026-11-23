@@ -18,14 +18,15 @@ function email_field(array $post, string $key, string $confirm, bool $needConfir
 function validate_form(array $post): array {
     $type = field($post, 'tipo', 20);
     if (!in_array($type, ['contatto', 'iscrizione'], true)) throw new InvalidArgumentException('Modulo non valido.');
-    $data = ['tipo' => $type, 'nome' => field($post, 'nome', 100), 'cognome' => field($post, 'cognome', 100), 'email' => email_field($post, 'email', 'conferma_email', $type === 'contatto' || array_key_exists('conferma_email', $post))];
+    $data = ['tipo' => $type, 'nome' => field($post, 'nome', 100), 'cognome' => field($post, 'cognome', 100), 'email' => ($type === 'iscrizione' && trim((string)($post['email'] ?? '')) === '') ? '' : email_field($post, 'email', 'conferma_email', $type === 'contatto' || array_key_exists('conferma_email', $post))];
     if (($post['privacy'] ?? '') !== 'on') throw new InvalidArgumentException('Conferma di aver letto l’informativa privacy.');
     if ($type === 'contatto') {
         $data += ['telefono' => field($post, 'telefono', 40, false), 'oggetto' => field($post, 'oggetto', 180), 'messaggio' => field($post, 'messaggio', 5000)];
     } else {
         $gia = (($post['iscritto_precedente'] ?? '') === 'si');
-        foreach (['codice_fiscale'=>20,'causale'=>200,'telefono'=>40,'iscritto_precedente'=>3,'pagamento'=>20] as $key=>$max) $data[$key] = field($post, $key, $max);
-        foreach (['indirizzo'=>250,'localita'=>120,'provincia'=>120,'cap'=>20,'paese'=>100,'luogo_nascita'=>120] as $key=>$max) $data[$key] = field($post, $key, $max, !$gia);
+        foreach (['codice_fiscale'=>20,'iscritto_precedente'=>3,'pagamento'=>20] as $key=>$max) $data[$key] = field($post, $key, $max);
+        foreach (['causale'=>200,'telefono'=>40] as $key=>$max) $data[$key] = field($post, $key, $max, false);
+        foreach (['indirizzo'=>250,'localita'=>120,'provincia'=>120,'cap'=>20,'paese'=>100,'luogo_nascita'=>120] as $key=>$max) $data[$key] = field($post, $key, $max, false);
         $data['data_nascita'] = field($post, 'data_nascita', 10, false);
         foreach (['ordine'=>150,'luogo_lavoro'=>200,'note'=>5000] as $key=>$max) $data[$key] = field($post, $key, $max, false);
         $data['pec'] = (trim((string)($post['pec'] ?? '')) === '' && trim((string)($post['conferma_pec'] ?? '')) === '') ? '' : email_field($post, 'pec', 'conferma_pec');

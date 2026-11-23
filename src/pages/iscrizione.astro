@@ -30,20 +30,20 @@ const anno = associazione.annoIscrizione;
           <label>Nome *<input name="nome" autocomplete="given-name" required /></label>
           <label>Cognome *<input name="cognome" autocomplete="family-name" required /></label>
           <label>Codice fiscale *<input name="codice_fiscale" autocomplete="off" required /></label>
-          <label>Causale *<input name="causale" value={`Iscrizione Afant ${anno}`} required /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
-          <label>Email *<input type="email" name="email" autocomplete="email" required /></label>
-          <label>Telefono *<input type="tel" name="telefono" autocomplete="tel" required /></label>
         </div>
         <fieldset class="form-choice"><legend>Sei già stato iscritto nel {anno - 1}? *</legend><label><input type="radio" name="iscritto_precedente" value="si" required /> Sì</label><label><input type="radio" name="iscritto_precedente" value="no" required /> No</label></fieldset>
         <div class="form-grid" id="dati-nuovi">
+          <label>Causale<input name="causale" value={`Iscrizione Afant ${anno}`} /><small>Se rinnovi, indica RINNOVO e l'anno.</small></label>
+          <label>Email<input type="email" name="email" autocomplete="email" /></label>
+          <label>Telefono<input type="tel" name="telefono" autocomplete="tel" /></label>
           <label>Email PEC (facoltativa)<input type="email" name="pec" /></label>
           <label>Conferma email PEC<input type="email" name="conferma_pec" /></label>
-          <label>Via, piazza o corso e numero civico *<input name="indirizzo" autocomplete="street-address" required /></label>
-          <label>Località *<input name="localita" autocomplete="address-level2" required /></label>
-          <label>Provincia o regione *<input name="provincia" autocomplete="address-level1" required /></label>
-          <label>CAP *<input name="cap" autocomplete="postal-code" required /></label>
-          <label>Paese *<input name="paese" autocomplete="country-name" required /></label>
-          <label>Luogo di nascita *<input name="luogo_nascita" required /></label>
+          <label>Via, piazza o corso e numero civico<input name="indirizzo" autocomplete="street-address" /></label>
+          <label>Località<input name="localita" autocomplete="address-level2" /></label>
+          <label>Provincia o regione<input name="provincia" autocomplete="address-level1" /></label>
+          <label>CAP<input name="cap" autocomplete="postal-code" /></label>
+          <label>Paese<input name="paese" autocomplete="country-name" /></label>
+          <label>Luogo di nascita<input name="luogo_nascita" /></label>
           <label>Ordine di appartenenza<input name="ordine" /></label>
           <label>Luogo di lavoro<input name="luogo_lavoro" /></label>
         </div>
