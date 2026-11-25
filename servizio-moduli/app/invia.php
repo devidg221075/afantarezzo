@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require __DIR__ . '/common.php';
+require_once __DIR__ . '/email-template.php';
 header('Content-Type: text/plain; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); header('Allow: POST'); exit('Metodo non consentito.'); }
 if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] !== 'https://' . $c['site_host']) { http_response_code(403); exit('Richiesta non consentita.'); }
@@ -34,11 +35,12 @@ try {
     $m->Subject=$data['tipo']==='contatto'?'Richiesta dal sito AFANT':'Richiesta iscrizione AFANT '.($data['anno_iscrizione']??$now->format('Y'));
     $body="Riferimento: $id\nData: ".$now->format('d/m/Y H:i')."\n\n";
     foreach ($data as $k=>$v) if ($k!=='tipo') $body.=str_replace('_',' ',ucfirst($k)).': '.$v."\n";
-    $m->Body=$body;foreach($files as $f)$m->addAttachment($f['tmp'],$f['nome']);
+    [$htmlW,$testoW]=email_webmaster($data,$id,$now,array_column($files,'nome'),$body);
+    $m->isHTML(true);$m->Body=$htmlW;$m->AltBody=$testoW;foreach($files as $f)$m->addAttachment($f['tmp'],$f['nome']);
     if (!empty($c['allega_registro']) && !empty($registroFile) && is_file($registroFile)) $m->addAttachment($registroFile,'iscrizioni-afant-aggiornato.xlsx');
     try { $m->send(); if($data['tipo']==='iscrizione'){$q=$db->prepare('UPDATE iscrizioni SET notifica=? WHERE id=?');$q->execute(['inviata',$id]);} }
     catch(Throwable $e){error_log('AFANT: invio non riuscito, riferimento '.$id);http_response_code(503);exit($data['tipo']==='iscrizione'?'La richiesta è stata registrata, ma la notifica non è partita. Contatta AFANT indicando il riferimento '.$id.'.':'Invio non riuscito. Riprova oppure scrivi a info@afantarezzo.it.');}
-    $sent=false; if($data['email']!=='') try { $receipt=create_mailer($c);$receipt->addAddress($data['email']);$receipt->addReplyTo($c['recipient']);$receipt->Subject='Conferma ricezione richiesta - AFANT Arezzo';$receipt->Body="Buongiorno,\n\nabbiamo ricevuto la tua richiesta. Ti risponderemo appena possibile.\nRiferimento: $id\n\nA.FA.N.T. Arezzo\ninfo@afantarezzo.it";$receipt->send();$sent=true; } catch(Throwable $e) { error_log('AFANT: ricevuta non inviata, riferimento '.$id);$sent=false; }
+    $sent=false; if($data['email']!=='') try { $receipt=create_mailer($c);$receipt->addAddress($data['email']);$receipt->addReplyTo($c['recipient']);$receipt->Subject='Conferma ricezione richiesta - AFANT Arezzo';[$htmlR,$testoR]=email_ricevuta($data,$id,$now);$receipt->isHTML(true);$receipt->Body=$htmlR;$receipt->AltBody=$testoR;$receipt->send();$sent=true; } catch(Throwable $e) { error_log('AFANT: ricevuta non inviata, riferimento '.$id);$sent=false; }
     echo 'Richiesta inviata. Riferimento: '.$id.($data['email']===''?'':($sent?' Ti abbiamo inviato una conferma via email.':' La conferma via email non è stata inviata.'));
 } catch (InvalidArgumentException $e) { http_response_code(400);exit($e->getMessage()); }
 catch (Throwable $e) { error_log('AFANT: errore elaborazione modulo');http_response_code(503);exit('Servizio temporaneamente non disponibile.'); }
