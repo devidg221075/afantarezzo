@@ -240,3 +240,5 @@ fieldset[hidden]{display:none}
 .search-results{max-height:none;overflow:visible}
 .search-row input{font-size:1rem}
 }
+.avviso-locandina{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:1.2rem;align-items:start}.avviso-locandina img{width:100%;height:auto;border-radius:.6rem}.avviso-locandina h3{margin-top:0}
+@media (max-width:640px){.avviso-locandina{grid-template-columns:1fr}}
